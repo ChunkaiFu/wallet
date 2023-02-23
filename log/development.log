@@ -1457,3 +1457,13 @@ ActionView::Template::Error (undefined local variable or method `signup_path' fo
     6: 
   
 app/views/sessions/new.html.erb:3
+Started GET "/" for 127.0.0.1 at 2023-02-23 17:33:48 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1269)
+  Rendered layout layouts/application.html.erb (Duration: 134.6ms | Allocations: 42193)
+Completed 200 OK in 147ms (Views: 141.7ms | ActiveRecord: 0.0ms | Allocations: 45053)
+
+
