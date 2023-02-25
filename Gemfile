@@ -83,6 +83,7 @@ group :test do
   gem "cucumber-rails", require: false
   gem "rspec-rails"
   gem "database_cleaner"
+  gem 'simplecov', require: false
 end
 
 gem "terser", "~> 1.1"
