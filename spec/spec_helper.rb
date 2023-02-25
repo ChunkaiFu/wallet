@@ -95,7 +95,7 @@ end
 
 require 'simplecov'
 
-SimpleCov.start
+SimpleCov.start 'rails'
 
 RSpec.configure do |config|
 
