@@ -1,4 +1,3 @@
-$LOAD_PATH.unshift File.expand_path("../test", __dir__)
 require "test_helper"
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
