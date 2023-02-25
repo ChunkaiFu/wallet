@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.1"
 
+gem 'irb',  '1.3.7'
+gem 'reline', '0.2.7'
+
 gem 'bcrypt',  '3.1.18'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
@@ -53,7 +56,7 @@ gem "bootsnap", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  # gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'sqlite3'
 end
 
@@ -81,3 +84,6 @@ group :test do
   gem "rspec-rails"
   gem "database_cleaner"
 end
+
+gem "terser", "~> 1.1"
+gem 'pg'

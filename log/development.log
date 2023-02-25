@@ -2193,3 +2193,22 @@ Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 4438)
 
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for 127.0.0.1 at 2023-02-24 19:56:48 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1444)
+  Rendered layout layouts/application.html.erb (Duration: 92.6ms | Allocations: 37079)
+Completed 200 OK in 107ms (Views: 101.8ms | ActiveRecord: 0.0ms | Allocations: 40094)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 19:56:52 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 13.2ms | Allocations: 3796)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 7832)
+Completed 200 OK in 37ms (Views: 23.4ms | ActiveRecord: 0.6ms | Allocations: 15697)
+
+
