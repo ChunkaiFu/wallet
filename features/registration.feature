@@ -1,7 +1,7 @@
 Feature: Registration 
 Background: 
 Given user on the homepage  
-And user follows "Sign in"  
+And user follows "Register"  
 @regression  
 Scenario: Create a New User 
 When user fills "Username textbox" with "p123"
@@ -11,4 +11,4 @@ And user enters the following details
 | First Name | Polkampally| 
 | Last Name | Keerthana| 
 | Password | 123456 | 
-And user clicks "register button"
+And user clicks "create my account button"
