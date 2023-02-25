@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.1"
 
+gem 'irb',  '1.3.7'
+gem 'reline', '0.2.7'
+
 gem 'bcrypt',  '3.1.18'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
@@ -27,6 +30,8 @@ gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+
+gem 'cucumber'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -75,4 +80,11 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "cucumber-rails", require: false
+  gem "rspec-rails"
+  gem "database_cleaner"
+  gem 'simplecov', require: false
 end
+
+gem "terser", "~> 1.1"
+# gem 'pg'

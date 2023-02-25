@@ -1467,3 +1467,964 @@ Processing by SessionsController#home as HTML
 Completed 200 OK in 147ms (Views: 141.7ms | ActiveRecord: 0.0ms | Allocations: 45053)
 
 
+Started GET "/" for 127.0.0.1 at 2023-02-23 17:37:18 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1251)
+  Rendered layout layouts/application.html.erb (Duration: 83.0ms | Allocations: 36283)
+Completed 200 OK in 94ms (Views: 89.5ms | ActiveRecord: 0.0ms | Allocations: 39144)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:12:36 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1248)
+  Rendered layout layouts/application.html.erb (Duration: 69.6ms | Allocations: 36063)
+Completed 200 OK in 88ms (Views: 80.9ms | ActiveRecord: 0.0ms | Allocations: 38895)
+
+
+Started GET "/register.html.erb" for 127.0.0.1 at 2023-02-24 15:12:39 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/register.html.erb"):
+  
+Started GET "/register.html.erb" for 127.0.0.1 at 2023-02-24 15:14:10 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/register.html.erb"):
+  
+Started GET "/register.html.erb" for 127.0.0.1 at 2023-02-24 15:14:13 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/register.html.erb"):
+  
+Started GET "/register.html.erb" for 127.0.0.1 at 2023-02-24 15:14:13 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/register.html.erb"):
+  
+Started GET "/register.html.erb" for 127.0.0.1 at 2023-02-24 15:14:13 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/register.html.erb"):
+  
+Started GET "/register.html.erb" for 127.0.0.1 at 2023-02-24 15:14:16 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/register.html.erb"):
+  
+Started GET "/register.html.erb" for 127.0.0.1 at 2023-02-24 15:15:47 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/register.html.erb"):
+  
+Started POST "/login" for 127.0.0.1 at 2023-02-24 15:16:29 -0600
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "Username"=>"", "Password"=>"[FILTERED]", "commit"=>"LOG IN"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."Username" = ? LIMIT ?[0m  [["Username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3002/login
+Completed 302 Found in 8ms (ActiveRecord: 1.1ms | Allocations: 4276)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-02-24 15:16:29 -0600
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1243)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 1331)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 1970)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `signup_path' for #<ActionView::Base:0x00000000014de8>):
+    1: # <h1>Sessions#new</h1>
+    2: # <p>Find me in app/views/sessions/new.html.erb</p>
+    3: # <p>New user? <%= link_to "Register", signup_path %></p>
+    4: # <% provide(:title, "Log in") %>
+    5: # <h1>Log in </h1>
+    6: 
+  
+app/views/sessions/new.html.erb:3
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:16:44 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 725)
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 15409)
+Completed 200 OK in 27ms (Views: 26.5ms | ActiveRecord: 0.0ms | Allocations: 15720)
+
+
+Started GET "/about.html" for 127.0.0.1 at 2023-02-24 15:16:45 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/about.html"):
+  
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:17:35 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 2.8ms | Allocations: 716)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 5013)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 5706)
+
+
+Started GET "/new.html" for 127.0.0.1 at 2023-02-24 15:17:37 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/new.html"):
+  
+Started GET "/new.html" for 127.0.0.1 at 2023-02-24 15:17:42 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/new.html"):
+  
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:20:14 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 710)
+  Rendered layout layouts/application.html.erb (Duration: 33.9ms | Allocations: 5913)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms | Allocations: 6584)
+
+
+  
+ActionView::Template::Error (uninitialized constant #<Class:0x000000010e448cc0>::Register_path):
+    29:   </head>
+    30:   <body>
+    31:   <div class="bottom-navigation">
+    32:     <a href="<%= Register_path %>">Register</a>
+    33:     <a href="about.html">About</a>
+    34:     <a href="contact.html">Contact Us</a>
+    35:   </div>
+  
+app/views/layouts/application.html.erb:32
+app/controllers/sessions_controller.rb:15:in `home'
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:22:06 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1242)
+  Rendered layout layouts/application.html.erb (Duration: 76.6ms | Allocations: 37379)
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 0.0ms | Allocations: 40151)
+
+
+  
+ActionView::Template::Error (uninitialized constant #<Class:0x0000000111ce6d70>::Register_path):
+    29:   </head>
+    30:   <body>
+    31:   <div class="bottom-navigation">
+    32:     <a href="<%= Register_path %>">Register</a>
+    33:     <a href="about.html">About</a>
+    34:     <a href="contact.html">Contact Us</a>
+    35:   </div>
+  
+app/views/layouts/application.html.erb:32
+app/controllers/sessions_controller.rb:15:in `home'
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:24:09 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 2.3ms | Allocations: 712)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 5879)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 6552)
+
+
+  
+ActionView::Template::Error (uninitialized constant #<Class:0x00000001123bd860>::Register):
+    29:   </head>
+    30:   <body>
+    31:   <div class="bottom-navigation">
+    32:     <a href="<%= Register %>">Register</a>
+    33:     <a href="about.html">About</a>
+    34:     <a href="contact.html">Contact Us</a>
+    35:   </div>
+  
+app/views/layouts/application.html.erb:32
+app/controllers/sessions_controller.rb:15:in `home'
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:24:23 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 710)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4972)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 5720)
+
+
+Started GET "/new.html" for 127.0.0.1 at 2023-02-24 15:24:26 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/new.html"):
+  
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:30:25 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 544)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 14811)
+Completed 200 OK in 26ms (Views: 25.1ms | Allocations: 15297)
+
+
+Started GET "/new.html" for 127.0.0.1 at 2023-02-24 15:30:27 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/new.html"):
+  
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:35:35 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 748)
+  Rendered layout layouts/application.html.erb (Duration: 35.2ms | Allocations: 15262)
+Completed 200 OK in 38ms (Views: 37.6ms | Allocations: 16035)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:40:36 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 13.9ms | Allocations: 701)
+  Rendered layout layouts/application.html.erb (Duration: 52.6ms | Allocations: 5611)
+Completed 200 OK in 65ms (Views: 62.8ms | Allocations: 6307)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:40:38 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 530)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 4497)
+Completed 200 OK in 9ms (Views: 8.6ms | Allocations: 4743)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:40:41 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 1.5ms | Allocations: 518)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 4485)
+Completed 200 OK in 13ms (Views: 12.3ms | Allocations: 4730)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:40:41 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 518)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4485)
+Completed 200 OK in 8ms (Views: 7.9ms | Allocations: 4730)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:40:41 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 527)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 4494)
+Completed 200 OK in 9ms (Views: 8.3ms | Allocations: 4739)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:40:41 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 527)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4524)
+Completed 200 OK in 11ms (Views: 10.3ms | Allocations: 4771)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:40:42 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 509)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 4502)
+Completed 200 OK in 13ms (Views: 11.3ms | Allocations: 4749)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:40:42 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 530)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4497)
+Completed 200 OK in 9ms (Views: 7.5ms | Allocations: 4743)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:40:42 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 524)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 4491)
+Completed 200 OK in 9ms (Views: 8.4ms | Allocations: 4737)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:41:17 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 2.4ms | Allocations: 736)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 5009)
+Completed 200 OK in 18ms (Views: 17.4ms | Allocations: 5703)
+
+
+Started GET "/new" for 127.0.0.1 at 2023-02-24 15:41:19 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+Started GET "/new" for 127.0.0.1 at 2023-02-24 15:41:30 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+Started GET "/new" for 127.0.0.1 at 2023-02-24 15:41:33 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+Started GET "/new" for 127.0.0.1 at 2023-02-24 15:41:33 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+Started GET "/new" for 127.0.0.1 at 2023-02-24 15:41:40 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+Started GET "/new" for 127.0.0.1 at 2023-02-24 15:42:50 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+Started GET "/new" for 127.0.0.1 at 2023-02-24 15:43:21 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+Started GET "/new" for 127.0.0.1 at 2023-02-24 15:53:18 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:54:57 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 4.6ms | Allocations: 722)
+  Rendered layout layouts/application.html.erb (Duration: 35.6ms | Allocations: 5064)
+Completed 200 OK in 41ms (Views: 39.6ms | Allocations: 5758)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 15:54:59 -0600
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 2.4ms | Allocations: 8195)
+
+
+  
+ActionView::MissingTemplate (Missing template users/new.html.erb, application/new.html.erb with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/polkampallykeerthana/wallet/app/views"
+  * "/usr/local/lib/ruby/gems/3.2.0/gems/actiontext-7.0.4.2/app/views"
+  * "/usr/local/lib/ruby/gems/3.2.0/gems/actionmailbox-7.0.4.2/app/views"
+):
+  
+app/controllers/users_controller.rb:4:in `new'
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:56:18 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 547)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 14850)
+Completed 200 OK in 16ms (Views: 15.3ms | Allocations: 15336)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 15:56:20 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 26.0ms | Allocations: 5328)
+  Rendered layout layouts/application.html.erb (Duration: 31.1ms | Allocations: 9328)
+Completed 200 OK in 39ms (Views: 32.8ms | ActiveRecord: 0.9ms | Allocations: 13452)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 15:56:41 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1845)
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 16077)
+Completed 200 OK in 33ms (Views: 25.5ms | ActiveRecord: 0.8ms | Allocations: 20025)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 15:56:43 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1704)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 5651)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 5914)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 15:56:45 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1716)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 5634)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 5897)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 15:56:45 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 563)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4586)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 5070)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 15:56:47 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1710)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 5629)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 5899)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 15:58:55 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2125)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 6404)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.0ms | Allocations: 7115)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 16:05:18 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 83.2ms | Allocations: 10843)
+Completed 200 OK in 86ms (Views: 84.5ms | Allocations: 11107)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 16:08:17 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 2139)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 6507)
+Completed 200 OK in 31ms (Views: 30.6ms | Allocations: 7218)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 16:08:21 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 2.7ms | Allocations: 731)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 4805)
+Completed 200 OK in 16ms (Views: 14.9ms | Allocations: 5321)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-02-24 16:08:33 -0600
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "Username"=>"", "Password"=>"[FILTERED]", "commit"=>"LOG IN"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."Username" = ? LIMIT ?[0m  [["Username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3002/login
+Completed 302 Found in 33ms (ActiveRecord: 1.2ms | Allocations: 2653)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-02-24 16:08:33 -0600
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 74)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4296)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 4608)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 16:08:36 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 506)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 4494)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 4740)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 16:08:38 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1698)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 5677)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 5945)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-02-24 16:10:36 -0600
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "Username"=>"", "Password"=>"[FILTERED]", "commit"=>"LOG IN"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."Username" = ? LIMIT ?[0m  [["Username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3002/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 880)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-02-24 16:10:36 -0600
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 4232)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 4493)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 16:10:40 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 530)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4518)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 4765)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 16:11:53 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 802)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 5087)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 5781)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 16:11:55 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2119)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 6171)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 6704)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-02-24 16:11:59 -0600
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "Username"=>"", "Password"=>"[FILTERED]", "commit"=>"LOG IN"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."Username" = ? LIMIT ?[0m  [["Username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3002/login
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 887)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-02-24 16:11:59 -0600
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 74)
+  Rendered layout layouts/application.html.erb (Duration: 68.3ms | Allocations: 4259)
+Completed 200 OK in 78ms (Views: 74.8ms | ActiveRecord: 0.0ms | Allocations: 4564)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 16:12:01 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 557)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4509)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 4755)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 16:12:11 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1710)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 5663)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 5929)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 16:15:24 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2131)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 6415)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 7125)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 16:15:30 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 2.1ms | Allocations: 802)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4827)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 5344)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 16:15:36 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 1701)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 5653)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.0ms | Allocations: 5920)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-02-24 16:15:41 -0600
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "Username"=>"", "Password"=>"[FILTERED]", "commit"=>"LOG IN"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."Username" = ? LIMIT ?[0m  [["Username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3002/login
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 887)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-02-24 16:15:41 -0600
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 73)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4252)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 4557)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 16:15:43 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 569)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 4521)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 4767)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 16:24:11 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1395)
+  Rendered layout layouts/application.html.erb (Duration: 136.5ms | Allocations: 43871)
+Completed 200 OK in 158ms (Views: 149.6ms | ActiveRecord: 0.0ms | Allocations: 46702)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-02-24 16:24:13 -0600
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "Username"=>"", "Password"=>"[FILTERED]", "commit"=>"LOG IN"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."Username" = ? LIMIT ?[0m  [["Username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3002/login
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms | Allocations: 4078)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-02-24 16:24:13 -0600
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 74)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4245)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 4556)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 16:24:14 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 545)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 4498)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 4746)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 16:24:15 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 3749)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 7778)
+Completed 200 OK in 27ms (Views: 18.0ms | ActiveRecord: 0.4ms | Allocations: 14030)
+
+
+Started POST "/users/new" for 127.0.0.1 at 2023-02-24 16:24:36 -0600
+  
+ActionController::RoutingError (No route matches [POST] "/users/new"):
+  
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 16:24:36 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1713)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 5731)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 6000)
+
+
+Started POST "/users/new" for 127.0.0.1 at 2023-02-24 16:24:41 -0600
+  
+ActionController::RoutingError (No route matches [POST] "/users/new"):
+  
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 16:24:41 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1698)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 5716)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 5979)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 16:24:44 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 539)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 4491)
+Completed 200 OK in 11ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 4737)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-02-24 16:25:04 -0600
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "Username"=>"p", "Password"=>"[FILTERED]", "commit"=>"LOG IN"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."Username" = ? LIMIT ?[0m  [["Username", "p"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3002/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 903)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-02-24 16:25:04 -0600
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 4178)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 4438)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for 127.0.0.1 at 2023-02-24 19:56:48 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1444)
+  Rendered layout layouts/application.html.erb (Duration: 92.6ms | Allocations: 37079)
+Completed 200 OK in 107ms (Views: 101.8ms | ActiveRecord: 0.0ms | Allocations: 40094)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 19:56:52 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 13.2ms | Allocations: 3796)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 7832)
+Completed 200 OK in 37ms (Views: 23.4ms | ActiveRecord: 0.6ms | Allocations: 15697)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-02-24 21:48:47 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1454)
+  Rendered layout layouts/application.html.erb (Duration: 147.2ms | Allocations: 37128)
+Completed 200 OK in 164ms (Views: 157.8ms | ActiveRecord: 0.0ms | Allocations: 40378)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 21:49:07 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 3933)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 7970)
+Completed 200 OK in 34ms (Views: 20.3ms | ActiveRecord: 0.6ms | Allocations: 16157)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 21:50:36 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1728)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 5687)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 5958)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 21:50:43 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 554)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 4513)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 4761)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 21:50:46 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 572)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 4561)
+Completed 200 OK in 13ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 4809)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 21:51:50 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1716)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 5713)
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 5978)
+
+
+Started POST "/users/new" for 127.0.0.1 at 2023-02-24 21:52:06 -0600
+  
+ActionController::RoutingError (No route matches [POST] "/users/new"):
+  
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 21:52:06 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1689)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 5693)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 5959)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 21:52:08 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 575)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 4533)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 4778)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-02-24 21:52:19 -0600
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "Username"=>"p123", "Password"=>"[FILTERED]", "commit"=>"LOG IN"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."Username" = ? LIMIT ?[0m  [["Username", "p123"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3003/login
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 2597)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-02-24 21:52:19 -0600
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 90)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4269)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 4576)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 21:53:25 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 8.1ms | Allocations: 566)
+  Rendered layout layouts/application.html.erb (Duration: 46.2ms | Allocations: 4524)
+Completed 200 OK in 52ms (Views: 48.5ms | ActiveRecord: 0.0ms | Allocations: 4769)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 21:53:28 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1698)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 5656)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 5920)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 21:58:14 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1692)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 5650)
+Completed 200 OK in 30ms (Views: 26.4ms | Allocations: 5914)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-02-24 22:37:46 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1442)
+  Rendered layout layouts/application.html.erb (Duration: 128.9ms | Allocations: 37034)
+Completed 200 OK in 144ms (Views: 137.5ms | ActiveRecord: 0.0ms | Allocations: 40284)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 22:37:48 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 15.1ms | Allocations: 3894)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 7930)
+Completed 200 OK in 39ms (Views: 23.8ms | ActiveRecord: 0.6ms | Allocations: 16106)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for 127.0.0.1 at 2023-02-24 23:18:18 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1469)
+  Rendered layout layouts/application.html.erb (Duration: 193.6ms | Allocations: 36643)
+Completed 200 OK in 208ms (Views: 201.7ms | ActiveRecord: 0.0ms | Allocations: 39894)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 23:18:20 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 32.3ms | Allocations: 3900)
+  Rendered layout layouts/application.html.erb (Duration: 42.3ms | Allocations: 7936)
+Completed 200 OK in 64ms (Views: 45.4ms | ActiveRecord: 0.7ms | Allocations: 16108)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 23:35:25 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1460)
+  Rendered layout layouts/application.html.erb (Duration: 130.1ms | Allocations: 36833)
+Completed 200 OK in 145ms (Views: 139.1ms | ActiveRecord: 0.0ms | Allocations: 40084)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-02-24 23:35:27 -0600
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 14.3ms | Allocations: 3888)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 7924)
+Completed 200 OK in 40ms (Views: 23.3ms | ActiveRecord: 0.6ms | Allocations: 16099)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-02-24 23:35:30 -0600
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "Username"=>"", "Password"=>"[FILTERED]", "commit"=>"LOG IN"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."Username" = ? LIMIT ?[0m  [["Username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://127.0.0.1:3001/login
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms | Allocations: 2622)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-02-24 23:35:30 -0600
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 90)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 4259)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 4570)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-24 23:35:32 -0600
+Processing by SessionsController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/home.html.erb within layouts/application
+  Rendered sessions/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 554)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4512)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 4758)
+
+

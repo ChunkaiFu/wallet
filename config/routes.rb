@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get    'help'    => 'static_pages#help'
   get    'About'   => 'static_pages#about'
   get    'Contact Us' => 'static_pages#contact'
-  get    'Register'  => 'users#new'
+  get    '/Register'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   resources :users
