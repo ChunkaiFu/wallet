@@ -1,10 +1,15 @@
 class ApplicationController < ActionController::Base
-    before_action :configure_permitted_parameters, if: :devise_controller?
+before_action :set_current_user
 
-    protected
-  
-    def configure_permitted_parameters
-       attributes = [:username, :firstname, :lastname]
-       devise_parameter_sanitizer.permit(:sign_up, keys: attributes)
+  def set_current_user
+    if session[:user_id]
+      Current.user = User.find_by(id: session[:user_id])
     end
+  end 
+
+  def require_user_logged_in!
+    redirect_to sign_in_path, alert: "You must sign in to do that." if Current.user.nil? 
+  end
+
+
 end

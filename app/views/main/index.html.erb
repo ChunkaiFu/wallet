@@ -1,0 +1,14 @@
+<div class= "d-flex align-items-center justify-content-center">
+<h1> Welcome to your virtual wallet! </h1>
+</div>
+
+<div>
+	<%=link_to "Get Started!", sign_up_path, class: "btn btn-primary"%>
+</div>
+
+<div>
+	<%=link_to "Sign In", sign_in_path, class: "btn btn-primary"%>
+</div>
+<div>
+<%= button_to "Connect Twitter", "auth/twitter", method: :post, class: "btn btn-primary" %>
+</div>
