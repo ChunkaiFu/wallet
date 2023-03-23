@@ -3,10 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.1"
 
-gem 'irb',  '1.3.7'
-gem 'reline', '0.2.7'
-
-gem 'bcrypt',  '3.1.18'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
@@ -30,8 +26,6 @@ gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
-
-gem 'cucumber'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -58,12 +52,13 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'sqlite3'
+  gem 'rspec-rails'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-
+  gem 'database_cleaner'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -71,20 +66,19 @@ group :development do
   # gem "spring"
 end
 
+group :test do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails-training-wheels'
+  gem 'rails-controller-testing'
+  gem 'simplecov', require: false
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "webdrivers"
+end
+
 group :production do
   gem 'pg' # for Heroku deployment
 end
 
-group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
-  gem "webdrivers"
-  gem "cucumber-rails", require: false
-  gem "rspec-rails"
-  gem "database_cleaner"
-  gem 'simplecov', require: false
-end
-
-gem "terser", "~> 1.1"
-# gem 'pg'
+gem "devise"

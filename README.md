@@ -1,3 +1,24 @@
-# wallet
-Your personal web-based digital wallet implemented with Ruby on Rails, HTML and CSS. 
-1. Please clone the project and commit from your own branch. 
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
