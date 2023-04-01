@@ -1,11 +1,11 @@
-  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
-  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (25.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Migrating to CreateUsers (20230322025508)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
-  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230322025508"]]
-  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230322025508"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
 Migrating to CreateTwitterAccounts (20230322190449)
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "twitter_accounts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "name" varchar, "username" varchar, "image" varchar, "token" varchar, "secret" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_287de1faaf"
@@ -14,7 +14,7 @@ FOREIGN KEY ("user_id")
 )[0m
   [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_twitter_accounts_on_user_id" ON "twitter_accounts" ("user_id")[0m
   [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230322190449"]]
-  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
 Migrating to CreateTweets (20230322233308)
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "tweets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "twitter_account_id" integer NOT NULL, "body" text, "publish_at" datetime(6), "tweet_id" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_003928b7f5"
@@ -27,96 +27,255 @@ FOREIGN KEY ("twitter_account_id")
   [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_tweets_on_user_id" ON "tweets" ("user_id")[0m
   [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_tweets_on_twitter_account_id" ON "tweets" ("twitter_account_id")[0m
   [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230322233308"]]
-  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-23 20:27:22.515452"], ["updated_at", "2023-03-23 20:27:22.515452"]]
-  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-23 20:44:12.476744"], ["updated_at", "2023-03-23 20:44:12.476744"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 165.91.13.163 at 2023-03-23 20:44:26 +0000
+Cannot render console from 165.91.13.163! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1005)
+  Rendered shared/_navbar.html.erb (Duration: 6.5ms | Allocations: 1010)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 220)
+  Rendered layout layouts/application.html.erb (Duration: 931.1ms | Allocations: 86655)
+Completed 200 OK in 956ms (Views: 940.2ms | ActiveRecord: 0.0ms | Allocations: 91263)
+
+
+Started GET "/sign_up" for 165.91.13.163 at 2023-03-23 20:44:31 +0000
+Cannot render console from 165.91.13.163! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 19.8ms | Allocations: 4662)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 338)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 7334)
+Completed 200 OK in 58ms (Views: 33.0ms | ActiveRecord: 0.6ms | Allocations: 13520)
+
+
+Started GET "/sign_in" for 165.91.13.163 at 2023-03-23 20:44:54 +0000
+Cannot render console from 165.91.13.163! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2683)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 332)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 5344)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms | Allocations: 5964)
+
+
+Started GET "/sign_up" for 165.91.13.163 at 2023-03-23 20:45:04 +0000
+Cannot render console from 165.91.13.163! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 986)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 312)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 3546)
+Completed 200 OK in 23ms (Views: 22.7ms | ActiveRecord: 0.0ms | Allocations: 3830)
+
+
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFirstnameToUsers (20230323204631)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "firstname" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230323204631"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddLastnameToUsers (20230323204643)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "lastname" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230323204643"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 165.91.13.163 at 2023-03-23 20:48:52 +0000
+Cannot render console from 165.91.13.163! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 827)
+  Rendered shared/_navbar.html.erb (Duration: 3.4ms | Allocations: 979)
+  Rendered shared/_flash.html.erb (Duration: 1.0ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 91.2ms | Allocations: 34534)
+Completed 200 OK in 99ms (Views: 95.4ms | ActiveRecord: 0.0ms | Allocations: 37411)
+
+
+Started GET "/sign_up" for 165.91.13.163 at 2023-03-23 20:48:53 +0000
+Cannot render console from 165.91.13.163! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 3511)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 338)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 6179)
+Completed 200 OK in 34ms (Views: 23.6ms | ActiveRecord: 0.7ms | Allocations: 12952)
+
+
+Started POST "/sign_up" for 165.91.13.163 at 2023-03-23 20:49:23 +0000
+Cannot render console from 165.91.13.163! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"swetha@gmail.com", "firstname"=>"Swetha", "lastname"=>"Reddy", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :firstname, :lastname. Context: { controller: RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007fa197ea1380>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"swetha@gmail.com", "firstname"=>"Swetha", "lastname"=>"Reddy", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "firstname", "lastname") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "swetha@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-23 20:49:23.339527"], ["updated_at", "2023-03-23 20:49:23.339527"], ["firstname", nil], ["lastname", nil]]
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+Redirected to http://18.221.241.109:8080/
+Completed 302 Found in 315ms (ActiveRecord: 5.3ms | Allocations: 4308)
+
+
+Started GET "/" for 165.91.13.163 at 2023-03-23 20:49:23 +0000
+Cannot render console from 165.91.13.163! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 263)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 512)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 3053)
+Completed 200 OK in 40ms (Views: 30.6ms | ActiveRecord: 0.3ms | Allocations: 5643)
+
+
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for 165.91.13.163 at 2023-03-23 20:51:02 +0000
+Cannot render console from 165.91.13.163! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 825)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 928)
+  Rendered shared/_flash.html.erb (Duration: 1.2ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 87.6ms | Allocations: 34451)
+Completed 200 OK in 112ms (Views: 92.5ms | ActiveRecord: 0.7ms | Allocations: 46048)
+
+
+Started GET "/sign_up" for 165.91.13.163 at 2023-03-23 20:51:04 +0000
+Cannot render console from 165.91.13.163! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RegistrationsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 3499)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 6357)
+Completed 200 OK in 28ms (Views: 25.3ms | ActiveRecord: 0.1ms | Allocations: 7538)
+
+
+Started POST "/sign_up" for 165.91.13.163 at 2023-03-23 20:51:22 +0000
+Cannot render console from 165.91.13.163! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"keer@gmail.com", "firstname"=>"keer", "lastname"=>"thana", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "firstname", "lastname") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "keer@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-23 20:51:22.358633"], ["updated_at", "2023-03-23 20:51:22.358633"], ["firstname", "keer"], ["lastname", "thana"]]
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+Redirected to http://18.221.241.109:8080/
+Completed 302 Found in 305ms (ActiveRecord: 5.9ms | Allocations: 4207)
+
+
+Started GET "/" for 165.91.13.163 at 2023-03-23 20:51:22 +0000
+Cannot render console from 165.91.13.163! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 263)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 496)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 3048)
+Completed 200 OK in 29ms (Views: 23.1ms | ActiveRecord: 0.1ms | Allocations: 3799)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-03-23 15:59:30 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1005)
+  Rendered shared/_navbar.html.erb (Duration: 3.2ms | Allocations: 1009)
+  Rendered shared/_flash.html.erb (Duration: 0.6ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 325.2ms | Allocations: 93699)
+Completed 200 OK in 347ms (Views: 333.2ms | ActiveRecord: 0.0ms | Allocations: 98307)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2023-03-23 15:59:33 -0500
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 55.1ms | Allocations: 5285)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 338)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 59.7ms | Allocations: 7955)
+Completed 200 OK in 76ms (Views: 61.2ms | ActiveRecord: 0.7ms | Allocations: 15090)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-04-01 11:00:39 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 967)
+  Rendered shared/_navbar.html.erb (Duration: 4.8ms | Allocations: 1008)
+  Rendered shared/_flash.html.erb (Duration: 1.1ms | Allocations: 220)
+  Rendered layout layouts/application.html.erb (Duration: 651.8ms | Allocations: 93004)
+Completed 200 OK in 686ms (Views: 665.7ms | ActiveRecord: 0.0ms | Allocations: 97610)
+
+
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Started GET "/" for 127.0.0.1 at 2023-03-23 15:31:53 -0500
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-04-01 11:01:33 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by MainController#index as HTML
   Rendering layout layouts/application.html.erb
   Rendering main/index.html.erb within layouts/application
-  Rendered main/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1005)
-  Rendered shared/_navbar.html.erb (Duration: 7.4ms | Allocations: 1010)
-  Rendered shared/_flash.html.erb (Duration: 0.6ms | Allocations: 220)
-  Rendered layout layouts/application.html.erb (Duration: 254.7ms | Allocations: 93094)
-Completed 200 OK in 268ms (Views: 258.4ms | ActiveRecord: 0.0ms | Allocations: 97702)
+  Rendered main/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 823)
+  Rendered shared/_navbar.html.erb (Duration: 3.4ms | Allocations: 1004)
+  Rendered shared/_flash.html.erb (Duration: 0.8ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 129.1ms | Allocations: 38359)
+Completed 200 OK in 141ms (Views: 133.8ms | ActiveRecord: 0.0ms | Allocations: 41234)
 
 
-Started GET "/sign_in" for 127.0.0.1 at 2023-03-23 15:31:55 -0500
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-01 11:01:35 -0500
 Processing by SessionsController#new as HTML
   Rendering layout layouts/application.html.erb
   Rendering sessions/new.html.erb within layouts/application
-  Rendered sessions/new.html.erb within layouts/application (Duration: 12.4ms | Allocations: 5684)
-  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 332)
-  Rendered shared/_flash.html.erb (Duration: 0.5ms | Allocations: 25)
-  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 8351)
-Completed 200 OK in 20ms (Views: 19.7ms | ActiveRecord: 0.0ms | Allocations: 8972)
-
-
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Started GET "/" for 127.0.0.1 at 2023-03-23 17:50:06 -0500
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by MainController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering main/index.html.erb within layouts/application
-  Rendered main/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 827)
-  Rendered shared/_navbar.html.erb (Duration: 2.4ms | Allocations: 1007)
-  Rendered shared/_flash.html.erb (Duration: 0.5ms | Allocations: 221)
-  Rendered layout layouts/application.html.erb (Duration: 58.4ms | Allocations: 36625)
-Completed 200 OK in 65ms (Views: 60.9ms | ActiveRecord: 0.0ms | Allocations: 39503)
-
-
-Started GET "/sign_in" for 127.0.0.1 at 2023-03-23 17:50:07 -0500
-Processing by SessionsController#new as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering sessions/new.html.erb within layouts/application
-  Rendered sessions/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 3968)
-  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 332)
-  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
-  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 6629)
-Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 7249)
-
-
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Started GET "/" for 127.0.0.1 at 2023-03-23 17:56:01 -0500
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by MainController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering main/index.html.erb within layouts/application
-  Rendered main/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 827)
-  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 981)
-  Rendered shared/_flash.html.erb (Duration: 0.7ms | Allocations: 227)
-  Rendered layout layouts/application.html.erb (Duration: 64.1ms | Allocations: 35023)
-Completed 200 OK in 71ms (Views: 66.4ms | ActiveRecord: 0.0ms | Allocations: 37901)
-
-
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Started GET "/" for 127.0.0.1 at 2023-03-23 18:00:32 -0500
-  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by MainController#index as HTML
-  Rendering layout layouts/application.html.erb
-  Rendering main/index.html.erb within layouts/application
-  Rendered main/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 827)
-  Rendered shared/_navbar.html.erb (Duration: 2.4ms | Allocations: 981)
-  Rendered shared/_flash.html.erb (Duration: 0.5ms | Allocations: 221)
-  Rendered layout layouts/application.html.erb (Duration: 57.4ms | Allocations: 35035)
-Completed 200 OK in 64ms (Views: 59.7ms | ActiveRecord: 0.0ms | Allocations: 37913)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 28.5ms | Allocations: 5679)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 332)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 37.9ms | Allocations: 8344)
+Completed 200 OK in 43ms (Views: 41.9ms | ActiveRecord: 0.0ms | Allocations: 8964)
 
 
