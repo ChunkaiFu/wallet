@@ -1,16 +1,3 @@
-<h1>My Cash</h1>
-
-<div class="container mb-5">
-  <% if @user.balance %>
-    <h3>Your balance is $ <%= @user.balance %></h3>
-  <% else %>
-    <div class="alert alert-warning" role="alert">
-      Your balance is not available. Please make a deposit.
-    </div>
-    <%= link_to "Deposit Money", root_path, class: "btn btn-primary" %>
-  <% end %>
-</div>
-
 <h1>My Cards</h1>
 <div class="row">
   <% @cards.each do |card| %>
@@ -24,16 +11,12 @@
         </div>
         
         <div class="mx-3 btn-group d-grid gap-2 d-md-block mb-2 align-items-center">
-          <%=link_to "Select", root_path, class: "btn btn-primary"%>
-          <%=link_to "Edit", root_path, class: "btn btn-primary"%>
+          <%=link_to "Select", card_path, class: "btn btn-primary"%>
+          <%=link_to "Edit", edit_card_path, class: "btn btn-primary"%>
           <%=link_to "Delete", card, method: :delete, data: {confirm: "Are you sure? "}, class: "btn btn-primary" %>
         </div>
 
       </div>
     </div>
   <% end %>
-</div>
-
-<div>
-	<%=link_to "Add a card now!", new_card_path, class: "btn btn-primary"%>
 </div>

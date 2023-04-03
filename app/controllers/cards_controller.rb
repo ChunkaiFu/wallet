@@ -2,9 +2,15 @@ class CardsController < ApplicationController
   before_action :require_user_logged_in! 
   before_action :set_card, only: [:edit, :update, :destroy]
   before_action :set_user
+
   def index
     @cards = Current.user.cards
+
   end
+
+  def show
+    render :show
+  end 
 
   def new
     @card = Card.new
@@ -24,7 +30,7 @@ class CardsController < ApplicationController
 
   def update
     if @card.update(card_params)
-      redirect_to @card, notice: 'Card was successfully updated.'
+      redirect_to cards_path, notice: 'Card was successfully updated.'
     else
       render :edit
     end
