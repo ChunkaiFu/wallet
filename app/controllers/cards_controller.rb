@@ -1,7 +1,7 @@
 class CardsController < ApplicationController
   before_action :require_user_logged_in! 
   before_action :set_card, only: [:edit, :update, :destroy]
-
+  before_action :set_user
   def index
     @cards = Current.user.cards
   end
@@ -43,4 +43,7 @@ class CardsController < ApplicationController
     def card_params
       params.require(:card).permit(:issuer, :card_number, :expiration_date, :card_holder_name, :cvv)
     end
+    def set_user
+      @user = Current.user
+    end 
 end
