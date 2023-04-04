@@ -1,6 +1,6 @@
 <h1> Forgot your password? </h1>
 
-<%=form_with url: root_path, data: { turbo: false } do |form| %>
+<%=form_with url: password_reset_path, data: { turbo: false } do |form| %>
   <div class= "mb-3">
   <%= form.label :email%>
   <%= form.text_field :email, class: "form-control", placeholder: "user_name@wallet.com" %>
