@@ -1720,3 +1720,2375 @@ Processing by MainController#index as TURBO_STREAM
 Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 3196)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-04-01 12:28:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 721)
+  Rendered shared/_navbar.html.erb (Duration: 5.2ms | Allocations: 1071)
+  Rendered shared/_flash.html.erb (Duration: 0.9ms | Allocations: 236)
+  Rendered layout layouts/application.html.erb (Duration: 372.6ms | Allocations: 95220)
+Completed 200 OK in 403ms (Views: 381.5ms | ActiveRecord: 0.0ms | Allocations: 103191)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-01 12:28:49 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 17.6ms | Allocations: 5752)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 323)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 8408)
+Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.0ms | Allocations: 9415)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2023-04-01 12:29:00 -0500
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2302)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 329)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4965)
+Completed 200 OK in 26ms (Views: 8.8ms | ActiveRecord: 0.6ms | Allocations: 12855)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2023-04-01 12:29:22 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"keerthana@gmail.com", "firstname"=>"K", "lastname"=>"P", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "firstname", "lastname") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "keerthana@gmail.com"], ["password_digest", "$2a$12$di.iSQKXhOhBYsOfRhj8s.pfLXIPll8iDwTCyH1CEY6kqhCLxBv0W"], ["created_at", "2023-04-01 17:29:22.711418"], ["updated_at", "2023-04-01 17:29:22.711418"], ["firstname", "K"], ["lastname", "P"]]
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 296ms (ActiveRecord: 1.8ms | Allocations: 3998)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 12:29:22 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 520)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2888)
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 5830)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 12:29:59 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 492)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2836)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 3934)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 12:30:02 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 492)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 2837)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 3894)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 12:30:04 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 492)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2837)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 3917)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-01 12:30:16 -0500
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1051)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 12:30:16 -0500
+Processing by MainController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 305)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2699)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 3339)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-01 12:30:18 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 2320)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 305)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 4876)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 5448)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2023-04-01 12:30:24 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"keerthana@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "keerthana@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 2315)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 305)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 4859)
+Completed 200 OK in 298ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 6119)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2023-04-01 12:30:34 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"keerthana@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "keerthana@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 292ms (ActiveRecord: 0.1ms | Allocations: 1033)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 12:30:35 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 492)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2840)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 3935)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateKycs (20230401174054)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "kycs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "license_number" varchar, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_0ae09b4cd6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_kycs_on_user_id" ON "kycs" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230401174054"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-04-01 12:48:29 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 576)
+  Rendered shared/_navbar.html.erb (Duration: 2.6ms | Allocations: 959)
+  Rendered shared/_flash.html.erb (Duration: 0.9ms | Allocations: 237)
+  Rendered layout layouts/application.html.erb (Duration: 87.6ms | Allocations: 35812)
+Completed 200 OK in 156ms (Views: 92.3ms | ActiveRecord: 3.3ms | Allocations: 48676)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 12:49:38 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 267)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 950)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 210)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4085)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.1ms | Allocations: 5653)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 12:49:41 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2862)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 559)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 5754)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.1ms | Allocations: 7160)
+
+
+Started POST "/kyc" for 127.0.0.1 at 2023-04-01 12:49:45 -0500
+Processing by KycController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "kyc"=>{"license_number"=>"MNBV"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kyc_controller.rb:9:in `create'
+  [1m[36mKyc Create (0.6ms)[0m  [1m[32mINSERT INTO "kycs" ("license_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["license_number", "MNBV"], ["user_id", 2], ["created_at", "2023-04-01 17:49:45.809448"], ["updated_at", "2023-04-01 17:49:45.809448"]]
+  ↳ app/controllers/kyc_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kyc_controller.rb:9:in `create'
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 2.1ms | Allocations: 10507)
+
+
+  
+NameError (undefined local variable or method `wallets_path' for #<KycController:0x0000000000bce8>):
+  
+app/controllers/kyc_controller.rb:10:in `create'
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 12:51:09 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1385)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 567)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 15128)
+Completed 200 OK in 24ms (Views: 14.9ms | ActiveRecord: 0.9ms | Allocations: 20407)
+
+
+Started POST "/kyc" for 127.0.0.1 at 2023-04-01 12:51:13 -0500
+Processing by KycController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "kyc"=>{"license_number"=>"POLK"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kyc_controller.rb:9:in `create'
+  [1m[36mKyc Create (0.5ms)[0m  [1m[32mINSERT INTO "kycs" ("license_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["license_number", "POLK"], ["user_id", 2], ["created_at", "2023-04-01 17:51:13.876076"], ["updated_at", "2023-04-01 17:51:13.876076"]]
+  ↳ app/controllers/kyc_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kyc_controller.rb:9:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 10ms (ActiveRecord: 1.8ms | Allocations: 5584)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 12:51:13 -0500
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 123)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 561)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3083)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 4481)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddStatusToKycs (20230401175625)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "kycs" ADD "status" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230401175625"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:12:54 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 282)
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 960)
+  Rendered shared/_flash.html.erb (Duration: 0.6ms | Allocations: 211)
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 14830)
+Completed 200 OK in 43ms (Views: 32.1ms | ActiveRecord: 0.4ms | Allocations: 19799)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-01 13:12:56 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2765)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 557)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 5676)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.1ms | Allocations: 7125)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/sign_in" for 127.0.0.1 at 2023-04-01 13:13:25 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"keerthana@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "keerthana@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 294ms (ActiveRecord: 0.2ms | Allocations: 1700)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:13:25 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 530)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2878)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 3954)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:13:30 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 1293)
+
+
+  
+NoMethodError (undefined method `authenicate_user!' for #<KycController:0x00000000014a00>):
+  
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+actiontext (7.0.4.3) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.4.3) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4.3) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4.3) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:13:45 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.9ms | Allocations: 5206)
+
+
+  
+NoMethodError (undefined method `authenticate_user!' for #<KycController:0x00000000019028>):
+  
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+actiontext (7.0.4.3) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.4.3) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4.3) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4.3) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:14:32 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1625)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 564)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 15365)
+Completed 200 OK in 29ms (Views: 18.6ms | ActiveRecord: 1.0ms | Allocations: 20696)
+
+
+Started POST "/kyc" for 127.0.0.1 at 2023-04-01 13:14:37 -0500
+Processing by KycController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "kyc"=>{"license_number"=>"MNBJ"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mKyc Create (0.5ms)[0m  [1m[32mINSERT INTO "kycs" ("license_number", "user_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?)[0m  [["license_number", "MNBJ"], ["user_id", 2], ["created_at", "2023-04-01 18:14:37.278620"], ["updated_at", "2023-04-01 18:14:37.278620"], ["status", "0"]]
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 17ms (ActiveRecord: 1.9ms | Allocations: 7674)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:14:37 -0500
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 123)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 561)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3081)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 4523)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:14:50 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1382)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 530)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 4163)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 5252)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:16:59 -0500
+  
+SyntaxError (/Users/polkampallykeerthana/Documents/CODE/wallet/app/controllers/kyc_controller.rb:18: syntax error, unexpected ':', expecting `end' or dummy end
+                render: show
+                      ^
+):
+  
+app/controllers/kyc_controller.rb:18: syntax error, unexpected ':', expecting `end' or dummy end
+app/controllers/kyc_controller.rb:18: syntax error, unexpected ':', expecting `end' or dummy end
+app/controllers/kyc_controller.rb:18: syntax error, unexpected ':', expecting `end' or dummy end
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:17:10 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1384)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 564)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 15124)
+Completed 200 OK in 27ms (Views: 17.8ms | ActiveRecord: 1.0ms | Allocations: 20457)
+
+
+Started POST "/kyc" for 127.0.0.1 at 2023-04-01 13:17:19 -0500
+Processing by KycController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "kyc"=>{"license_number"=>"MNBV"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mKyc Create (0.5ms)[0m  [1m[32mINSERT INTO "kycs" ("license_number", "user_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?)[0m  [["license_number", "MNBV"], ["user_id", 2], ["created_at", "2023-04-01 18:17:19.987315"], ["updated_at", "2023-04-01 18:17:19.987315"], ["status", "0"]]
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 13ms (ActiveRecord: 2.0ms | Allocations: 6209)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:17:19 -0500
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 123)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 561)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3038)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 4437)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:18:04 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 127)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 569)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 13888)
+Completed 200 OK in 23ms (Views: 15.1ms | ActiveRecord: 0.9ms | Allocations: 19110)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-01 13:18:07 -0500
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1086)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:18:07 -0500
+Processing by MainController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 345)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2696)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 3302)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-01 13:18:08 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2387)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 362)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 5080)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 5905)
+
+
+  [1m[36mKyc Load (0.3ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs"[0m
+Started POST "/sign_in" for 127.0.0.1 at 2023-04-01 13:21:37 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2674)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 751)
+  Rendered shared/_flash.html.erb (Duration: 0.5ms | Allocations: 206)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 6275)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.2ms | Allocations: 7970)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2023-04-01 13:21:46 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"keerthana@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "keerthana@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 292ms (ActiveRecord: 0.1ms | Allocations: 1036)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:21:47 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 266)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 560)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3163)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 4571)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:21:55 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1640)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 559)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 4552)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.1ms | Allocations: 5992)
+
+
+Started POST "/kyc" for 127.0.0.1 at 2023-04-01 13:21:58 -0500
+Processing by KycController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "kyc"=>{"license_number"=>"KLOP"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mKyc Create (0.5ms)[0m  [1m[32mINSERT INTO "kycs" ("license_number", "user_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?)[0m  [["license_number", "KLOP"], ["user_id", 2], ["created_at", "2023-04-01 18:21:58.911429"], ["updated_at", "2023-04-01 18:21:58.911429"], ["status", "0"]]
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 14ms (ActiveRecord: 2.0ms | Allocations: 6325)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:21:58 -0500
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 530)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2949)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 4088)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:22:27 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1384)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 530)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 4165)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 5243)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:23:42 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 127)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 569)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 13854)
+Completed 200 OK in 31ms (Views: 19.8ms | ActiveRecord: 0.9ms | Allocations: 19058)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:23:45 -0500
+  
+SyntaxError (/Users/polkampallykeerthana/Documents/CODE/wallet/app/controllers/kyc_controller.rb:12: syntax error, unexpected ':', expecting `end' or dummy end
+                render: show
+                      ^
+):
+  
+app/controllers/kyc_controller.rb:12: syntax error, unexpected ':', expecting `end' or dummy end
+app/controllers/kyc_controller.rb:12: syntax error, unexpected ':', expecting `end' or dummy end
+app/controllers/kyc_controller.rb:12: syntax error, unexpected ':', expecting `end' or dummy end
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:24:24 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1384)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 564)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 15124)
+Completed 200 OK in 23ms (Views: 14.9ms | ActiveRecord: 0.9ms | Allocations: 20385)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:24:26 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 123)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 561)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3031)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 4391)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:24:28 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1382)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 530)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 4163)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 5260)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:25:12 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 127)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 569)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 13888)
+Completed 200 OK in 25ms (Views: 16.9ms | ActiveRecord: 1.0ms | Allocations: 19119)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-01 13:25:14 -0500
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1087)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:25:14 -0500
+Processing by MainController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 345)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2696)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 3297)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-01 13:25:16 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 2387)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 362)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 5080)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 5860)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2023-04-01 13:25:23 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"keerthana@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "keerthana@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 293ms (ActiveRecord: 0.2ms | Allocations: 1170)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:25:23 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 2.4ms | Allocations: 530)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 2878)
+Completed 200 OK in 25ms (Views: 16.4ms | ActiveRecord: 0.1ms | Allocations: 3953)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:25:35 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1453)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 559)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 4355)
+Completed 200 OK in 12ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 5739)
+
+
+Started POST "/kyc" for 127.0.0.1 at 2023-04-01 13:25:43 -0500
+Processing by KycController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "kyc"=>{"license_number"=>"LKJH"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mKyc Create (0.5ms)[0m  [1m[32mINSERT INTO "kycs" ("license_number", "user_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?)[0m  [["license_number", "LKJH"], ["user_id", 2], ["created_at", "2023-04-01 18:25:43.934964"], ["updated_at", "2023-04-01 18:25:43.934964"], ["status", "0"]]
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 29ms (ActiveRecord: 1.9ms | Allocations: 12067)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:25:43 -0500
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 530)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2891)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.1ms | Allocations: 3967)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-01 13:33:05 -0500
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.4ms | Allocations: 4544)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:33:05 -0500
+Processing by MainController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 126)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 366)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 13656)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.0ms | Allocations: 14519)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-01 13:33:08 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 2387)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 362)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 5080)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 5881)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2023-04-01 13:33:09 -0500
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2279)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 368)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4979)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 5977)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2023-04-01 13:33:36 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"swetha@gmail.com", "firstname"=>"swetha", "lastname"=>"reddy", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "firstname", "lastname") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "swetha@gmail.com"], ["password_digest", "$2a$12$B52SpOCzAFVRZfBfYFFmhecGRViP7xlLR7PEHNGwaNAZsUoLNC1D6"], ["created_at", "2023-04-01 18:33:36.644392"], ["updated_at", "2023-04-01 18:33:36.644392"], ["firstname", "swetha"], ["lastname", "reddy"]]
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 295ms (ActiveRecord: 1.5ms | Allocations: 2845)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:33:36 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 546)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2894)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 3987)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:33:41 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1400)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 559)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 4325)
+Completed 200 OK in 12ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 5706)
+
+
+Started POST "/kyc" for 127.0.0.1 at 2023-04-01 13:33:48 -0500
+Processing by KycController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "kyc"=>{"license_number"=>"MLOP"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mKyc Create (0.5ms)[0m  [1m[32mINSERT INTO "kycs" ("license_number", "user_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?)[0m  [["license_number", "MLOP"], ["user_id", 3], ["created_at", "2023-04-01 18:33:48.545552"], ["updated_at", "2023-04-01 18:33:48.545552"], ["status", "0"]]
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 14ms (ActiveRecord: 1.5ms | Allocations: 5982)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:33:48 -0500
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 530)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2913)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 4015)
+
+
+  [1m[36mKyc Load (0.2ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs"[0m
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:35:46 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 127)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 569)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 13854)
+Completed 200 OK in 24ms (Views: 15.2ms | ActiveRecord: 0.9ms | Allocations: 19043)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-01 13:35:49 -0500
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1081)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:35:49 -0500
+Processing by MainController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 345)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2696)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 3293)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-01 13:35:51 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2387)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 362)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 5080)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 5902)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2023-04-01 13:35:55 -0500
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1560)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 368)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 4260)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 5134)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2023-04-01 13:36:18 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"chunkaifu@gmail.com", "firstname"=>"chunkai", "lastname"=>"fu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "firstname", "lastname") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "chunkaifu@gmail.com"], ["password_digest", "$2a$12$2K2rVmxoplx4aDeMagWdVeOGM5Xog3lFJtagFo8FNFg86Y4ta9XhO"], ["created_at", "2023-04-01 18:36:18.945883"], ["updated_at", "2023-04-01 18:36:18.945883"], ["firstname", "chunkai"], ["lastname", "fu"]]
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 295ms (ActiveRecord: 1.9ms | Allocations: 2765)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:36:18 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 4.2ms | Allocations: 530)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 2878)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.1ms | Allocations: 3981)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:36:23 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1400)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 559)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 4325)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.1ms | Allocations: 5712)
+
+
+Started POST "/kyc" for 127.0.0.1 at 2023-04-01 13:36:34 -0500
+Processing by KycController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "kyc"=>{"license_number"=>"POLK"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mKyc Create (0.4ms)[0m  [1m[32mINSERT INTO "kycs" ("license_number", "user_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?)[0m  [["license_number", "POLK"], ["user_id", 4], ["created_at", "2023-04-01 18:36:34.511476"], ["updated_at", "2023-04-01 18:36:34.511476"], ["status", "0"]]
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 13ms (ActiveRecord: 1.9ms | Allocations: 6451)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:36:34 -0500
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 530)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2886)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 4008)
+
+
+  [1m[36mKyc Load (0.2ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDefaultValueToStatusColumn (20230401184141)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "akycs" ("id" integer NOT NULL PRIMARY KEY, "license_number" varchar DEFAULT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "status" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_akycs_on_user_id" ON "akycs" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "akycs" ("id","license_number","user_id","created_at","updated_at","status")
+                     SELECT "id","license_number","user_id","created_at","updated_at","status" FROM "kycs"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "kycs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "kycs" ("id" integer NOT NULL PRIMARY KEY, "license_number" varchar DEFAULT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "status" varchar DEFAULT 'pending', CONSTRAINT "fk_rails_0ae09b4cd6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_kycs_on_user_id" ON "kycs" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "kycs" ("id","license_number","user_id","created_at","updated_at","status")
+                     SELECT "id","license_number","user_id","created_at","updated_at","status" FROM "akycs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "akycs"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230401184141"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:42:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 127)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 569)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 13854)
+Completed 200 OK in 22ms (Views: 14.7ms | ActiveRecord: 0.1ms | Allocations: 18543)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-01 13:42:50 -0500
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1078)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:42:50 -0500
+Processing by MainController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 345)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2696)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 3301)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-01 13:42:55 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2387)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 362)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 5110)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 5918)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2023-04-01 13:42:57 -0500
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1560)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 368)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 4291)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 5165)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2023-04-01 13:43:20 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"user1@gmail.com", "firstname"=>"user1", "lastname"=>"1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "firstname", "lastname") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "user1@gmail.com"], ["password_digest", "$2a$12$PSFhse4HUQpcmcjnng41DuliBNSWEfZs2W1Qd0OZSVxHm/yT6B2Jy"], ["created_at", "2023-04-01 18:43:20.951020"], ["updated_at", "2023-04-01 18:43:20.951020"], ["firstname", "user1"], ["lastname", "1"]]
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 296ms (ActiveRecord: 2.8ms | Allocations: 2785)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:43:20 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2899)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.5ms | Allocations: 3988)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:43:25 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1400)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 558)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 4290)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 5684)
+
+
+Started POST "/kyc" for 127.0.0.1 at 2023-04-01 13:43:29 -0500
+Processing by KycController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "kyc"=>{"license_number"=>"MNBV"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mKyc Create (0.4ms)[0m  [1m[32mINSERT INTO "kycs" ("license_number", "user_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?)[0m  [["license_number", "MNBV"], ["user_id", 5], ["created_at", "2023-04-01 18:43:29.310904"], ["updated_at", "2023-04-01 18:43:29.310904"], ["status", "0"]]
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 12ms (ActiveRecord: 1.3ms | Allocations: 6025)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:43:29 -0500
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 2880)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.1ms | Allocations: 3982)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:43:33 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2873)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 3933)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:43:35 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1382)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 4162)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 5237)
+
+
+  [1m[36mKyc Load (0.2ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs"[0m
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:45:31 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2874)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 3951)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-01 13:45:33 -0500
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1018)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:45:33 -0500
+Processing by MainController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 343)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2694)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 3287)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-01 13:45:34 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 2319)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 343)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 4913)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 5485)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2023-04-01 13:45:48 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"user1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 293ms (ActiveRecord: 0.2ms | Allocations: 1151)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:45:48 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2878)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.1ms | Allocations: 3989)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:45:53 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1384)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 4194)
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.1ms | Allocations: 5248)
+
+
+Started POST "/kyc" for 127.0.0.1 at 2023-04-01 13:45:56 -0500
+Processing by KycController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "kyc"=>{"license_number"=>"POLK"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mKyc Create (0.6ms)[0m  [1m[32mINSERT INTO "kycs" ("license_number", "user_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?)[0m  [["license_number", "POLK"], ["user_id", 5], ["created_at", "2023-04-01 18:45:56.765046"], ["updated_at", "2023-04-01 18:45:56.765046"], ["status", "0"]]
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms | Allocations: 2876)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:45:56 -0500
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2891)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms | Allocations: 3975)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:46:06 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1382)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 4162)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 5246)
+
+
+Started POST "/kyc" for 127.0.0.1 at 2023-04-01 13:46:18 -0500
+Processing by KycController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "kyc"=>{"license_number"=>"LKJH"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mKyc Create (0.4ms)[0m  [1m[32mINSERT INTO "kycs" ("license_number", "user_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?)[0m  [["license_number", "LKJH"], ["user_id", 5], ["created_at", "2023-04-01 18:46:18.198494"], ["updated_at", "2023-04-01 18:46:18.198494"], ["status", "0"]]
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms | Allocations: 2892)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:46:18 -0500
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2880)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 3966)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:46:21 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1383)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 4163)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.1ms | Allocations: 5253)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mKyc Load (0.3ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs"[0m
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:52:15 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 127)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 568)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 13890)
+Completed 200 OK in 26ms (Views: 19.2ms | ActiveRecord: 0.4ms | Allocations: 18706)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-01 13:52:17 -0500
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1081)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:52:17 -0500
+Processing by MainController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 345)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2715)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 3332)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-01 13:52:21 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 2387)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 362)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 5081)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 5876)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2023-04-01 13:52:28 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"user1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 292ms (ActiveRecord: 0.5ms | Allocations: 1164)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:52:28 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2877)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 3959)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:52:35 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1453)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 558)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 4343)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 5723)
+
+
+Started POST "/kyc" for 127.0.0.1 at 2023-04-01 13:52:40 -0500
+Processing by KycController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "kyc"=>{"license_number"=>"IOJK"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mKyc Create (0.4ms)[0m  [1m[32mINSERT INTO "kycs" ("license_number", "user_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?)[0m  [["license_number", "IOJK"], ["user_id", 5], ["created_at", "2023-04-01 18:52:40.360346"], ["updated_at", "2023-04-01 18:52:40.360346"], ["status", nil]]
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kyc_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 12ms (ActiveRecord: 1.8ms | Allocations: 6484)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:52:40 -0500
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2880)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.1ms | Allocations: 3986)
+
+
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs"[0m
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:54:43 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 127)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 568)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 13887)
+Completed 200 OK in 26ms (Views: 15.6ms | ActiveRecord: 1.2ms | Allocations: 19108)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-01 13:54:51 -0500
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1066)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:54:51 -0500
+Processing by MainController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 345)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 2696)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 3293)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-01 13:54:52 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2387)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 362)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 5080)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 5884)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2023-04-01 13:54:58 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"user1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 292ms (ActiveRecord: 0.2ms | Allocations: 1164)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:54:59 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 2877)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 3940)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:55:03 -0500
+  
+NoMethodError (undefined method `before_validation' for KycController:Class):
+  
+app/controllers/kyc_controller.rb:3:in `<class:KycController>'
+app/controllers/kyc_controller.rb:1:in `<main>'
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:56:11 -0500
+  
+NoMethodError (undefined method `before_validation' for KycController:Class):
+  
+app/controllers/kyc_controller.rb:3:in `<class:KycController>'
+app/controllers/kyc_controller.rb:1:in `<main>'
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:56:29 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1384)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 563)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 15123)
+Completed 200 OK in 23ms (Views: 14.8ms | ActiveRecord: 1.1ms | Allocations: 20447)
+
+
+Started POST "/kyc" for 127.0.0.1 at 2023-04-01 13:56:34 -0500
+Processing by KycController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "kyc"=>{"license_number"=>"LKOP"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kyc_controller.rb:11:in `create'
+  [1m[36mKyc Create (0.4ms)[0m  [1m[32mINSERT INTO "kycs" ("license_number", "user_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?)[0m  [["license_number", "LKOP"], ["user_id", 5], ["created_at", "2023-04-01 18:56:34.030659"], ["updated_at", "2023-04-01 18:56:34.030659"], ["status", "0"]]
+  ↳ app/controllers/kyc_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kyc_controller.rb:11:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 14ms (ActiveRecord: 2.0ms | Allocations: 6421)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:56:34 -0500
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 123)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 560)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3037)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.1ms | Allocations: 4445)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:56:38 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1382)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 4162)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 5213)
+
+
+  [1m[36mKyc Load (0.2ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs"[0m
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:58:50 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 127)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 568)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 13887)
+Completed 200 OK in 24ms (Views: 15.8ms | ActiveRecord: 0.9ms | Allocations: 19088)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-01 13:58:53 -0500
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1068)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:58:53 -0500
+Processing by MainController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 345)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2696)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 3281)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-01 13:58:54 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 2387)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 362)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 5080)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 5872)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2023-04-01 13:58:55 -0500
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1560)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 368)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 4260)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 5146)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2023-04-01 13:59:14 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"user2@gmail.com", "firstname"=>"user2", "lastname"=>"k", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "firstname", "lastname") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "user2@gmail.com"], ["password_digest", "$2a$12$Zz3a0xV3Au/XkWckAb..kOrCGV92.Y2ULMU1dxpgaWOq6OPmx5CJO"], ["created_at", "2023-04-01 18:59:15.112269"], ["updated_at", "2023-04-01 18:59:15.112269"], ["firstname", "user2"], ["lastname", "k"]]
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 296ms (ActiveRecord: 1.4ms | Allocations: 2782)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:59:15 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2877)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 3964)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:59:20 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1453)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 558)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 4377)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 5779)
+
+
+Started POST "/kyc" for 127.0.0.1 at 2023-04-01 13:59:23 -0500
+Processing by KycController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "kyc"=>{"license_number"=>"vbnn"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kyc_controller.rb:11:in `create'
+  [1m[36mKyc Create (0.4ms)[0m  [1m[32mINSERT INTO "kycs" ("license_number", "user_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?)[0m  [["license_number", "vbnn"], ["user_id", 6], ["created_at", "2023-04-01 18:59:24.015570"], ["updated_at", "2023-04-01 18:59:24.015570"], ["status", "0"]]
+  ↳ app/controllers/kyc_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kyc_controller.rb:11:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 28ms (ActiveRecord: 2.0ms | Allocations: 12174)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 13:59:24 -0500
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2912)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms | Allocations: 4002)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 13:59:27 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1382)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 4162)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 5234)
+
+
+  [1m[36mKyc Load (0.2ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs"[0m
+Started GET "/" for 127.0.0.1 at 2023-04-01 14:08:48 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 2874)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.2ms | Allocations: 3934)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 17:55:53 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 127)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 568)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 13887)
+Completed 200 OK in 56ms (Views: 33.9ms | ActiveRecord: 0.9ms | Allocations: 18729)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 17:55:56 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2873)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 3937)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 17:56:00 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1453)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 558)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4343)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.1ms | Allocations: 5714)
+
+
+Started POST "/kyc" for 127.0.0.1 at 2023-04-01 17:56:11 -0500
+Processing by KycController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "kyc"=>{"license_number"=>"ASRTQ"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kyc_controller.rb:11:in `create'
+  [1m[36mKyc Create (0.5ms)[0m  [1m[32mINSERT INTO "kycs" ("license_number", "user_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?)[0m  [["license_number", "ASRTQ"], ["user_id", 6], ["created_at", "2023-04-01 22:56:11.561247"], ["updated_at", "2023-04-01 22:56:11.561247"], ["status", "0"]]
+  ↳ app/controllers/kyc_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kyc_controller.rb:11:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 18ms (ActiveRecord: 1.7ms | Allocations: 6156)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 17:56:11 -0500
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 4.5ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | Allocations: 2880)
+Completed 200 OK in 63ms (Views: 44.8ms | ActiveRecord: 0.2ms | Allocations: 3984)
+
+
+  [1m[36mKyc Load (0.8ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs"[0m
+Started GET "/" for 127.0.0.1 at 2023-04-01 17:59:30 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 127)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 568)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 13868)
+Completed 200 OK in 25ms (Views: 16.1ms | ActiveRecord: 1.0ms | Allocations: 19133)
+
+
+Started GET "/password" for 127.0.0.1 at 2023-04-01 17:59:33 -0500
+Processing by PasswordsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/edit.html.erb within layouts/application
+  Rendered passwords/edit.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1227)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 556)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4115)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.1ms | Allocations: 5625)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 17:59:34 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2873)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 3952)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-01 17:59:36 -0500
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1069)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 17:59:36 -0500
+Processing by MainController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 345)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2696)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 3292)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-01 17:59:41 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 2387)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 362)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 5080)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 5875)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2023-04-01 18:00:13 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"user1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 292ms (ActiveRecord: 0.2ms | Allocations: 1170)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 18:00:13 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2877)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 3952)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 18:01:05 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1400)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 558)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 4324)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 5707)
+
+
+Started POST "/kyc" for 127.0.0.1 at 2023-04-01 18:01:36 -0500
+Processing by KycController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "kyc"=>{"license_number"=>"ASDF"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kyc_controller.rb:11:in `create'
+  [1m[36mKyc Create (0.4ms)[0m  [1m[32mINSERT INTO "kycs" ("license_number", "user_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?)[0m  [["license_number", "ASDF"], ["user_id", 5], ["created_at", "2023-04-01 23:01:36.694872"], ["updated_at", "2023-04-01 23:01:36.694872"], ["status", "0"]]
+  ↳ app/controllers/kyc_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kyc_controller.rb:11:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 28ms (ActiveRecord: 2.0ms | Allocations: 12188)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 18:01:36 -0500
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2897)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 3992)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 18:02:43 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 127)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 568)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 13853)
+Completed 200 OK in 27ms (Views: 18.2ms | ActiveRecord: 0.9ms | Allocations: 19063)
+
+
+Started GET "/password" for 127.0.0.1 at 2023-04-01 18:02:45 -0500
+Processing by PasswordsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/edit.html.erb within layouts/application
+  Rendered passwords/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 885)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 556)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3793)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 5165)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 18:02:47 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2889)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms | Allocations: 3952)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-01 18:02:49 -0500
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1072)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 18:02:49 -0500
+Processing by MainController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 345)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2696)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 3274)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-01 18:02:51 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2387)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 362)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 5080)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 5896)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2023-04-01 18:03:08 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"user1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 292ms (ActiveRecord: 0.2ms | Allocations: 1150)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 18:03:08 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2877)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 3961)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-01 18:03:13 -0500
+Processing by KycController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/index.html.erb within layouts/application
+  Rendered kyc/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1452)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 558)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 4342)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 5726)
+
+
+Started POST "/kyc" for 127.0.0.1 at 2023-04-01 18:03:24 -0500
+Processing by KycController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "kyc"=>{"license_number"=>"QWERTY"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kyc_controller.rb:11:in `create'
+  [1m[36mKyc Create (0.4ms)[0m  [1m[32mINSERT INTO "kycs" ("license_number", "user_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?)[0m  [["license_number", "QWERTY"], ["user_id", 5], ["created_at", "2023-04-01 23:03:24.737721"], ["updated_at", "2023-04-01 23:03:24.737721"], ["status", "0"]]
+  ↳ app/controllers/kyc_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kyc_controller.rb:11:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 28ms (ActiveRecord: 1.9ms | Allocations: 12205)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-01 18:03:24 -0500
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 529)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2881)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 3972)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-04 13:52:45 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 576)
+  Rendered shared/_navbar.html.erb (Duration: 3.0ms | Allocations: 1019)
+  Rendered shared/_flash.html.erb (Duration: 8.7ms | Allocations: 237)
+  Rendered layout layouts/application.html.erb (Duration: 128.6ms | Allocations: 37818)
+Completed 200 OK in 172ms (Views: 132.9ms | ActiveRecord: 1.5ms | Allocations: 50682)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-04 13:52:51 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 3969)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 556)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 6858)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.1ms | Allocations: 8319)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-04 13:52:56 -0500
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1136)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-04 13:52:56 -0500
+Processing by MainController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 345)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2743)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 3390)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-04 14:21:36 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 577)
+  Rendered shared/_navbar.html.erb (Duration: 5.0ms | Allocations: 1102)
+  Rendered shared/_flash.html.erb (Duration: 0.8ms | Allocations: 237)
+  Rendered layout layouts/application.html.erb (Duration: 87.8ms | Allocations: 36043)
+Completed 200 OK in 103ms (Views: 92.0ms | ActiveRecord: 0.0ms | Allocations: 39779)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-04 14:21:38 -0500
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 345)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2690)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 3269)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-04 14:21:40 -0500
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 345)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2690)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 3266)
+
+
+Started GET "/kyc" for 127.0.0.1 at 2023-04-04 14:21:41 -0500
+Processing by KycController#index as HTML
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 665)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-04 14:21:41 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 3980)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 362)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 6716)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 7700)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-04 14:21:42 -0500
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 345)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2690)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 3279)
+
+
+Started GET "/contact" for 127.0.0.1 at 2023-04-04 14:21:43 -0500
+Processing by ContactController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contact/index.html.erb within layouts/application
+  Rendered contact/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 123)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 393)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2867)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 3840)
+
+
+Started GET "/about-us" for 127.0.0.1 at 2023-04-04 14:21:44 -0500
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 128)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 393)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2872)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 3835)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-04 14:21:48 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2320)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 343)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4914)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 5483)
+
+

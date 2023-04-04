@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   patch "password/reset/edit", to: "password_resets#update"
 
   root to: "main#index"
+  resources :kyc, only: [:index, :create]
 end
