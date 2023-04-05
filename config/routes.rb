@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   get "password/reset/edit", to: "password_resets#edit"
   patch "password/reset/edit", to: "password_resets#update"
 
+  get "kyc/new", to: "kyc#new"
+  post "kyc/new", to: "kyc#create"
+  get "kyc/show", to: "kyc#show"
+
   root to: "main#index"
-  resources :kyc, only: [:index, :create]
 end

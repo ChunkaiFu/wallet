@@ -1,8 +1,6 @@
 <h1>KYC Status</h1>
-<p>
-  KYC status: <%= @kyc.status.humanize %>
-</p>
-<% if @kyc.approved? %>
+<p>Showing KYC status for user <%= Current.user.email %>:</p>
+<% if @kyc.status == "approved" %>
   <p>
     Your KYC has been approved. You can now access our services.
   </p>

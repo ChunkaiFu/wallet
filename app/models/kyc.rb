@@ -1,11 +1,7 @@
 class Kyc < ApplicationRecord
   belongs_to :user
-  before_validation :set_default_status
 
   enum status: [:pending, :approved, :rejected, :awaiting]
-  validates :status, inclusion: { in: statuses.keys }
-  private
-  def set_default_status
-    self.status ||= "pending"
-  end
+  attribute :status, :string, default: "pending"
+  validates :license_number, uniqueness: { scope: :user_id, message: "has already been taken" }
 end

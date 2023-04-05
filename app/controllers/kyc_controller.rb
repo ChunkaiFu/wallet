@@ -1,35 +1,47 @@
 class KycController < ApplicationController
-    before_action :require_user_logged_in! 
+    before_action :require_user_logged_in!, except: [:status] 
 
     def new
-        @kyc = Kyc.new
+        @kyc = Kyc.find_by(user_id: Current.user.id)
+        if @kyc.present?
+            puts (@kyc.present?)
+          redirect_to kyc_show_path(@kyc)
+        else
+          @kyc = Kyc.new
+        end
     end
     
     def create
-        @kyc = Kyc.new(kyc_params)
-        @kyc.user = Current.user
-        if @kyc.save
-            puts @kyc.status
-            if @kyc.status == "awaiting"
-                render :show
-            else    
-                redirect_to root_path
-                flash[:notice] = "License added successfully"
-            end    
-        else
-            if @kyc.status == "pending"
-                render :new
-                puts @kyc.status
-                puts @kyc.errors.full_messages
-                @kyc.status = "awaiting"
-                puts @kyc.status
-                puts ("status changed")
+        @kyc = Kyc.find_by(user_id: Current.user.id)
+        if @kyc.present?
+            redirect_to kyc_show_path(@kyc)
+        else    
+            @kyc = Kyc.new(kyc_params)
+            @kyc.user = Current.user
+            if @kyc.save  
+                if @kyc.status == "pending"
+                    @kyc.update(status: :awaiting)
+                    flash[:notice] = "License added successfully"        
+                elsif @kyc.status == "awaiting"
+                    redirect_to kyc_show_path(@kyc)
+                else    
+                    redirect_to root_path
+                    flash[:notice] = "License added successfully"
+                end    
             else
-                render :show
-                puts ("status changed")
-            end    
-        end        
+                if @kyc.status == "pending"
+                    render :new
+                else
+                    render :show
+                end    
+            end   
+        end         
     end    
+
+    def show
+        @kyc = Kyc.find_by(user_id: Current.user.id)
+        render :show
+    end
 
     def status
         @kyc = Kyc.find_by(user_id: Current.user.id)
