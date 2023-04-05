@@ -68,7 +68,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg' # for Heroku deployment
+  gem 'pg', '~> 1.4.6'# for Heroku deployment
 end
 
 group :test do
