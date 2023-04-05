@@ -20,9 +20,9 @@ class KycController < ApplicationController
             @kyc.user = Current.user
             if @kyc.save  
                 if @kyc.status == "pending"
-                    @kyc.update(status: :awaiting)
                     flash[:notice] = "License added successfully"
                     puts flash[:notice]
+                    @kyc.update(status: :awaiting)
                     redirect_to kyc_show_path(@kyc), notice: "License added successfully"
                 elsif @kyc.status == "awaiting"
                     redirect_to kyc_show_path(@kyc)
