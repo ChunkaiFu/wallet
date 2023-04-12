@@ -1,0 +1,11 @@
+<h1> My Wallet </h1>
+<div class="d-flex align-items-center justify-content-between">
+  <% if !Current.user.wallet %>
+  <%= link_to "Create a wallet", new_wallet_path, class: "btn btn-primary" %>
+  <% end %>
+</div>
+<h2>Balance </h2>
+<h2>Cards</h2>
+
+
+

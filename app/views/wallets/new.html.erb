@@ -1,0 +1,14 @@
+<h1> New Wallet </h1>
+
+<%= form_with model: @wallet, url: new_wallet_path, data: { turbo: false } do |form| %>
+    <% if @wallet.errors.any? %>
+        <div class="alert alert-danger">
+            <% @wallet.errors.full_messages.each do |message| %>
+                <div> <%= message %> </div>
+            <% end %>
+        </div>
+    <% end %>
+        <div class= "mb-3">
+            <%= form.submit "Add a card", class: "btn btn-primary" %>
+        </div> 
+<% end %>
