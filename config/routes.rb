@@ -20,10 +20,17 @@ Rails.application.routes.draw do
   get "password/reset/edit", to: "password_resets#edit"
   patch "password/reset/edit", to: "password_resets#update"
 
+  resources :wallets do 
+    resources :balances
+  end 
 
+  resources :wallets do 
+    
+  end 
 
+  resource :users do
+    resource :wallets
+  end
 
-
-  
   root to: "main#index"
 end
