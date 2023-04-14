@@ -1,0 +1,11 @@
+<h1>Admin Login</h1>
+
+<%= form_with url: admin_sessions_path, method: :post do |form| %>
+  <%= form.label :email %>
+  <%= form.email_field :email %>
+
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+
+  <%= form.submit "Login" %>
+<% end %>

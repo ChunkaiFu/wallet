@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'login', to: 'sessions#new', as: 'login'
+    post 'login', to: 'sessions#create', as: 'sessions'
+    delete 'logout', to: 'sessions#destroy', as: 'logout'
+  end
   ActiveAdmin.routes(self)
   get "about-us", to: "about#index", as: :about 
 
@@ -24,6 +29,8 @@ Rails.application.routes.draw do
   get "kyc/new", to: "kyc#new"
   post "kyc/new", to: "kyc#create"
   get "kyc/show", to: "kyc#show"
+
+
 
   root to: "main#index"
 end
