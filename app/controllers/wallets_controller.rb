@@ -9,19 +9,18 @@ class WalletsController < ApplicationController
   def create 
       @wallet = Wallet.new(user_id: @user.id)
       if @wallet.save 
-          redirect_to user_wallet_path, notice: "Successfully created wallet!"
+          redirect_to wallet_cards_path, notice: "Successfully created wallet!"
       else 
           render :new 
       end 
   end 
 
   def show 
-
   end 
-
 
   private
     def get_user
       @user = Current.user
     end
+
 end

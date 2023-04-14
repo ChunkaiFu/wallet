@@ -1,0 +1,25 @@
+<h1> Add a new currency </h1>
+
+<%= form_with model: @balance, url: new_wallet_balance_path, data: { turbo: false } do |form| %>
+    <% if @balance.errors.any? %>
+        <div class="alert alert-danger">
+            <% @balance.errors.full_messages.each do |message| %>
+                <div> <%= message %> </div>
+            <% end %>
+        </div>
+    <% end %>
+
+    <div class= "mb-3">
+        <%= form.label :currency%>
+        <%= form.select :currency, [["USD", "USD"], ["EUR", "EUR"], ["GBP", "GBP"]] %>
+    </div> 
+
+    <div class= "mb-3">
+        <%= form.label :value%>
+        <%= form.text_field :value, class: "form-control", placeholder: "100" %>
+    </div> 
+
+    <div class= "mb-3">
+        <%= form.submit "Add currency", class: "btn btn-primary" %>
+    </div> 
+<% end %>
