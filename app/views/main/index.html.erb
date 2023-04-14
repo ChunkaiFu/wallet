@@ -1,0 +1,15 @@
+<div class= "d-flex align-items-center justify-content-center">
+<h1> Welcome to your virtual wallet! </h1>
+</div>
+
+<div>
+	<% if Current.user.nil? %>
+		<%=link_to "Register", sign_up_path, class: "btn btn-primary"%>
+	<% end %>	
+</div>
+
+<div>
+	<% if Current.user.nil? %>
+	<%=link_to "Sign In", sign_in_path, class: "btn btn-primary"%>
+	<% end %>
+</div>
