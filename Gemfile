@@ -82,6 +82,4 @@ group :test do
   gem 'simplecov', require:false
 end
 
-group :production do
-  gem 'pg'
-end
+gem 'pg'
