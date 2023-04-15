@@ -49,5 +49,8 @@ Rails.application.routes.draw do
     resource :wallet
   end
 
-  root to: "main#index"
+  #root to: "main#index"
+  root :to => redirect('/home')
+  get '/home', to: 'main#index'
+
 end
