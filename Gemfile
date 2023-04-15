@@ -81,3 +81,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'simplecov', require:false
 end
+
+group :production do
+  gem 'pg' # for Heroku deployment
+end
