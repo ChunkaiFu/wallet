@@ -16,6 +16,11 @@
     </div> 
 
     <div class= "mb-3">
+    <%= form.label :card_id %>
+    <%= form.select :card_id, options_for_select(@wallet.cards.map{ |c| ["#{c.issuer} - #{c.number.slice(-4, 4)}", c.id] }), { class: "form-control" } %>
+    </div> 
+
+    <div class= "mb-3">
         <%= form.submit "Add Cash", class: "btn btn-primary" %>
     </div> 
 <% end %>

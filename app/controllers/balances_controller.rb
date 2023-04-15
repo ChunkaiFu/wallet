@@ -21,11 +21,16 @@ class BalancesController < ApplicationController
   end 
 
   def create
-    @balance = @wallet.balances.new(balance_params)
-    if @balance.save
-      redirect_to wallet_balances_path, notice: 'Balance was successfully created.'
-    else
-      render :new
+    balances = @wallet.balances
+    if balances.any? { |balance| balance.currency == balance_params[:currency] }
+      redirect_to wallet_balances_path, notice: 'Currency already exist.'
+    else 
+      @balance = @wallet.balances.new(balance_params)
+      if @balance.save
+        redirect_to wallet_balances_path, notice: 'Balance was successfully created.'
+      else
+        render :new
+      end
     end
   end
 

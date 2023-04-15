@@ -37015,3 +37015,2625 @@ Processing by BalancesController#index as HTML
 Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 5935)
 
 
+Started GET "/" for 127.0.0.1 at 2023-04-14 18:44:06 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 127)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 573)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 13888)
+Completed 200 OK in 11ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 18559)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 18:44:07 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 4282)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 559)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 7174)
+Completed 200 OK in 11ms (Views: 4.9ms | ActiveRecord: 0.2ms | Allocations: 14084)
+
+
+Started PATCH "/wallet/balances/17" for 127.0.0.1 at 2023-04-14 18:44:08 -0500
+Processing by BalancesController#show as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"id"=>"17"}, "commit"=>"Select", "id"=>"17"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_balance'
+  [1m[36mCACHE Balance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/show.html.erb within layouts/application
+  Rendered balances/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 151)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 537)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 2933)
+Completed 200 OK in 8ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 6015)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 18:44:10 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1486)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 4269)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 5855)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 18:44:15 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 4855)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 559)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 7747)
+Completed 200 OK in 11ms (Views: 5.6ms | ActiveRecord: 0.3ms | Allocations: 11100)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 18:44:16 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1487)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 4270)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 5859)
+
+
+Started GET "/wallet/balances/17/edit" for 127.0.0.1 at 2023-04-14 18:44:18 -0500
+Processing by BalancesController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_balance'
+  [1m[36mCACHE Balance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:20:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/edit.html.erb within layouts/application
+  Rendered balances/edit.html.erb within layouts/application (Duration: 1.6ms | Allocations: 969)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3778)
+Completed 200 OK in 19ms (Views: 4.0ms | ActiveRecord: 0.4ms | Allocations: 6753)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 18:48:11 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1950)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 5791)
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 7865)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 18:48:26 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  Rendered cards/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 1372)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | Allocations: 1461)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 3502)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>My Cards</h1>
+<div class="row">
+  <% if @cards %>
+    <% @cards.each do |card| %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= card.issuer %></h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card Number: <%= **** **** **** card.number.slice(-4, 4) %></h6>
+            <p class="card-text">Card Holder Name: <%= card.holder_name %></p>
+            <p class="card-text">Expiration Date: <%= card.expiration_date %></p>
+          </div>
+          
+          <div class="mx-3 btn-group d-grid gap-2 d-md-block mb-2 align-items-center">
+            <div>
+              <%= form_with model: card, url: wallet_card_path(card.id), data: { turbo: false }, method: :patch do |form| %>
+                <%= form.hidden_field :id %>
+                <%= form.submit "Select", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+            <div>
+              <%= form_with model: card, url: wallet_card_path(card.id), data: { turbo: false }, method: :delete do |form| %>
+                <%= form.hidden_field :id %>
+                <%= form.submit "Delete", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div>
+	<%=link_to "Add a card now!", new_wallet_card_path, class: "btn btn-primary"%>
+</div>
+):
+1:    <h1>My Cards</h1>
+2:    <div class="row">
+3:      <% if @cards %>
+4:        <% @cards.each do |card| %>
+5:          <div class="col-md-4 mb-4">
+6:            <div class="card">
+7:              <div class="card-body">
+8:                <h5 class="card-title"><%= card.issuer %></h5>
+9:                <h6 class="card-subtitle mb-2 text-muted">Card Number: <%= **** **** **** card.number.slice(-4, 4) %></h6>
+10:                <p class="card-text">Card Holder Name: <%= card.holder_name %></p>
+11:                <p class="card-text">Expiration Date: <%= card.expiration_date %></p>
+12:              </div>
+13:              
+14:              <div class="mx-3 btn-group d-grid gap-2 d-md-block mb-2 align-items-center">
+15:                <div>
+16:                  <%= form_with model: card, url: wallet_card_path(card.id), data: { turbo: false }, method: :patch do |form| %>
+17:                    <%= form.hidden_field :id %>
+18:                    <%= form.submit "Select", class: "btn btn-primary" %>
+19:                  <% end %>
+20:                </div>
+21:                <div>
+22:                  <%= form_with model: card, url: wallet_card_path(card.id), data: { turbo: false }, method: :delete do |form| %>
+23:                    <%= form.hidden_field :id %>
+24:                    <%= form.submit "Delete", class: "btn btn-primary" %>
+25:                  <% end %>
+26:                </div>
+27:              </div>
+28:            </div>
+29:          </div>
+30:        <% end %>
+31:      <% end %>
+32:    </div>
+33:    
+34:    <div>
+35:    	<%=link_to "Add a card now!", new_wallet_card_path, class: "btn btn-primary"%>
+36:    </div>
+  
+app/views/cards/index.html.erb:9: syntax error, unexpected **arg
+app/views/cards/index.html.erb:38: syntax error, unexpected `end'
+app/views/cards/index.html.erb:9: syntax error, unexpected **arg
+app/views/cards/index.html.erb:38: syntax error, unexpected `end'
+app/views/cards/index.html.erb:9: syntax error, unexpected **arg
+app/views/cards/index.html.erb:38: syntax error, unexpected `end'
+app/views/cards/index.html.erb:9: syntax error, unexpected **arg
+app/views/cards/index.html.erb:38: syntax error, unexpected `end'
+app/views/cards/index.html.erb:9: syntax error, unexpected **arg
+app/views/cards/index.html.erb:38: syntax error, unexpected `end'
+app/views/cards/index.html.erb:9: syntax error, unexpected **arg
+app/views/cards/index.html.erb:38: syntax error, unexpected `end'
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 18:49:08 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1953)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 5797)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.2ms | Allocations: 7853)
+
+
+Started GET "/wallet/cards/new" for 127.0.0.1 at 2023-04-14 18:49:12 -0500
+Processing by CardsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2028)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 4811)
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 6437)
+
+
+Started POST "/wallet/cards/new" for 127.0.0.1 at 2023-04-14 18:49:36 -0500
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "card"=>{"issuer"=>"MASTER", "number"=>"2222555566663333", "expiration_date"=>"55/99", "holder_name"=>"Adam ", "cvv"=>"Lambert"}, "commit"=>"Add Card"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 3235)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 6010)
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 8984)
+
+
+Started POST "/wallet/cards/new" for 127.0.0.1 at 2023-04-14 18:49:46 -0500
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "card"=>{"issuer"=>"MASTER", "number"=>"2222555566663333", "expiration_date"=>"55/99", "holder_name"=>"Adam Lambert", "cvv"=>"222"}, "commit"=>"Add Card"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:21:in `create'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("issuer", "holder_name", "number", "expiration_date", "cvv", "wallet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["issuer", "MASTER"], ["holder_name", "Adam Lambert"], ["number", "2222555566663333"], ["expiration_date", "55/99"], ["cvv", "222"], ["wallet_id", 5], ["created_at", "2023-04-14 23:49:46.289758"], ["updated_at", "2023-04-14 23:49:46.289758"]]
+  ↳ app/controllers/cards_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (13.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/wallet/cards
+Completed 302 Found in 18ms (ActiveRecord: 13.3ms | Allocations: 3724)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 18:49:46 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 2255)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 5042)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.2ms | Allocations: 6633)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 18:52:21 -0500
+Processing by CardsController#index as HTML
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 237)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-14 18:52:21 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 2649)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 367)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 5348)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 6039)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 18:54:24 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2732)
+  Rendered shared/_navbar.html.erb (Duration: 3.8ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 212)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 6545)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.2ms | Allocations: 8590)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 18:55:10 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2733)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 950)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 6559)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.2ms | Allocations: 8617)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 18:55:25 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2733)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 6543)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.2ms | Allocations: 8597)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 18:55:35 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2733)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 6543)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 8585)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 18:56:18 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2733)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 6543)
+Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 0.3ms | Allocations: 8609)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 18:56:32 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2733)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 6543)
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 0.5ms | Allocations: 8594)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 18:56:35 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2255)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 5038)
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 0.3ms | Allocations: 6610)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 18:56:35 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.2ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1959)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 559)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4846)
+Completed 200 OK in 16ms (Views: 10.9ms | ActiveRecord: 0.5ms | Allocations: 6722)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 18:57:25 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1963)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 5773)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.2ms | Allocations: 7846)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 18:57:57 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1962)
+  Rendered shared/_navbar.html.erb (Duration: 3.3ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 2.7ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 5772)
+Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 0.2ms | Allocations: 7824)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 18:59:30 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1964)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 950)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 5792)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 7836)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:00:07 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1961)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 5783)
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 0.2ms | Allocations: 7847)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:00:53 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1960)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 5770)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 7829)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:01:23 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1961)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 5771)
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 7820)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:01:53 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1961)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 5771)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 7823)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:02:18 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1961)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 5771)
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 0.3ms | Allocations: 7832)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:02:35 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1960)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 5770)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 7816)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:02:42 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1960)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 5770)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.2ms | Allocations: 7834)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:03:02 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1961)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 5771)
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 0.3ms | Allocations: 7844)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:03:39 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1963)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 5773)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.2ms | Allocations: 7846)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:03:41 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1486)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 4269)
+Completed 200 OK in 9ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 5842)
+
+
+Started PATCH "/wallet/balances/17" for 127.0.0.1 at 2023-04-14 19:03:44 -0500
+Processing by BalancesController#show as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"id"=>"17"}, "commit"=>"Select", "id"=>"17"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_balance'
+  [1m[36mCACHE Balance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/show.html.erb within layouts/application
+  Rendered balances/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 145)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 537)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2960)
+Completed 200 OK in 9ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 5965)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:04:13 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1966)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 5808)
+Completed 200 OK in 14ms (Views: 10.0ms | ActiveRecord: 0.3ms | Allocations: 7872)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:04:21 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1961)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 5781)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 7836)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:04:39 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1961)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 5771)
+Completed 200 OK in 13ms (Views: 9.2ms | ActiveRecord: 0.3ms | Allocations: 7827)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:05:11 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1963)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 5773)
+Completed 200 OK in 12ms (Views: 7.6ms | ActiveRecord: 0.3ms | Allocations: 7843)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:05:20 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1961)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 5771)
+Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 0.2ms | Allocations: 7835)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:05:39 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1963)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 5773)
+Completed 200 OK in 10ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 7822)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:05:56 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1961)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 5771)
+Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 0.5ms | Allocations: 7823)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:06:07 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1961)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 5771)
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 0.2ms | Allocations: 7820)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:06:21 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1962)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 5772)
+Completed 200 OK in 13ms (Views: 8.8ms | ActiveRecord: 0.2ms | Allocations: 7836)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:06:27 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1960)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 5770)
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 0.3ms | Allocations: 7846)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:06:36 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1961)
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | Allocations: 950)
+  Rendered shared/_flash.html.erb (Duration: 0.5ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 5809)
+Completed 200 OK in 24ms (Views: 20.3ms | ActiveRecord: 0.3ms | Allocations: 7868)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:07:15 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1961)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 5803)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 7889)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:07:25 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1961)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 5781)
+Completed 200 OK in 12ms (Views: 8.1ms | ActiveRecord: 0.2ms | Allocations: 7842)
+
+
+Started GET "/wallet/balances/new" for 127.0.0.1 at 2023-04-14 19:07:30 -0500
+Processing by BalancesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/new.html.erb within layouts/application
+  Rendered balances/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1169)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 3952)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 5584)
+
+
+Started POST "/wallet/balances/new" for 127.0.0.1 at 2023-04-14 19:07:34 -0500
+Processing by BalancesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"currency"=>"USD", "value"=>"22"}, "commit"=>"Add currency"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/balances_controller.rb:25:in `create'
+  [1m[36mBalance Create (0.2ms)[0m  [1m[32mINSERT INTO "balances" ("value", "wallet_id", "created_at", "updated_at", "currency") VALUES (?, ?, ?, ?, ?)[0m  [["value", 22.0], ["wallet_id", 5], ["created_at", "2023-04-15 00:07:34.465473"], ["updated_at", "2023-04-15 00:07:34.465473"], ["currency", "USD"]]
+  ↳ app/controllers/balances_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (21.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/balances_controller.rb:25:in `create'
+Redirected to http://127.0.0.1:3000/wallet/balances
+Completed 302 Found in 30ms (ActiveRecord: 21.9ms | Allocations: 3757)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:07:34 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2281)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 5068)
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 0.3ms | Allocations: 6654)
+
+
+Started PATCH "/wallet/balances/17" for 127.0.0.1 at 2023-04-14 19:07:55 -0500
+Processing by BalancesController#show as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"id"=>"17"}, "commit"=>"Select", "id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_balance'
+  [1m[36mCACHE Balance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/show.html.erb within layouts/application
+  Rendered balances/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 145)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 537)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2926)
+Completed 200 OK in 8ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 5918)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:07:56 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2281)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 5064)
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 0.5ms | Allocations: 6632)
+
+
+Started DELETE "/wallet/balances/17" for 127.0.0.1 at 2023-04-14 19:07:59 -0500
+Processing by BalancesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"id"=>"17"}, "commit"=>"Transfer out", "id"=>"17"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_balance'
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:46:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/balances_controller.rb:47:in `destroy'
+  [1m[36mBalance Destroy (0.1ms)[0m  [1m[31mDELETE FROM "balances" WHERE "balances"."id" = ?[0m  [["id", 17]]
+  ↳ app/controllers/balances_controller.rb:47:in `destroy'
+  [1m[36mTRANSACTION (18.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/balances_controller.rb:47:in `destroy'
+Redirected to http://127.0.0.1:3000/wallet/balances
+Completed 302 Found in 23ms (ActiveRecord: 18.8ms | Allocations: 4878)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:07:59 -0500
+Processing by BalancesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1486)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 4319)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 5982)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-14 19:08:01 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 265)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 563)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 3161)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 4361)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:08:01 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1486)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 4269)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 5867)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 19:08:02 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2735)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 559)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 5656)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 7524)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 19:08:07 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 2255)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 5071)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 6635)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:08:07 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1486)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 4272)
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.2ms | Allocations: 5846)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 19:08:12 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 2255)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 5038)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.2ms | Allocations: 6633)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:08:13 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1486)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 4269)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.2ms | Allocations: 5843)
+
+
+Started GET "/wallet/balances/18/edit" for 127.0.0.1 at 2023-04-14 19:08:15 -0500
+Processing by BalancesController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_balance'
+  [1m[36mCACHE Balance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:20:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/edit.html.erb within layouts/application
+  Rendered balances/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 954)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3729)
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 6695)
+
+
+Started PATCH "/wallet/balances/18/edit" for 127.0.0.1 at 2023-04-14 19:08:19 -0500
+Processing by BalancesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"id"=>"18", "value"=>"55"}, "commit"=>"Add Cash", "id"=>"18"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_balance'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/balances_controller.rb:37:in `update'
+  [1m[36mBalance Update (0.1ms)[0m  [1m[33mUPDATE "balances" SET "value" = ?, "updated_at" = ? WHERE "balances"."id" = ?[0m  [["value", 77.0], ["updated_at", "2023-04-15 00:08:19.134885"], ["id", 18]]
+  ↳ app/controllers/balances_controller.rb:37:in `update'
+  [1m[36mTRANSACTION (20.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/balances_controller.rb:37:in `update'
+Redirected to http://127.0.0.1:3000/wallet/balances
+Completed 302 Found in 28ms (ActiveRecord: 20.9ms | Allocations: 4138)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:08:19 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1486)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 4273)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.2ms | Allocations: 5868)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:08:21 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1486)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 4269)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 5855)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:09:45 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1486)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 4269)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 5863)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 19:09:46 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2255)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 5038)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 6600)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:15:18 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1993)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.8ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 5837)
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 8101)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:15:19 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1486)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 4301)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 5877)
+
+
+Started GET "/wallet/balances/18/edit" for 127.0.0.1 at 2023-04-14 19:15:20 -0500
+Processing by BalancesController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_balance'
+  [1m[36mCACHE Balance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:20:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/edit.html.erb within layouts/application
+  Rendered balances/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 957)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 3735)
+Completed 200 OK in 10ms (Views: 3.5ms | ActiveRecord: 0.4ms | Allocations: 6735)
+
+
+Started PATCH "/wallet/balances/18/edit" for 127.0.0.1 at 2023-04-14 19:15:34 -0500
+Processing by BalancesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"id"=>"18", "value"=>"77.0"}, "commit"=>"Add Cash", "id"=>"18"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_balance'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/balances_controller.rb:37:in `update'
+  [1m[36mBalance Update (0.1ms)[0m  [1m[33mUPDATE "balances" SET "value" = ?, "updated_at" = ? WHERE "balances"."id" = ?[0m  [["value", 154.0], ["updated_at", "2023-04-15 00:15:34.937079"], ["id", 18]]
+  ↳ app/controllers/balances_controller.rb:37:in `update'
+  [1m[36mTRANSACTION (18.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/balances_controller.rb:37:in `update'
+Redirected to http://127.0.0.1:3000/wallet/balances
+Completed 302 Found in 27ms (ActiveRecord: 19.2ms | Allocations: 4126)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:15:34 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1486)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 4273)
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 0.4ms | Allocations: 5845)
+
+
+Started GET "/wallet/balances/18/edit" for 127.0.0.1 at 2023-04-14 19:15:38 -0500
+Processing by BalancesController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_balance'
+  [1m[36mCACHE Balance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:20:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/edit.html.erb within layouts/application
+  Rendered balances/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 647)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3422)
+Completed 200 OK in 12ms (Views: 3.9ms | ActiveRecord: 0.4ms | Allocations: 6324)
+
+
+Started GET "/wallet/balances/18/edit" for 127.0.0.1 at 2023-04-14 19:16:10 -0500
+Processing by BalancesController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_balance'
+  [1m[36mCACHE Balance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:20:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/edit.html.erb within layouts/application
+  Rendered balances/edit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1008)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 953)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 4814)
+Completed 200 OK in 9ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 8217)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:16:12 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1905)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 4688)
+Completed 200 OK in 15ms (Views: 10.1ms | ActiveRecord: 0.5ms | Allocations: 6327)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 19:16:13 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2770)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 559)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 5657)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 7533)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:16:14 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1486)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 4292)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 5876)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:16:33 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1960)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 949)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 5811)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.1ms | Allocations: 7862)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:16:33 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1486)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 4285)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.2ms | Allocations: 5861)
+
+
+Started GET "/wallet/balances/18/edit" for 127.0.0.1 at 2023-04-14 19:16:34 -0500
+Processing by BalancesController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_balance'
+  [1m[36mCACHE Balance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:20:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/edit.html.erb within layouts/application
+  [1m[36mCard Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/edit.html.erb:20:in `map'
+  Rendered balances/edit.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2760)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 2847)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms | Allocations: 5808)
+
+
+  
+ActionView::Template::Error (undefined method `brand' for #<Card id: 15, issuer: "VISA", holder_name: "John Wick", number: "1111222233336666", expiration_date: "11/88", cvv: "888", wallet_id: 5, created_at: "2023-04-14 23:36:09.174806000 +0000", updated_at: "2023-04-14 23:36:09.174806000 +0000">):
+    17: 
+    18:     <div class= "mb-3">
+    19:     <%= form.label :card_id %>
+    20:     <%= form.select :card_id, options_for_select(@wallet.cards.map{ |c| ["#{c.brand} - #{c.last4}", c.id] }), { include_blank: "Select a card" }, { class: "form-control" } %>
+    21:     </div> 
+    22:     
+    23:     <div class= "mb-3">
+  
+app/views/balances/edit.html.erb:20
+app/views/balances/edit.html.erb:20:in `map'
+app/views/balances/edit.html.erb:20
+app/views/balances/edit.html.erb:3
+Started GET "/wallet/balances/18/edit" for 127.0.0.1 at 2023-04-14 19:16:52 -0500
+Processing by BalancesController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_balance'
+  [1m[36mCACHE Balance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:20:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/edit.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/edit.html.erb:20:in `map'
+  Rendered balances/edit.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2729)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 2817)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 6199)
+
+
+  
+ActionView::Template::Error (undefined method `last4' for #<Card id: 15, issuer: "VISA", holder_name: "John Wick", number: "1111222233336666", expiration_date: "11/88", cvv: "888", wallet_id: 5, created_at: "2023-04-14 23:36:09.174806000 +0000", updated_at: "2023-04-14 23:36:09.174806000 +0000">):
+    17: 
+    18:     <div class= "mb-3">
+    19:     <%= form.label :card_id %>
+    20:     <%= form.select :card_id, options_for_select(@wallet.cards.map{ |c| ["#{c.issuer} - #{c.last4}", c.id] }), { include_blank: "Select a card" }, { class: "form-control" } %>
+    21:     </div> 
+    22: 
+    23:     <div class= "mb-3">
+  
+app/views/balances/edit.html.erb:20
+app/views/balances/edit.html.erb:20:in `map'
+app/views/balances/edit.html.erb:20
+app/views/balances/edit.html.erb:3
+Started GET "/wallet/balances/18/edit" for 127.0.0.1 at 2023-04-14 19:17:44 -0500
+Processing by BalancesController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_balance'
+  [1m[36mCACHE Balance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:20:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/edit.html.erb within layouts/application
+  [1m[36mCard Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/edit.html.erb:20:in `map'
+  Rendered balances/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2153)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 953)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 5992)
+Completed 200 OK in 11ms (Views: 6.3ms | ActiveRecord: 0.2ms | Allocations: 9398)
+
+
+Started PATCH "/wallet/balances/18/edit" for 127.0.0.1 at 2023-04-14 19:17:47 -0500
+Processing by BalancesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"id"=>"18", "value"=>"154.0", "card_id"=>"15"}, "commit"=>"Add Cash", "id"=>"18"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_balance'
+[31mUnpermitted parameter: :card_id. Context: { controller: BalancesController, action: update, request: #<ActionDispatch::Request:0x00007f7585f85640>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "balance"=>{"id"=>"18", "value"=>"154.0", "card_id"=>"15"}, "commit"=>"Add Cash", "controller"=>"balances", "action"=>"update", "id"=>"18"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/balances_controller.rb:37:in `update'
+  [1m[36mBalance Update (0.2ms)[0m  [1m[33mUPDATE "balances" SET "value" = ?, "updated_at" = ? WHERE "balances"."id" = ?[0m  [["value", 308.0], ["updated_at", "2023-04-15 00:17:47.532064"], ["id", 18]]
+  ↳ app/controllers/balances_controller.rb:37:in `update'
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/balances_controller.rb:37:in `update'
+Redirected to http://127.0.0.1:3000/wallet/balances
+Completed 302 Found in 18ms (ActiveRecord: 10.3ms | Allocations: 4227)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:17:47 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1905)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 4692)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 6351)
+
+
+Started GET "/wallet/balances/18/edit" for 127.0.0.1 at 2023-04-14 19:17:49 -0500
+Processing by BalancesController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_balance'
+  [1m[36mCACHE Balance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:20:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/edit.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/edit.html.erb:20:in `map'
+  Rendered balances/edit.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1688)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4463)
+Completed 200 OK in 16ms (Views: 7.6ms | ActiveRecord: 0.6ms | Allocations: 7379)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:17:57 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1486)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 4269)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.1ms | Allocations: 5856)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 19:17:58 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2730)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 559)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 5617)
+Completed 200 OK in 14ms (Views: 9.6ms | ActiveRecord: 0.4ms | Allocations: 7487)
+
+
+Started GET "/wallet/cards/new" for 127.0.0.1 at 2023-04-14 19:18:00 -0500
+Processing by CardsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2010)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4793)
+Completed 200 OK in 14ms (Views: 8.8ms | ActiveRecord: 0.3ms | Allocations: 6405)
+
+
+Started POST "/wallet/cards/new" for 127.0.0.1 at 2023-04-14 19:18:21 -0500
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "card"=>{"issuer"=>"VISA", "number"=>"7777555522223333", "expiration_date"=>"11/55", "holder_name"=>"Harry Potter", "cvv"=>"563"}, "commit"=>"Add Card"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:21:in `create'
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("issuer", "holder_name", "number", "expiration_date", "cvv", "wallet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["issuer", "VISA"], ["holder_name", "Harry Potter"], ["number", "7777555522223333"], ["expiration_date", "11/55"], ["cvv", "563"], ["wallet_id", 5], ["created_at", "2023-04-15 00:18:21.365766"], ["updated_at", "2023-04-15 00:18:21.365766"]]
+  ↳ app/controllers/cards_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:21:in `create'
+Redirected to http://127.0.0.1:3000/wallet/cards
+Completed 302 Found in 26ms (ActiveRecord: 10.6ms | Allocations: 3657)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 19:18:21 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 3037)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 5858)
+Completed 200 OK in 42ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 7468)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:18:22 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1486)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 4298)
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 5868)
+
+
+Started GET "/wallet/balances/new" for 127.0.0.1 at 2023-04-14 19:18:24 -0500
+Processing by BalancesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/new.html.erb within layouts/application
+  Rendered balances/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1173)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 3960)
+Completed 200 OK in 14ms (Views: 9.4ms | ActiveRecord: 0.3ms | Allocations: 5572)
+
+
+Started POST "/wallet/balances/new" for 127.0.0.1 at 2023-04-14 19:18:30 -0500
+Processing by BalancesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"currency"=>"EUR", "value"=>"252"}, "commit"=>"Add currency"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/balances_controller.rb:25:in `create'
+  [1m[36mBalance Create (0.2ms)[0m  [1m[32mINSERT INTO "balances" ("value", "wallet_id", "created_at", "updated_at", "currency") VALUES (?, ?, ?, ?, ?)[0m  [["value", 252.0], ["wallet_id", 5], ["created_at", "2023-04-15 00:18:30.153897"], ["updated_at", "2023-04-15 00:18:30.153897"], ["currency", "EUR"]]
+  ↳ app/controllers/balances_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/balances_controller.rb:25:in `create'
+Redirected to http://127.0.0.1:3000/wallet/balances
+Completed 302 Found in 15ms (ActiveRecord: 10.4ms | Allocations: 3576)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:18:30 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 2281)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 5069)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 6657)
+
+
+Started GET "/wallet/balances/19/edit" for 127.0.0.1 at 2023-04-14 19:18:33 -0500
+Processing by BalancesController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_balance'
+  [1m[36mCACHE Balance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:20:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/edit.html.erb within layouts/application
+  [1m[36mCard Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/edit.html.erb:20:in `map'
+  Rendered balances/edit.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1740)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 4515)
+Completed 200 OK in 8ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 7426)
+
+
+Started PATCH "/wallet/balances/19/edit" for 127.0.0.1 at 2023-04-14 19:18:41 -0500
+Processing by BalancesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"id"=>"19", "value"=>"252.0", "card_id"=>"16"}, "commit"=>"Add Cash", "id"=>"19"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_balance'
+[31mUnpermitted parameter: :card_id. Context: { controller: BalancesController, action: update, request: #<ActionDispatch::Request:0x00007f75866ea8e0>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "balance"=>{"id"=>"19", "value"=>"252.0", "card_id"=>"16"}, "commit"=>"Add Cash", "controller"=>"balances", "action"=>"update", "id"=>"19"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/balances_controller.rb:37:in `update'
+  [1m[36mBalance Update (0.1ms)[0m  [1m[33mUPDATE "balances" SET "value" = ?, "updated_at" = ? WHERE "balances"."id" = ?[0m  [["value", 504.0], ["updated_at", "2023-04-15 00:18:41.223836"], ["id", 19]]
+  ↳ app/controllers/balances_controller.rb:37:in `update'
+  [1m[36mTRANSACTION (18.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/balances_controller.rb:37:in `update'
+Redirected to http://127.0.0.1:3000/wallet/balances
+Completed 302 Found in 23ms (ActiveRecord: 18.8ms | Allocations: 4226)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:18:41 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2281)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 5068)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 6653)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 19:18:43 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 3037)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 5820)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 7388)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:18:46 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.2ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:61:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2292)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 5087)
+Completed 200 OK in 15ms (Views: 9.7ms | ActiveRecord: 0.4ms | Allocations: 6658)
+
+
+Started GET "/wallet/balances/new" for 127.0.0.1 at 2023-04-14 19:24:15 -0500
+  
+SyntaxError (/home/chunkai/Documents/CSCE606/wallet/app/controllers/balances_controller.rb:71: syntax error, unexpected end-of-input):
+  
+app/controllers/balances_controller.rb:71: syntax error, unexpected end-of-input
+app/controllers/balances_controller.rb:71: syntax error, unexpected end-of-input
+app/controllers/balances_controller.rb:71: syntax error, unexpected end-of-input
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:24:17 -0500
+  
+SyntaxError (/home/chunkai/Documents/CSCE606/wallet/app/controllers/balances_controller.rb:71: syntax error, unexpected end-of-input):
+  
+app/controllers/balances_controller.rb:71: syntax error, unexpected end-of-input
+app/controllers/balances_controller.rb:71: syntax error, unexpected end-of-input
+app/controllers/balances_controller.rb:71: syntax error, unexpected end-of-input
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 19:24:18 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 6432)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 564)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 20172)
+Completed 200 OK in 19ms (Views: 9.8ms | ActiveRecord: 0.4ms | Allocations: 30819)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:24:21 -0500
+  
+SyntaxError (/home/chunkai/Documents/CSCE606/wallet/app/controllers/balances_controller.rb:71: syntax error, unexpected end-of-input):
+  
+app/controllers/balances_controller.rb:71: syntax error, unexpected end-of-input
+app/controllers/balances_controller.rb:71: syntax error, unexpected end-of-input
+app/controllers/balances_controller.rb:71: syntax error, unexpected end-of-input
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:25:19 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 5429)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 564)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 19169)
+Completed 200 OK in 18ms (Views: 9.3ms | ActiveRecord: 0.9ms | Allocations: 30250)
+
+
+Started GET "/wallet/balances/new" for 127.0.0.1 at 2023-04-14 19:25:20 -0500
+Processing by BalancesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/new.html.erb within layouts/application
+  Rendered balances/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 842)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 3625)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 5184)
+
+
+Started POST "/wallet/balances/new" for 127.0.0.1 at 2023-04-14 19:25:24 -0500
+Processing by BalancesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"currency"=>"USD", "value"=>"55"}, "commit"=>"Add currency"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:65:in `set_wallet'
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/controllers/balances_controller.rb:25:in `create'
+Redirected to http://127.0.0.1:3000/wallet/balances
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/balances_controller.rb:29:in `create'
+  [1m[36mBalance Create (0.1ms)[0m  [1m[32mINSERT INTO "balances" ("value", "wallet_id", "created_at", "updated_at", "currency") VALUES (?, ?, ?, ?, ?)[0m  [["value", 55.0], ["wallet_id", 5], ["created_at", "2023-04-15 00:25:24.587467"], ["updated_at", "2023-04-15 00:25:24.587467"], ["currency", "USD"]]
+  ↳ app/controllers/balances_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/balances_controller.rb:29:in `create'
+Redirected to 
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 9.9ms | Allocations: 4873)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/balances_controller.rb:30:in `create'
+Started POST "/wallet/balances/new" for 127.0.0.1 at 2023-04-14 19:26:12 -0500
+Processing by BalancesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"currency"=>"USD", "value"=>"55"}, "commit"=>"Add currency"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/controllers/balances_controller.rb:25:in `create'
+Redirected to http://127.0.0.1:3000/wallet/balances
+Completed 302 Found in 11ms (ActiveRecord: 0.9ms | Allocations: 14274)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:26:12 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 3166)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 564)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 16908)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.1ms | Allocations: 18756)
+
+
+Started GET "/wallet/balances/new" for 127.0.0.1 at 2023-04-14 19:26:15 -0500
+Processing by BalancesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/new.html.erb within layouts/application
+  Rendered balances/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 842)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 3625)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 5201)
+
+
+Started POST "/wallet/balances/new" for 127.0.0.1 at 2023-04-14 19:26:20 -0500
+Processing by BalancesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"currency"=>"EUR", "value"=>"55"}, "commit"=>"Add currency"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/controllers/balances_controller.rb:25:in `create'
+Redirected to http://127.0.0.1:3000/wallet/balances
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 2234)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:26:20 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 3076)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 5863)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 7451)
+
+
+Started DELETE "/wallet/balances/18" for 127.0.0.1 at 2023-04-14 19:26:23 -0500
+Processing by BalancesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"id"=>"18"}, "commit"=>"Transfer out", "id"=>"18"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:70:in `set_balance'
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:51:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/balances_controller.rb:52:in `destroy'
+  [1m[36mBalance Destroy (0.1ms)[0m  [1m[31mDELETE FROM "balances" WHERE "balances"."id" = ?[0m  [["id", 18]]
+  ↳ app/controllers/balances_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (17.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/balances_controller.rb:52:in `destroy'
+Redirected to http://127.0.0.1:3000/wallet/balances
+Completed 302 Found in 27ms (ActiveRecord: 17.9ms | Allocations: 4965)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:26:23 -0500
+Processing by BalancesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2281)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 5148)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 6805)
+
+
+Started GET "/wallet/balances/new" for 127.0.0.1 at 2023-04-14 19:26:24 -0500
+Processing by BalancesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/new.html.erb within layouts/application
+  Rendered balances/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 826)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3612)
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 5163)
+
+
+Started POST "/wallet/balances/new" for 127.0.0.1 at 2023-04-14 19:26:29 -0500
+Processing by BalancesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"currency"=>"GBP", "value"=>"55"}, "commit"=>"Add currency"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/controllers/balances_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/balances_controller.rb:29:in `create'
+  [1m[36mBalance Create (0.1ms)[0m  [1m[32mINSERT INTO "balances" ("value", "wallet_id", "created_at", "updated_at", "currency") VALUES (?, ?, ?, ?, ?)[0m  [["value", 55.0], ["wallet_id", 5], ["created_at", "2023-04-15 00:26:29.211844"], ["updated_at", "2023-04-15 00:26:29.211844"], ["currency", "GBP"]]
+  ↳ app/controllers/balances_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (19.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/balances_controller.rb:29:in `create'
+Redirected to http://127.0.0.1:3000/wallet/balances
+Completed 302 Found in 27ms (ActiveRecord: 19.7ms | Allocations: 4389)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:26:29 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 3076)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 5863)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 7457)
+
+
+Started GET "/wallet/balances/new" for 127.0.0.1 at 2023-04-14 19:26:32 -0500
+Processing by BalancesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/new.html.erb within layouts/application
+  Rendered balances/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 826)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 3609)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 5160)
+
+
+Started POST "/wallet/balances/new" for 127.0.0.1 at 2023-04-14 19:26:35 -0500
+Processing by BalancesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"currency"=>"USD", "value"=>"589"}, "commit"=>"Add currency"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/controllers/balances_controller.rb:25:in `create'
+Redirected to http://127.0.0.1:3000/wallet/balances
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 2234)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:26:35 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 3076)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 5863)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 7457)
+
+
+Started GET "/wallet/balances/19/edit" for 127.0.0.1 at 2023-04-14 19:26:41 -0500
+Processing by BalancesController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:70:in `set_balance'
+  [1m[36mCACHE Balance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:20:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/edit.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/edit.html.erb:20:in `map'
+  Rendered balances/edit.html.erb within layouts/application (Duration: 6.0ms | Allocations: 7192)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 9968)
+Completed 200 OK in 16ms (Views: 7.7ms | ActiveRecord: 0.7ms | Allocations: 12881)
+
+
+Started PATCH "/wallet/balances/19/edit" for 127.0.0.1 at 2023-04-14 19:26:50 -0500
+Processing by BalancesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"id"=>"19", "value"=>"10", "card_id"=>"16"}, "commit"=>"Add Cash", "id"=>"19"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:70:in `set_balance'
+[31mUnpermitted parameter: :card_id. Context: { controller: BalancesController, action: update, request: #<ActionDispatch::Request:0x00007f75cc024ce0>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "balance"=>{"id"=>"19", "value"=>"10", "card_id"=>"16"}, "commit"=>"Add Cash", "controller"=>"balances", "action"=>"update", "id"=>"19"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/balances_controller.rb:42:in `update'
+  [1m[36mBalance Update (0.1ms)[0m  [1m[33mUPDATE "balances" SET "value" = ?, "updated_at" = ? WHERE "balances"."id" = ?[0m  [["value", 514.0], ["updated_at", "2023-04-15 00:26:50.802577"], ["id", 19]]
+  ↳ app/controllers/balances_controller.rb:42:in `update'
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/balances_controller.rb:42:in `update'
+Redirected to http://127.0.0.1:3000/wallet/balances
+Completed 302 Found in 17ms (ActiveRecord: 10.3ms | Allocations: 4238)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:26:50 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 3076)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 5897)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 7485)
+
+
+Started GET "/wallet/balances/new" for 127.0.0.1 at 2023-04-14 19:26:53 -0500
+Processing by BalancesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/new.html.erb within layouts/application
+  Rendered balances/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 826)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3609)
+Completed 200 OK in 13ms (Views: 8.3ms | ActiveRecord: 0.3ms | Allocations: 5169)
+
+
+Started POST "/wallet/balances/new" for 127.0.0.1 at 2023-04-14 19:26:57 -0500
+Processing by BalancesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"currency"=>"USD", "value"=>"100"}, "commit"=>"Add currency"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/controllers/balances_controller.rb:25:in `create'
+Redirected to http://127.0.0.1:3000/wallet/balances
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 2240)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:26:57 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 3076)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 5863)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 7427)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:26:59 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 3076)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 5859)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.1ms | Allocations: 7442)
+
+
+Started GET "/wallet/balances/20/edit" for 127.0.0.1 at 2023-04-14 19:27:05 -0500
+Processing by BalancesController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:70:in `set_balance'
+  [1m[36mCACHE Balance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:20:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/edit.html.erb within layouts/application
+  [1m[36mCard Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/edit.html.erb:20:in `map'
+  Rendered balances/edit.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1740)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 4515)
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 0.2ms | Allocations: 7438)
+
+
+Started PATCH "/wallet/balances/20/edit" for 127.0.0.1 at 2023-04-14 19:27:09 -0500
+Processing by BalancesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"id"=>"20", "value"=>"10", "card_id"=>""}, "commit"=>"Add Cash", "id"=>"20"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.2ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:70:in `set_balance'
+[31mUnpermitted parameter: :card_id. Context: { controller: BalancesController, action: update, request: #<ActionDispatch::Request:0x00007f75cf6379e0>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "balance"=>{"id"=>"20", "value"=>"10", "card_id"=>""}, "commit"=>"Add Cash", "controller"=>"balances", "action"=>"update", "id"=>"20"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/balances_controller.rb:42:in `update'
+  [1m[36mBalance Update (0.1ms)[0m  [1m[33mUPDATE "balances" SET "value" = ?, "updated_at" = ? WHERE "balances"."id" = ?[0m  [["value", 65.0], ["updated_at", "2023-04-15 00:27:09.187899"], ["id", 20]]
+  ↳ app/controllers/balances_controller.rb:42:in `update'
+  [1m[36mTRANSACTION (21.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/balances_controller.rb:42:in `update'
+Redirected to http://127.0.0.1:3000/wallet/balances
+Completed 302 Found in 32ms (ActiveRecord: 21.6ms | Allocations: 4214)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:27:09 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 3076)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 5897)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.3ms | Allocations: 7492)
+
+
+Started GET "/wallet/balances/20/edit" for 127.0.0.1 at 2023-04-14 19:27:14 -0500
+Processing by BalancesController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:70:in `set_balance'
+  [1m[36mCACHE Balance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:20:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/edit.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/edit.html.erb:20:in `map'
+  Rendered balances/edit.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1740)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4549)
+Completed 200 OK in 14ms (Views: 6.3ms | ActiveRecord: 0.4ms | Allocations: 7463)
+
+
+Started GET "/wallet/balances/20/edit" for 127.0.0.1 at 2023-04-14 19:28:06 -0500
+Processing by BalancesController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:70:in `set_balance'
+  [1m[36mCACHE Balance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:20:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/edit.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/edit.html.erb:20:in `map'
+  Rendered balances/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2127)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 953)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 209)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 5932)
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 0.3ms | Allocations: 9347)
+
+
+Started PATCH "/wallet/balances/20/edit" for 127.0.0.1 at 2023-04-14 19:28:15 -0500
+Processing by BalancesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"id"=>"20", "value"=>"65.0", "card_id"=>"16"}, "commit"=>"Add Cash", "id"=>"20"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:70:in `set_balance'
+[31mUnpermitted parameter: :card_id. Context: { controller: BalancesController, action: update, request: #<ActionDispatch::Request:0x00007f7586059940>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "balance"=>{"id"=>"20", "value"=>"65.0", "card_id"=>"16"}, "commit"=>"Add Cash", "controller"=>"balances", "action"=>"update", "id"=>"20"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/balances_controller.rb:42:in `update'
+  [1m[36mBalance Update (0.1ms)[0m  [1m[33mUPDATE "balances" SET "value" = ?, "updated_at" = ? WHERE "balances"."id" = ?[0m  [["value", 130.0], ["updated_at", "2023-04-15 00:28:15.452903"], ["id", 20]]
+  ↳ app/controllers/balances_controller.rb:42:in `update'
+  [1m[36mTRANSACTION (18.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/balances_controller.rb:42:in `update'
+Redirected to http://127.0.0.1:3000/wallet/balances
+Completed 302 Found in 24ms (ActiveRecord: 18.9ms | Allocations: 4217)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:28:15 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 3495)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 6282)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 7938)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-14 19:28:18 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 271)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 565)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 3183)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 4517)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:28:18 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 3076)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 5859)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 7452)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 19:28:19 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (2.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 13.0ms | Allocations: 3548)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 559)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 6439)
+Completed 200 OK in 37ms (Views: 29.9ms | ActiveRecord: 2.1ms | Allocations: 8471)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-14 19:28:20 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2897)
+Completed 200 OK in 14ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 3836)
+
+
+Started GET "/contact" for 127.0.0.1 at 2023-04-14 19:28:20 -0500
+Processing by ContactController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering contact/index.html.erb within layouts/application
+  Rendered contact/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 123)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 592)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 3091)
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 4369)
+
+
+Started GET "/about-us" for 127.0.0.1 at 2023-04-14 19:28:21 -0500
+Processing by AboutController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 127)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 592)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3078)
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.2ms | Allocations: 4358)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-14 19:28:21 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:52:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 3037)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 5823)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.2ms | Allocations: 7395)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:28:21 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 3076)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 5859)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 7428)
+
+
+Started PATCH "/wallet/balances/19" for 127.0.0.1 at 2023-04-14 19:28:22 -0500
+Processing by BalancesController#show as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "balance"=>{"id"=>"19"}, "commit"=>"Select", "id"=>"19"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  [1m[36mBalance Load (0.1ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:70:in `set_balance'
+  [1m[36mCACHE Balance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ? AND "balances"."id" = ? LIMIT ?[0m  [["wallet_id", 5], ["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:12:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/show.html.erb within layouts/application
+  Rendered balances/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 145)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 537)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2926)
+Completed 200 OK in 14ms (Views: 5.0ms | ActiveRecord: 0.4ms | Allocations: 5925)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-14 19:28:24 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2876)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 3805)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-14 19:28:24 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/balances_controller.rb:66:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering balances/index.html.erb within layouts/application
+  [1m[36mBalance Load (0.0ms)[0m  [1m[34mSELECT "balances".* FROM "balances" WHERE "balances"."wallet_id" = ?[0m  [["wallet_id", 5]]
+  ↳ app/views/balances/index.html.erb:4
+  Rendered balances/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 3076)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 532)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 5860)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 7440)
+
+

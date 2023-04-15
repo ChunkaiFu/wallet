@@ -9,19 +9,19 @@
             <h6 class="card-subtitle mb-2 text-muted">Balance: <%=balance.value %></h6>
           </div>
           
-          <div class="mx-3 btn-group d-grid gap-2 d-md-block mb-2 align-items-center">
-            <div>
+          <div class="row mx-2">
+            <div class="col-3 ml-2 mb-2">
               <%= form_with model: balance, url: wallet_balance_path(balance.id), data: { turbo: false } do |form| %>
                 <%= form.hidden_field :id %>
                 <%= form.submit "Select", class: "btn btn-primary" %>
               <% end %>
             </div>
 
-            <div>
-            <%=link_to "Add cash", edit_wallet_balance_path(balance.id), class: "btn btn-primary"%>
+            <div class="col-3 ml-2 mb-2">
+            <%=link_to "Deposit", edit_wallet_balance_path(balance.id), class: "btn btn-primary"%>
             </div>
 
-            <div>
+            <div class="col-3 mx-3 mb-2">
               <%= form_with model: balance, url: wallet_balance_path(balance.id), method: :delete do |form| %>
                 <%= form.hidden_field :id %>
                 <%= form.submit "Transfer out", class: "btn btn-primary" %>
