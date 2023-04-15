@@ -181,8 +181,6 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
-    nokogiri (1.14.3-x86_64-darwin)
-      racc (~> 1.4)
     nokogiri (1.14.3-x86_64-linux)
       racc (~> 1.4)
     pg (1.4.6)
@@ -269,7 +267,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.6.2-x86_64-darwin)
     sqlite3 (1.6.2-x86_64-linux)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
@@ -302,7 +299,6 @@ GEM
     zeitwerk (2.6.7)
 
 PLATFORMS
-  x86_64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
@@ -317,7 +313,7 @@ DEPENDENCIES
   faker
   importmap-rails
   jbuilder
-  pg
+  pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
   rails-controller-testing
