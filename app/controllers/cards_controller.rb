@@ -1,3 +1,5 @@
+require 'rqrcode'
+
 class CardsController < ApplicationController
   before_action :require_user_logged_in! 
   before_action :set_user
@@ -10,6 +12,8 @@ class CardsController < ApplicationController
 
   def show
     @card = @wallet.cards.find_by(id: params[:id])
+    card_number = @card.number
+    @qr = RQRCode::QRCode.new(card_number)
   end 
 
   def new
