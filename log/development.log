@@ -42525,3 +42525,482 @@ Processing by BalancesController#index as HTML
 Completed 200 OK in 12ms (Views: 6.8ms | ActiveRecord: 0.4ms | Allocations: 7451)
 
 
+Started GET "/" for 127.0.0.1 at 2023-04-17 10:58:13 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/home" for 127.0.0.1 at 2023-04-17 10:58:13 -0500
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 545)
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | Allocations: 1108)
+  Rendered shared/_flash.html.erb (Duration: 0.7ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 53.0ms | Allocations: 39113)
+Completed 200 OK in 60ms (Views: 54.6ms | ActiveRecord: 0.0ms | Allocations: 42519)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-17 10:58:15 -0500
+Processing by CardsController#index as HTML
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 589)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-17 10:58:15 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 3973)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 367)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 32)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 6707)
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 7564)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-17 10:58:16 -0500
+Processing by BalancesController#index as HTML
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 483)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-17 10:58:16 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2317)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 346)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 4915)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 5361)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-17 10:58:16 -0500
+Processing by CardsController#index as HTML
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 368)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-17 10:58:16 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2320)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 346)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4918)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 5343)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-17 10:58:17 -0500
+Started GET "/home" for 127.0.0.1 at 2023-04-17 10:58:17 -0500
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 346)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2686)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 3135)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-17 10:58:17 -0500
+Processing by CardsController#index as HTML
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-17 10:58:17 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2320)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 346)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4919)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 5382)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2023-04-17 10:58:27 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"calvin8058@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "calvin8058@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 2237)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 346)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 4818)
+Completed 200 OK in 18ms (Views: 5.7ms | ActiveRecord: 0.5ms | Allocations: 9770)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2023-04-17 10:58:40 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"sam@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sam@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 2315)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 346)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 4896)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 5858)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2023-04-17 10:58:41 -0500
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2302)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 373)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 5007)
+Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 0.3ms | Allocations: 9974)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2023-04-17 10:59:00 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"user_1234@gmail.com", "firstname"=>"user", "lastname"=>"new", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user_1234@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8:in `email_registered?'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user_1234@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:11:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 3155)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 346)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 5740)
+Completed 200 OK in 191ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 8715)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2023-04-17 10:59:20 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"user_abcd1234@gmail.com", "firstname"=>"user", "lastname"=>"new", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user_abcd1234@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8:in `email_registered?'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user_abcd1234@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:11:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "firstname", "lastname") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "user_abcd1234@gmail.com"], ["password_digest", "$2a$12$zcIpawjaI.F1cvuxKXi99.LKKtApkD4x/PYKY9IiS65MifA7jP31a"], ["created_at", "2023-04-17 15:59:20.713725"], ["updated_at", "2023-04-17 15:59:20.713725"], ["firstname", "user"], ["lastname", "new"]]
+  ↳ app/controllers/registrations_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (18.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/registrations_controller.rb:11:in `create'
+Redirected to http://127.0.0.1:3000/wallet
+Completed 302 Found in 200ms (ActiveRecord: 18.9ms | Allocations: 4643)
+
+
+Started GET "/wallet" for 127.0.0.1 at 2023-04-17 10:59:20 -0500
+Processing by WalletsController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering wallets/show.html.erb within layouts/application
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/wallets/show.html.erb:3
+  Rendered wallets/show.html.erb within layouts/application (Duration: 9.6ms | Allocations: 5376)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 575)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 8332)
+Completed 200 OK in 17ms (Views: 14.0ms | ActiveRecord: 0.5ms | Allocations: 10288)
+
+
+Started GET "/wallet/new" for 127.0.0.1 at 2023-04-17 10:59:21 -0500
+Processing by WalletsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering wallets/new.html.erb within layouts/application
+  Rendered wallets/new.html.erb within layouts/application (Duration: 9.9ms | Allocations: 565)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 533)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 3345)
+Completed 200 OK in 22ms (Views: 13.8ms | ActiveRecord: 0.5ms | Allocations: 6209)
+
+
+Started POST "/wallet/new" for 127.0.0.1 at 2023-04-17 10:59:22 -0500
+Processing by WalletsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Add some cards"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/wallets_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/wallets_controller.rb:11:in `create'
+  [1m[36mWallet Create (0.4ms)[0m  [1m[32mINSERT INTO "wallets" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 6], ["created_at", "2023-04-17 15:59:22.391426"], ["updated_at", "2023-04-17 15:59:22.391426"]]
+  ↳ app/controllers/wallets_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (16.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/wallets_controller.rb:11:in `create'
+Redirected to http://127.0.0.1:3000/wallet/cards
+Completed 302 Found in 32ms (ActiveRecord: 16.6ms | Allocations: 5405)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-17 10:59:22 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:56:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 6]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2393)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 566)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 5308)
+Completed 200 OK in 13ms (Views: 5.9ms | ActiveRecord: 0.5ms | Allocations: 9288)
+
+
+Started GET "/wallet/cards/new" for 127.0.0.1 at 2023-04-17 10:59:23 -0500
+Processing by CardsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:56:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/new.html.erb within layouts/application
+  Rendered cards/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2374)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 533)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 5154)
+Completed 200 OK in 17ms (Views: 6.8ms | ActiveRecord: 0.5ms | Allocations: 10850)
+
+
+Started POST "/wallet/cards/new" for 127.0.0.1 at 2023-04-17 10:59:47 -0500
+Processing by CardsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "card"=>{"issuer"=>"VISA", "number"=>"1111444455556666", "expiration_date"=>"11/88", "holder_name"=>"He Yu", "cvv"=>"111"}, "commit"=>"Add Card"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:56:in `set_wallet'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cards_controller.rb:25:in `create'
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("issuer", "holder_name", "number", "expiration_date", "cvv", "wallet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["issuer", "VISA"], ["holder_name", "He Yu"], ["number", "1111444455556666"], ["expiration_date", "11/88"], ["cvv", "111"], ["wallet_id", 6], ["created_at", "2023-04-17 15:59:47.070550"], ["updated_at", "2023-04-17 15:59:47.070550"]]
+  ↳ app/controllers/cards_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (12.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cards_controller.rb:25:in `create'
+Redirected to http://127.0.0.1:3000/wallet/cards
+Completed 302 Found in 19ms (ActiveRecord: 13.2ms | Allocations: 4553)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-17 10:59:47 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:56:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 6]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1605)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 533)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 4389)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 6016)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-17 10:59:50 -0500
+Started GET "/home" for 127.0.0.1 at 2023-04-17 10:59:50 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 547)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2920)
+Completed 200 OK in 11ms (Views: 4.2ms | ActiveRecord: 0.2ms | Allocations: 3850)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-17 10:59:50 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cards_controller.rb:56:in `set_wallet'
+  Rendering layout layouts/application.html.erb
+  Rendering cards/index.html.erb within layouts/application
+  [1m[36mCard Load (0.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."wallet_id" = ?[0m  [["wallet_id", 6]]
+  ↳ app/views/cards/index.html.erb:4
+  Rendered cards/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1473)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 533)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 4273)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.2ms | Allocations: 5859)
+
+
+Started GET "/password" for 127.0.0.1 at 2023-04-17 10:59:53 -0500
+Processing by PasswordsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/edit.html.erb within layouts/application
+  Rendered passwords/edit.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1213)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 562)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 4113)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 5492)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-17 10:59:56 -0500
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 867)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-17 10:59:56 -0500
+Started GET "/home" for 127.0.0.1 at 2023-04-17 10:59:56 -0500
+Processing by MainController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 93)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 346)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2736)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 3229)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-17 10:59:57 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2320)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 346)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 4913)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 5355)
+
+
+Started GET "/password/reset" for 127.0.0.1 at 2023-04-17 10:59:59 -0500
+Processing by PasswordResetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 1564)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 375)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 4268)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 5103)
+
+
+Started POST "/password/reset" for 127.0.0.1 at 2023-04-17 11:00:11 -0500
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"user_abcd1234@gmail.com", "commit"=>"Reset Password"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 739)
+
+
+  
+NameError (undefined local variable or method `user' for #<PasswordResetsController:0x0000000000f8c0>):
+  
+app/controllers/password_resets_controller.rb:6:in `create'
+Started POST "/password/reset" for 127.0.0.1 at 2023-04-17 11:00:32 -0500
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"user_abcd1234@gmail.com", "commit"=>"Reset Password"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 697)
+
+
+  
+NameError (undefined local variable or method `user' for #<PasswordResetsController:0x0000000000fca8>):
+  
+app/controllers/password_resets_controller.rb:6:in `create'
+Started POST "/password/reset" for 127.0.0.1 at 2023-04-17 11:01:17 -0500
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"user_abcd1234@gmail.com", "commit"=>"Reset Password"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user_abcd1234@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.6ms | Allocations: 4685)
+
+
+  
+NameError (undefined local variable or method `passwordmailer' for #<PasswordResetsController:0x00000000017598>):
+  
+app/controllers/password_resets_controller.rb:9:in `create'
+Started POST "/password/reset" for 127.0.0.1 at 2023-04-17 11:01:44 -0500
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"user_abcd1234@gmail.com", "commit"=>"Reset Password"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user_abcd1234@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/password_resets_controller.rb:6:in `create'
+  Rendering layout layouts/mailer.html.erb
+  Rendering password_mailer/reset.html.erb within layouts/mailer
+  Rendered password_mailer/reset.html.erb within layouts/mailer (Duration: 0.9ms | Allocations: 302)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.6ms | Allocations: 525)
+  Rendering layout layouts/mailer.text.erb
+  Rendering password_mailer/reset.text.erb within layouts/mailer
+  Rendered password_mailer/reset.text.erb within layouts/mailer (Duration: 0.3ms | Allocations: 127)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.8ms | Allocations: 381)
+PasswordMailer#reset: processed outbound mail in 17.3ms
+Delivered mail 643d6d6993a7_3f0537288680@thinkpad.mail (19.5ms)
+Date: Mon, 17 Apr 2023 11:01:45 -0500
+From: from@example.com
+To: user_abcd1234@gmail.com
+Message-ID: <643d6d6993a7_3f0537288680@thinkpad.mail>
+Subject: Reset
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_643d6d6980d5_3f053728857f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_643d6d6980d5_3f053728857f
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi 
+
+Someone requested a reset of your password, if this was you, click the following link 
+to reset your password. The link will expire in 5 minutes. 
+
+http://127.0.0.1:3000/password/reset/edit?token=eyJfcmFpbHMiOnsibWVzc2FnZSI6Ik5nPT0iLCJleHAiOiIyMDIzLTA0LTE3VDE2OjA2OjQ1LjAxOFoiLCJwdXIiOiJ1c2VyL3Bhc3N3b3JkX3Jlc2V0In19--3b3280c3001006a5cc03e7ee8d6ca871b46ad12287cae2f8e4d1c36ed77dd314
+----==_mimepart_643d6d6980d5_3f053728857f
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    Hi 
+
+Someone requested a reset of your password, if this was you, click the following link 
+to reset your password. The link will expire in 5 minutes. 
+
+<a href="http://127.0.0.1:3000/password/reset/edit?token=eyJfcmFpbHMiOnsibWVzc2FnZSI6Ik5nPT0iLCJleHAiOiIyMDIzLTA0LTE3VDE2OjA2OjQ1LjAxOFoiLCJwdXIiOiJ1c2VyL3Bhc3N3b3JkX3Jlc2V0In19--3b3280c3001006a5cc03e7ee8d6ca871b46ad12287cae2f8e4d1c36ed77dd314">Reset Password</a>
+  </body>
+</html>
+
+----==_mimepart_643d6d6980d5_3f053728857f--
+
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 67ms (ActiveRecord: 0.5ms | Allocations: 41000)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-17 11:01:45 -0500
+Started GET "/home" for 127.0.0.1 at 2023-04-17 11:01:45 -0500
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 123)
+  Rendered shared/_navbar.html.erb (Duration: 2.4ms | Allocations: 454)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 13749)
+Completed 200 OK in 19ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 14489)
+
+
