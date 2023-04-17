@@ -20,6 +20,8 @@ class PasswordResetsController < ApplicationController
   def update 
     @user = user.find_signed(params[:token], purpose: "password_reset")
     if @user.update(password_params)
+      user_id = @user.id 
+      session[:user_id] = nil 
       redirect_to sign_in_path, notice: "your password was reset successfully. please sign in."
     else 
       render :edit 
@@ -31,4 +33,5 @@ class PasswordResetsController < ApplicationController
   def password_params
     params.require(:user).permit(:password, :password_confirmation)
   end 
+
 end 
