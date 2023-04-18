@@ -6,7 +6,7 @@ class BalancesController < ApplicationController
 
   def index
     if !@wallet
-      redirect_to new_wallet_path, notice: "You need to add a card first"
+      redirect_to new_wallet_path, alert: "You need to add a card first"
     else 
       @balances = @wallet.balances
     end 
@@ -40,7 +40,7 @@ class BalancesController < ApplicationController
       redirect_to wallet_cards_path, alert: "You need to add a card before adding cash"
     else  
       if @balances.any? { |balance| balance.currency == balance_params[:currency] }
-        redirect_to wallet_balances_path, notice: 'Currency already exist.'
+        redirect_to wallet_balances_path, alert: 'Currency already exist.'
       else 
         @balance = @wallet.balances.new(balance_params)
         if @balance.save
@@ -54,9 +54,9 @@ class BalancesController < ApplicationController
 
   def update
     if !@balance
-      redirect_to new_wallet_balance_path, notice: 'You do not have a currency, add one now!'
+      redirect_to new_wallet_balance_path, alert: 'You do not have a currency, add one now!'
     elsif !@wallet.cards
-      redirect_to wallet_cards_path, notice: "You need to add a card before adding cash"
+      redirect_to wallet_cards_path, alert: "You need to add a card before adding cash"
     else 
       if @balance && balance_params[:value].to_f < 9999
         @balance.increment(:value, balance_params[:value].to_f)
