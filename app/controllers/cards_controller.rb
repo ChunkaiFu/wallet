@@ -7,7 +7,11 @@ class CardsController < ApplicationController
   before_action :set_card, only: [:show, :destroy]
 
   def index
-    @cards = @wallet.cards
+    if !@wallet
+      redirect_to new_wallet_path, notice: "Add some cards now"
+    else 
+      @cards = @wallet.cards
+    end 
   end
 
   def show

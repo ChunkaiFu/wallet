@@ -5,7 +5,11 @@ class BalancesController < ApplicationController
   before_action :set_balance, only: [:show, :destroy, :edit, :update]
 
   def index
-    @balances = @wallet.balances
+    if !@wallet
+      redirect_to new_wallet_path, notice: "You need to add a card first"
+    else 
+      @balances = @wallet.balances
+    end 
   end
 
   def show
@@ -13,7 +17,16 @@ class BalancesController < ApplicationController
   end 
 
   def new
-    @balance = Balance.new
+    if !@wallet 
+      redirect_to new_wallet_path, notice: "Create a new wallet now"
+    else 
+      @cards=@wallet.cards
+      if !@cards
+        redirect_to wallet_cards_path, alert: "You need to add a card before adding cash"
+      else 
+        @balance = Balance.new
+      end 
+    end 
   end
 
   def edit 
@@ -21,30 +34,40 @@ class BalancesController < ApplicationController
   end 
 
   def create
-    balances = @wallet.balances
-    if balances.any? { |balance| balance.currency == balance_params[:currency] }
-      redirect_to wallet_balances_path, notice: 'Currency already exist.'
-    else 
-      @balance = @wallet.balances.new(balance_params)
-      if @balance.save
-        redirect_to wallet_balances_path, notice: 'Balance was successfully created.'
-      else
-        render :new
+    @balances = @wallet.balances
+    @cards = @wallet.cards 
+    if !@cards 
+      redirect_to wallet_cards_path, alert: "You need to add a card before adding cash"
+    else  
+      if @balances.any? { |balance| balance.currency == balance_params[:currency] }
+        redirect_to wallet_balances_path, notice: 'Currency already exist.'
+      else 
+        @balance = @wallet.balances.new(balance_params)
+        if @balance.save
+          redirect_to wallet_balances_path, notice: 'Balance was successfully created.'
+        else
+          render :new
+        end
       end
-    end
+    end 
   end
 
   def update
     if !@balance
       redirect_to new_wallet_balance_path, notice: 'You do not have a currency, add one now!'
-    elsif @balance
-      @balance.increment(:value, balance_params[:value].to_f)
-      if @balance.save 
-        redirect_to wallet_balances_path, notice: 'Balance was successfully updated.'
-      end 
-    else
-      render :edit
-    end
+    elsif !@wallet.cards
+      redirect_to wallet_cards_path, notice: "You need to add a card before adding cash"
+    else 
+      if @balance && balance_params[:value].to_f < 9999
+        @balance.increment(:value, balance_params[:value].to_f)
+        if @balance.save 
+          redirect_to wallet_balances_path, notice: 'Balance was successfully updated.'
+        end 
+      else 
+        flash[:alert] = "enter value less than 9999"
+        render :edit  
+      end
+    end 
   end
   
   def destroy

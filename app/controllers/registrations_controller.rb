@@ -10,9 +10,7 @@ class RegistrationsController < ApplicationController
             render :new
         elsif @user.save 
             session[:user_id] = @user.id
-            redirect_to wallet_path, notice: "Successfully created account!"
-        else 
-            render :new 
+            redirect_to new_wallet_path, notice: "Successfully created account!"
         end 
     end 
 
@@ -22,4 +20,3 @@ class RegistrationsController < ApplicationController
         params.require(:user).permit(:email, :firstname, :lastname, :password, :password_confirmation)
     end 
 end
-  
