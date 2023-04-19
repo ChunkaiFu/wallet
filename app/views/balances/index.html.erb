@@ -1,3 +1,13 @@
+<% if @wallet.cards.empty? %>
+  <div class="alert alert-warning" role="alert">
+    Add a card now before you deposit some cash!
+  </div>
+
+  <div>
+  <%=link_to "Add a card now!", new_wallet_card_path, class: "btn btn-primary"%>
+  </div>
+<% end %>
+
 <h1>My Balances</h1>
 <div class="row">
   <% if @balances %>
@@ -34,6 +44,8 @@
   <% end %>
 </div>
 
-<div>
-	<%=link_to "Add a new currency", new_wallet_balance_path, class: "btn btn-primary"%>
-</div>
+<% if !@wallet.cards.empty? %>
+  <div>
+    <%=link_to "Add a new currency", new_wallet_balance_path, class: "btn btn-primary"%>
+  </div>
+<% end %>
