@@ -25,7 +25,7 @@ When("I press {string}") do |button|
 end
 
 Then("I should be on the home page") do
-  expect(current_path).to eq(root_path)
+  expect(current_path).to eq(home_path)
 end
 
 Then("I should be on the User Registration page") do
@@ -40,3 +40,6 @@ When('I follow {string}') do |my_link|
   click_link(my_link)
 end
 
+Then("I should be on the new wallet page") do
+  expect(current_path).to eq(new_wallet_path)
+end

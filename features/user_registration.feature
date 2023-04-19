@@ -5,10 +5,10 @@ Feature: Registration
   And I fill in "Email" with "swetha@yahoo.com"
   And I fill in "Firstname" with "Swetha"
   And I fill in "Lastname" with "Reddy"
-  And I fill in "Password" with "password"
-  And I fill in "Password confirmation" with "password"
+  And I fill in "Password" with "password123"
+  And I fill in "Password confirmation" with "password123"
   And I press "Sign up"
-  Then I should be on the home page
+  Then I should be on the new wallet page
   And I should see "Successfully created account!"
   
   Scenario: cannot register a user due to password(sad path)
