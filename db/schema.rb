@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_13_060914) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_20_233419) do
   create_table "balances", force: :cascade do |t|
     t.float "value", default: 0.0
     t.integer "wallet_id", null: false
@@ -39,6 +39,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_060914) do
     t.datetime "updated_at", null: false
     t.string "firstname"
     t.string "lastname"
+    t.boolean "terms_of_service"
   end
 
   create_table "wallets", force: :cascade do |t|

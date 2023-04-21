@@ -10,17 +10,22 @@ class RegistrationsController < ApplicationController
         elsif user_params[:password] != user_params[:password_confirmation]
             @user.errors.add(:base, "Password do not match")
             render :new
-        elsif @user.save 
+        elsif @user.save
             session[:user_id] = @user.id
-            redirect_to new_wallet_path, notice: "Successfully created account!"
+            if @user.terms_of_service
+                redirect_to new_wallet_path, notice: "Successfully created account!"
+            else 
+                redirect_to terms_path, alert: "please accept our terms of use"
+            end 
         else 
             render :new
+            flash[:alert]="please accept our terms of use"
         end 
     end 
 
     private 
 
     def user_params
-        params.require(:user).permit(:email, :firstname, :lastname, :password, :password_confirmation)
+        params.require(:user).permit(:email, :firstname, :lastname, :password, :password_confirmation, :terms_of_service)
     end 
 end

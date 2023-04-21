@@ -7,10 +7,16 @@ class CardsController < ApplicationController
   before_action :set_card, only: [:show, :destroy]
 
   def index
-    if !@wallet
-      redirect_to new_wallet_path, notice: "Add some cards now"
-    else 
+    if @wallet && @user.terms_of_service 
       @cards = @wallet.cards
+    else
+      if !@wallet
+        redirect_to new_wallet_path, alert: "Add some cards now" and return 
+      elsif !@user.terms_of_service 
+        redirect_to terms_path, alert: "please accept our terms first" and return 
+      else 
+        redirect_to wallet_cards_path, "You are good to go! Add some cards if you have not done so"
+      end 
     end 
   end
 

@@ -1,3 +1,5 @@
+<h1>My Balances</h1>
+
 <% if @wallet.cards.empty? %>
   <div class="alert alert-warning" role="alert">
     Add a card now before you deposit some cash!
@@ -8,7 +10,6 @@
   </div>
 <% end %>
 
-<h1>My Balances</h1>
 <div class="row">
   <% if @balances %>
     <% @balances.each do |balance| %>
@@ -23,18 +24,18 @@
             <div class="col-3 ml-2 mb-2">
               <%= form_with model: balance, url: wallet_balance_path(balance.id), data: { turbo: false } do |form| %>
                 <%= form.hidden_field :id %>
-                <%= form.submit "Select", class: "btn btn-primary" %>
+                <%= form.submit "Select", class: "btn btn-outline-primary" %>
               <% end %>
             </div>
 
             <div class="col-3 ml-2 mb-2">
-            <%=link_to "Deposit", edit_wallet_balance_path(balance.id), class: "btn btn-primary"%>
+            <%=link_to "Deposit", edit_wallet_balance_path(balance.id), class: "btn btn-outline-success"%>
             </div>
 
             <div class="col-3 mx-3 mb-2">
-              <%= form_with model: balance, url: wallet_balance_path(balance.id), method: :delete do |form| %>
+              <%= form_with model: balance, url: wallet_balance_path(balance.id), data: {"turbo-confirm": 'Are you sure you want to claim this balance?'}, method: :delete do |form| %>
                 <%= form.hidden_field :id %>
-                <%= form.submit "Transfer out", class: "btn btn-primary" %>
+                <%= form.submit "Transfer out", class: "btn btn-outline-danger" %>
               <% end %>
             </div>
           </div>

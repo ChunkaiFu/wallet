@@ -2,12 +2,29 @@
 <h1> Welcome to your virtual wallet! </h1>
 </div>
 
+
+<div class="container" style="width: 800px; height: 500px;">
+  <%= image_tag "front.png", class: "img-fluid rounded mx-auto d-block" %>
+</div>
+
 <% if !@user %>
-	<div>
-		<%=link_to "Register", sign_up_path, class: "btn btn-primary"%>
+	<div class="text-center">
+		<%=link_to "Register", sign_up_path, class: "btn btn-lg btn-primary custom-width", style: "width: 250px; margin-top: 10px; margin-bottom: 10px;" %>
 	</div>
 
-	<div>
-		<%=link_to "Sign In", sign_in_path, class: "btn btn-primary"%>
+	<div class="text-center">
+		<%=link_to "Sign In", sign_in_path, class: "btn btn-lg btn-primary custom-width", style: "width: 250px; margin-top: 10px; margin-bottom: 10px;"%>
+	</div>
+
+	<div class="text-center">
+		<%=link_to "Sign in with Google", '/auth/google_oauth2', method: :get, class: "btn btn-lg btn-primary custom-width", style: "width: 250px;margin-top: 10px; margin-bottom: 10px;"%>
 	</div>
 <% end %>
+
+<div class="text-left">
+	<%=link_to "Follow us on twitter", 'https://twitter.com/payfastwallet' %>
+</div>
+
+<div class="text-left">
+	<%=link_to "Join our team", contact_path %>
+</div>

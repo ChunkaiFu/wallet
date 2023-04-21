@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get "about-us", to: "about#index", as: :about 
 
   get "contact", to: "contact#index", as: :contact 
+  get "terms_of_services", to: "terms_of_services#index", as: :terms_of_services 
 
   get "password", to: "passwords#edit", as: :edit_password
   patch "password", to: "passwords#update"
@@ -37,7 +38,6 @@ Rails.application.routes.draw do
 
   get "wallet/balances/:id/edit", to: "balances#edit"
   patch "wallet/balances/:id/edit", to: "balances#update"
-  #post "wallet/balances/:id/edit", to: "balances#update"
 
   
   resource :wallet do 
@@ -53,4 +53,9 @@ Rails.application.routes.draw do
   root :to => redirect('/home')
   get '/home', to: 'main#index'
 
+  get '/auth/:provider/callback', to: "sessions#omniauth"
+
+  get "terms", to: "terms#edit"
+  patch "terms", to: "terms#update"
+  post "terms", to: "terms#create"
 end

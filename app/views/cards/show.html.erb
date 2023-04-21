@@ -3,7 +3,7 @@
   <div class="card">
     <div class="card-body">
       <h5 class="card-title"><%= @card.issuer %></h5>
-      <h6 class="card-subtitle mb-2 text-muted">Card Number: <%= @card.number %></h6>
+      <h6 class="card-subtitle mb-2 text-muted">Card Number: **** **** **** <%=@card.number.slice(-4, 4) %></h6>
       <p class="card-text">Card Holder Name: <%= @card.holder_name %></p>
       <p class="card-text">Expiration Date: <%= @card.expiration_date %></p>
     </div>

@@ -1,4 +1,6 @@
 require "active_support/core_ext/integer/time"
+require 'aws-sdk-secretsmanager'
+require 'json'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -93,14 +95,26 @@ Rails.application.configure do
   
   config.action_mailer.default_url_options = { host: "bigwallet.herokuapp.com" }
 
+  def get_secret(secret_id)
+    credentials = Aws::Credentials.new(
+      ENV['AWS_KEY'], ENV['AWS_SECRET'])
+    client = Aws::SecretsManager::Client.new(region: 'us-east-2', credentials: credentials)
+    begin
+      get_secret_value_response = client.get_secret_value(secret_id: secret_id)
+    rescue StandardError => e
+      raise e
+    end
+    secret_raw = get_secret_value_response.secret_string
+  end
   # setting for deploying mailer for password reset 
   # may need to use google oauth ID and Key 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
   address:              'smtp.gmail.com',
   port:                  587,
-  user_name:            'calvinjoyy123@gmail.com', 
-  password:             'acoagsjpgxysrdpk', 
+  user_name:            JSON.parse(get_secret('MAILER_NAME'))["MAILER_USER_NAME"], 
+  password:             JSON.parse(get_secret('MAILER_PASS'))["MAILER_PASSWORD"], 
   authentication:       'plain',
   enable_starttls_auto: true }
+
 end
