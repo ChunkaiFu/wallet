@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 ActiveAdmin.register_page "Dashboard" do
   menu priority: 1, label: proc { I18n.t("active_admin.dashboard") }
 
@@ -15,6 +16,7 @@ ActiveAdmin.register_page "Dashboard" do
     # Here is an example of a simple dashboard with columns and panels.
     #
     @users = User.all
+    @kyc = Kyc.all
     columns do
       column do
         panel "Users" do
@@ -26,9 +28,13 @@ ActiveAdmin.register_page "Dashboard" do
               column :lastname
               column :email
               column :created_at
-              column "KYC Status" do |user|
-                user.kyc.status if user.kyc
+              column "KYC Status", :status do |user|
+                if user.kyc && user.kyc.status.present?
+                  status = user.kyc.status
+                  status_tag(status, class: status == 'approved' ? :ok : :error, label: status.humanize, :editable => true)
+                end
               end
+                   
             end  
           end
         end

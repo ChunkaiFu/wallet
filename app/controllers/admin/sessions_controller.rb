@@ -18,4 +18,29 @@ class Admin::SessionsController < ApplicationController
     session[:admin_authenticated] = false
     redirect_to root_path
   end
+
+  def edit
+    @kyc = Kyc.find(params[:id])
+    @user = @kyc.user
+    render 
+  end
+
+  def update
+    print(params[:id])
+    @kyc = Kyc.find(params[:id])
+    if(session[:admin_authenticated])
+      if @kyc.update(kyc_params)
+        print("i'm here")
+        redirect_to admin_dashboard_path, notice: "KYC status updated successfully."
+      else
+        print("here 2")
+        redirect_to admin_sessions_path(@kyc), alert: "Failed to update KYC status."
+      end
+    end
+  end
+  private
+  def sessions_params
+    params.require(:kyc).permit(:status)
+  end
+
 end

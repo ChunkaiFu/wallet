@@ -3,6 +3,11 @@ Rails.application.routes.draw do
     get 'login', to: 'sessions#new', as: 'login'
     post 'login', to: 'sessions#create', as: 'sessions'
     delete 'logout', to: 'sessions#destroy', as: 'logout'
+    get 'edit', to: 'sessions#edit', as: 'sessions_edit'
+    put 'dashboard', to: 'sessions#update', as: 'dashboard'
+    put 'login.id', to: 'sessions#update', as: 'update'
+    resources :kycs
+    resources :sessions, only: [:new, :create, :destroy, :edit, :update]
   end
   ActiveAdmin.routes(self)
   get "about-us", to: "about#index", as: :about 
