@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   patch "wallet/balances/:id/edit", to: "balances#update"
 
   
+  
   resource :wallet do 
     resources :balances
     resources :cards 
@@ -53,9 +54,19 @@ Rails.application.routes.draw do
   root :to => redirect('/home')
   get '/home', to: 'main#index'
 
+
   get '/auth/:provider/callback', to: "sessions#omniauth"
 
   get "terms", to: "terms#edit"
   patch "terms", to: "terms#update"
   post "terms", to: "terms#create"
+
+
+  #get "new_transaction", to: "transactions#new"
+  #post "new_transaction", to: "transactions#create"
+  get "transactions/new", to: "transactions#new"
+  post "transactions/new", to: "transactions#create"
+  resources :transactions
+ # root to: "main#index"
 end
+
