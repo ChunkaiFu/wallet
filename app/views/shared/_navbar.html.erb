@@ -7,17 +7,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav nav-fill w-100>
         <li class="nav-item"> <%=link_to "Home", root_path, class: "nav-link"%>                    </li>
-        <li class="nav-item"> <%=link_to "MyWallet", root_path, class: "nav-link"%>    </li>
-        <li class="nav-item">
-        <% if Current.user&.id && Kyc.exists?(user_id: Current.user.id) %>
-          <%= link_to "KYC", kyc_show_path, class: "nav-link" %>
-        <% else %>
-          <%= link_to "KYC", kyc_new_path, class: "nav-link" %>
-        <% end %>
-        </li>
-        <li class="nav-item"> <%=link_to "Transactions", root_path, class: "nav-link"%>    </li>
+        <li class="nav-item"> <%=link_to "MyCash", wallet_balances_path, class: "nav-link"%>    </li>
+        <li class="nav-item"> <%=link_to "MyCards", wallet_cards_path, class: "nav-link"%>    </li>
+        <li class="nav-item"> <%=link_to "MyWallet", wallet_path, class: "nav-link"%>    </li>
+        <li class="nav-item"> <%=link_to "Transactions", transactions_path, class: "nav-link"%>    </li>
         <li class="nav-item"> <%=link_to "Contact", contact_path, class: "nav-link"%>              </li>
-        <li class="nav-item"> <%=link_to "About", about_path, class: "nav-link"%>                  </li>
+        <li class="nav-item"> <%=link_to "Why Us", about_path, class: "nav-link"%>                  </li>
+        <li class="nav-item"> <%=link_to "Terms of Services", terms_of_services_path, class: "nav-link"%>                  </li>
       </ul>
 
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">

@@ -1,5 +1,4 @@
 ActiveAdmin.register User do
-  menu parent: 'Dashboard', priority: 1
   permit_params :id, :email, :firstname, :lastname, kyc_attributes: [:id, :status]
   # action_item :edit_status, only: :edit do
   #   link_to "Edit Status", custom_path(resource)

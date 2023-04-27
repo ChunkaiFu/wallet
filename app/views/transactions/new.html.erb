@@ -1,0 +1,29 @@
+<h1> New Transaction  </h1>
+
+<%= form_with model: @transaction, url: new_transaction_path, data: { turbo: false } do |form| %>
+    <% if @transaction.errors.any? %>
+        <div class="alert alert-danger">
+            <% @transaction.errors.full_messages.each do |message| %>
+                <div> <%= message %> </div>
+            <% end %>
+        </div>
+    <% end %>
+
+        <div class= "mb-3">
+            <%= form.label :email%>
+            <%= form.text_field :email, class: "form-control", placeholder: "user_name@wallet.com" %>
+        </div> 
+        <div class= "mb-3">
+            <%= form.label :currency%>
+            <%= form.select :currency, [["USD", "USD"], ["EUR", "EUR"], ["GBP", "GBP"]] %>
+        </div> 
+        <div class= "mb-3">
+            <%= form.label :amount%>
+            <%= form.text_field :amount, class: "form-control", placeholder: "100" %>
+        </div> 
+        
+        
+        <div class= "mb-3">
+            <%= form.submit "Initiate transaction", class: "btn btn-primary" %>
+        </div> 
+<% end %>

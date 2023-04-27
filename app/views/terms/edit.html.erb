@@ -1,0 +1,22 @@
+<h1> Accept Terms of Service </h1>
+
+<%= form_with model: @user, url: terms_path, data: { turbo: false } do |form| %>
+    <% if @user.errors.any? %>
+        <div class="alert alert-danger">
+            <% @user.errors.full_messages.each do |message| %>
+                <div> <%= message %> </div>
+            <% end %>
+        </div>
+    <% end %>
+
+    <div class= "mb-3">
+        <%= form.check_box :terms_of_service %>
+        <%= form.label :terms_of_service do %>
+            I agree to the <%= link_to "Terms of Service", terms_of_services_path %> 
+        <% end %>
+    </div> 
+
+    <div class= "mb-3">
+        <%= form.submit "Accept Terms", class: "btn btn-primary" %>
+    </div> 
+<% end %>

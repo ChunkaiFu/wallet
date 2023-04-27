@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+
+<br>
+<h1> Transactions </h1>
+
+<br>
+<div>
+    <%= link_to "New Transaction!", new_transaction_path, class: "btn btn-outline-secondary"%>
+</div>
+
+<br>
+<br>
+<br>
+
+<html>
+<head>
+  <style>
+    /* Define CSS styles for table and list elements */
+    .sender-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: rgba(170, 0, 0, 1); /* Set the background color to green */
+      color: white; /* Set the text color to white */
+    }
+    .receiver-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: green; /* Set the background color to green */
+      color: white; /* Set the text color to white */
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: black; /* Set the background color of table headers to green */
+    }
+    li {
+      list-style-type: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sent transactions</h1>
+  <!-- Create a table to display transaction data -->
+  <table class="sender-table">
+    <tr>
+      <th>Amount</th> <!-- Set the header for the "Amount" column -->
+      <th>Currency</th> <!-- Set the header for the "Receiver ID" column -->
+      <th>Receiver Email</th> <!-- Set the header for the "Receiver ID" column -->
+      <th>Time</th> <!-- Set the header for the "Receiver ID" column -->
+    </tr>
+    <% @transactions_sender.each do |transaction| %>
+      <tr>
+        <td><%= transaction[0] %></td> <!-- Access the amount property from the array -->
+        <td><%= transaction[3] %></td> <!-- Access the receiver_id property from the array -->
+        <td><%= transaction[1] %></td> <!-- Access the receiver_id property from the array -->
+        <td><%= transaction[2] %></td> <!-- Access the receiver_id property from the array -->
+      </tr>
+    <% end %>
+  </table>
+</body>
+
+
+
+<br>
+<br>
+<br>
+
+
+<body>
+  <h1>Received transactions</h1>
+  <!-- Create a table to display transaction data -->
+  <table class="receiver-table">
+    <tr>
+      <th>Amount</th> <!-- Set the header for the "Amount" column -->
+      <th>Currency</th> <!-- Set the header for the "Receiver ID" column -->
+      <th>Sender Email</th> <!-- Set the header for the "Receiver ID" column -->
+      <th>Time</th> <!-- Set the header for the "Receiver ID" column -->
+    </tr>
+    <% @transactions_receiver.each do |transaction| %>
+      <tr>
+        <td><%= transaction[0] %></td> <!-- Access the amount property from the array -->
+        <td><%= transaction[3] %></td> <!-- Access the receiver_id property from the array -->
+        <td><%= transaction[1] %></td> <!-- Access the receiver_id property from the array -->
+        <td><%= transaction[2] %></td> <!-- Access the receiver_id property from the array -->
+      </tr>
+    <% end %>
+  </table>
+</body>
+</html>
+
+

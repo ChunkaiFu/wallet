@@ -104,7 +104,7 @@ ActiveAdmin.setup do |config|
   #
   # Default:
   config.logout_link_path = :destroy_admin_user_session_path
-
+  # config.stylesheets = ['application.css', 'active_admin.scss']
   # This setting changes the http method used when rendering the
   # link. For example :get, :delete, :put, etc..
   #

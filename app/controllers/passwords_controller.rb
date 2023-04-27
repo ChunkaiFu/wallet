@@ -2,6 +2,12 @@ class PasswordsController < ApplicationController
   before_action :require_user_logged_in! 
 
   def edit 
+    @user = Current.user
+    if @user.terms_of_service
+      render :edit 
+    else 
+      redirect_to terms_path, alert: "please accept our terms first"
+    end 
   end 
 
 

@@ -10,7 +10,7 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-# gem "sqlite3", "~> 1.4"
+gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -53,7 +53,6 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'database_cleaner'
   gem 'rspec-rails'
-  gem 'sqlite3'
 end
 
 group :development do
@@ -67,9 +66,7 @@ group :development do
   # gem "spring"
 end
 
-group :production do
-  gem 'pg', '~> 1.4.6'# for Heroku deployment
-end
+gem 'pg'
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
@@ -88,3 +85,12 @@ end
 gem 'activeadmin'
 gem 'sassc'
 gem 'sassc-rails'
+
+gem 'dotenv-rails'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
+
+gem 'aws-sdk-secretsmanager'
+gem 'rqrcode'
+gem 'bootstrap-sass', '~> 3.3.7'
