@@ -93,4 +93,3 @@ gem 'omniauth-rails_csrf_protection'
 
 gem 'aws-sdk-secretsmanager'
 gem 'rqrcode'
-gem 'bootstrap-sass', '~> 3.3.7'
