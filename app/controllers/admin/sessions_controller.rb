@@ -5,7 +5,6 @@ class Admin::SessionsController < ApplicationController
   def create
     if params[:email] == 'admin@example.com' && params[:password] == 'password'
       session[:admin_authenticated] = true
-      puts("admin login success")
       flash.now[:alert] = 'Admin login successful'
       redirect_to admin_dashboard_path
     else
@@ -26,14 +25,11 @@ class Admin::SessionsController < ApplicationController
   end
 
   def update
-    print(params[:id])
     @kyc = Kyc.find(params[:id])
     if(session[:admin_authenticated])
       if @kyc.update(kyc_params)
-        print("i'm here")
         redirect_to admin_dashboard_path, notice: "KYC status updated successfully."
       else
-        print("here 2")
         redirect_to admin_sessions_path(@kyc), alert: "Failed to update KYC status."
       end
     end

@@ -5,6 +5,7 @@ class CardsController < ApplicationController
   before_action :set_user
   before_action :set_wallet
   before_action :set_card, only: [:show, :destroy]
+  before_action :require_kyc_exists, only: [:index, :show, :edit, :update]
   before_action :require_kyc_approved, only: [:index, :show, :edit, :update]
 
   def index
@@ -69,6 +70,14 @@ class CardsController < ApplicationController
 
     def set_card
       @card = @wallet.cards.find_by(id: params[:id])
+    end
+
+    def require_kyc_exists
+      @user = Current.user
+      unless @user.kyc.present?
+        flash[:alert] = "KYC must be approved to access this page"
+        redirect_to kyc_new_path
+      end
     end
 
     def require_kyc_approved

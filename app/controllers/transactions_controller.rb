@@ -4,6 +4,7 @@ class TransactionsController < ApplicationController
     before_action :set_user
     before_action :set_wallet
     before_action :set_balance, only: [:show, :destroy, :edit, :update]
+    before_action :require_kyc_exists, only: [:index, :show, :edit, :update]
     before_action :require_kyc_approved, only: [:index, :show, :edit, :update]
     def index
         user = Current.user
@@ -140,6 +141,13 @@ class TransactionsController < ApplicationController
       @balance = @wallet.balances.find_by(id: params[:id])
     end
 
+    def require_kyc_exists
+        @user = Current.user
+        unless @user.kyc.present?
+          flash[:alert] = "KYC must be approved to access this page"
+          redirect_to kyc_new_path
+        end
+    end
     def require_kyc_approved
         @user = Current.user
         unless @user.kyc.status == "approved"

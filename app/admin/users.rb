@@ -19,11 +19,11 @@ ActiveAdmin.register User do
       f.input :firstname
       f.input :lastname
     end
-    f.inputs "KYC Details" do
-      f.fields_for :kyc, @user.kyc || @user.build_kyc do |kyc_f|
-        kyc_f.input :status, as: :select, collection: Kyc.statuses.keys
-      end
-    end
+    # f.inputs "KYC Details" do
+    #   f.fields_for :kyc, @user.kyc || @user.build_kyc do |kyc_f|
+    #     kyc_f.input :status, as: :select, collection: Kyc.statuses.keys
+    #   end
+    # end
     f.actions
   end
   controller do
@@ -37,11 +37,11 @@ ActiveAdmin.register User do
         render :edit
       end
     end
-    def edit
-      @user = User.find(params[:id])
-      @user.build_kyc if @user.kyc.nil?
-      super
-    end
+    # def edit
+    #   @user = User.find(params[:id])
+    #   @user.build_kyc if @user.kyc.nil?
+    #   super
+    # end
     private
     def user_params
       params.require(:user).permit(:id, :email, :firstname, :lastname, kyc_attributes: [:id, :status])
