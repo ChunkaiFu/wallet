@@ -4237,3 +4237,95 @@ Processing by MainController#index as HTML
 Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 4221)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-04-28 23:18:45 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/home" for 127.0.0.1 at 2023-04-28 23:18:45 -0500
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 96.9ms | Allocations: 21571)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 1433)
+  Rendered shared/_flash.html.erb (Duration: 0.6ms | Allocations: 231)
+  Rendered layout layouts/application.html.erb (Duration: 110.2ms | Allocations: 36908)
+Completed 200 OK in 120ms (Views: 112.2ms | ActiveRecord: 0.0ms | Allocations: 40771)
+
+
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-04-28 23:18:46 -0500
+Processing by CardsController#index as HTML
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 540)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-28 23:18:46 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 3983)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 903)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 32)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 7240)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 8065)
+
+
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-04-28 23:18:47 -0500
+Processing by BalancesController#index as HTML
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 477)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-28 23:18:47 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 2356)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 869)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 5495)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 5920)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2023-04-28 23:18:48 -0500
+Processing by TransactionsController#index as HTML
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 489)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-04-28 23:18:48 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2356)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 869)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 5495)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 5941)
+
+
+Started GET "/contact" for 127.0.0.1 at 2023-04-28 23:18:48 -0500
+Processing by ContactController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contact/index.html.erb within layouts/application
+  Rendered contact/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 129)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 939)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3434)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 4250)
+
+
+Started GET "/about-us" for 127.0.0.1 at 2023-04-28 23:18:49 -0500
+Processing by AboutController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 139)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 937)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3441)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 4245)
+
+
