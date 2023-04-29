@@ -4,5 +4,4 @@ log/
 db/migrate/development.sqlite3
 log/development.log
 /config/master.key
-/config/credentials.yml.enc
 .env
