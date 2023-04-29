@@ -93,10 +93,11 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
-  config.action_mailer.default_url_options = { host: "hugewallet.herokuapp.com" }
+  config.action_mailer.default_url_options = { host: "bigwallet.herokuapp.com" }
 
   def get_secret(secret_id)
-    credentials = Aws::Credentials.new(Rails.application.credentials.dig(:aws, :AWS_KEY), Rails.application.credentials.dig(:aws, :AWS_SECRET))
+    credentials = Aws::Credentials.new(
+      ENV['AWS_KEY'], ENV['AWS_SECRET'])
     client = Aws::SecretsManager::Client.new(region: 'us-east-2', credentials: credentials)
     begin
       get_secret_value_response = client.get_secret_value(secret_id: secret_id)
