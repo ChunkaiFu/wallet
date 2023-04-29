@@ -4,11 +4,16 @@ class TransactionsController < ApplicationController
     before_action :set_user
     before_action :set_wallet
     before_action :set_balance, only: [:show, :destroy, :edit, :update]
+
     def index
         user = Current.user
         @transactions_sender=Transaction.where(sender_id: user.id).pluck(:amount, :receiver_email, :created_at, :currency)
         @transactions_receiver=Transaction.where(receiver_id: user.id).pluck(:amount, :sender_email, :created_at, :currency)
-        render 'index'
+        if !user.terms_of_service
+            redirect_to terms_path, alert: "please accept our terms first" and return 
+        else 
+            render 'index'
+        end
     end
 
     def new
