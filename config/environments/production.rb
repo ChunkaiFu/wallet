@@ -97,7 +97,7 @@ Rails.application.configure do
 
   def get_secret(secret_id)
     credentials = Aws::Credentials.new(
-      Rails.application.credentials[:aws][:AWS_KEY], Rails.application.credentials[:aws][:AWS_SECRET])
+      ENV['AWS_KEY'], ENV['AWS_SECRET'])
     client = Aws::SecretsManager::Client.new(region: 'us-east-2', credentials: credentials)
     begin
       get_secret_value_response = client.get_secret_value(secret_id: secret_id)
