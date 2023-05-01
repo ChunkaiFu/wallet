@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     put 'kycs/:id', to: 'sessions#update', as: 'sessions_update'
     put 'dashboard', to: 'sessions#update', as: 'dashboard'
     put 'login.id', to: 'sessions#update', as: 'update'
-    resources :kycs
+    resources :kycs, only: [:edit, :update, :show]
     resources :sessions
   end
   ActiveAdmin.routes(self)
