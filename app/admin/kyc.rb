@@ -11,8 +11,7 @@ ActiveAdmin.register Kyc do
     def update
         @kyc = Kyc.find(params[:id])
         if @kyc.update(kyc_params)
-          print("kyc update")
-          redirect_to admin_dashboard_path, notice: "KYC was successfully updated."
+          redirect_to admin_dashboard_path, notice: "KYC status was successfully updated."
         else
           render :edit
         end

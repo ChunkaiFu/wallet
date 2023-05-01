@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get 'edit', to: 'sessions#edit', as: 'sessions_edit'
     put 'dashboard', to: 'sessions#update', as: 'dashboard'
     put 'login.id', to: 'sessions#update', as: 'update'
-    resources :kycs
+    resources :kycs, only: [:new, :create, :destroy, :edit, :update]
     resources :sessions, only: [:new, :create, :destroy, :edit, :update]
   end
   ActiveAdmin.routes(self)
