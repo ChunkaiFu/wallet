@@ -6,7 +6,9 @@ ActiveAdmin.register Kyc do
         f.input :status, as: :select, collection: Kyc.statuses.keys
         f.input :license_number, input_html: { value: f.object.license_number }, readonly: true
         end
-        f.actions
+        f.actions do
+          f.action :submit, label: "Update KYC"
+        end
     end
     def update
         @kyc = Kyc.find(params[:id])
