@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     post 'login', to: 'sessions#create', as: 'sessions'
     delete 'logout', to: 'sessions#destroy', as: 'logout'
     get 'edit', to: 'sessions#edit', as: 'sessions_edit'
-    post 'kycs/:id', to: 'sessions#update', as: 'sessions_update'
+    put 'kycs/:id', to: 'sessions#update', as: 'sessions_update'
     put 'dashboard', to: 'sessions#update', as: 'dashboard'
     put 'login.id', to: 'sessions#update', as: 'update'
     resources :kycs

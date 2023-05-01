@@ -49579,3 +49579,199 @@ Processing by Admin::KycsController#show as HTML
 Completed 200 OK in 61ms (Views: 55.6ms | ActiveRecord: 1.5ms | Allocations: 32899)
 
 
+Started GET "/" for 127.0.0.1 at 2023-05-01 09:37:19 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/home" for 127.0.0.1 at 2023-05-01 09:37:19 -0500
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 197.8ms | Allocations: 45036)
+  Rendered shared/_navbar.html.erb (Duration: 3.2ms | Allocations: 900)
+  Rendered shared/_flash.html.erb (Duration: 1.1ms | Allocations: 214)
+  Rendered layout layouts/application.html.erb (Duration: 390.3ms | Allocations: 64405)
+Completed 200 OK in 461ms (Views: 397.8ms | ActiveRecord: 0.0ms | Allocations: 68208)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2023-05-01 09:37:22 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1608)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 456)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 4935)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.0ms | Allocations: 5954)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2023-05-01 09:37:23 -0500
+Processing by Admin::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/sessions/new.html.erb within layouts/application
+  Rendered admin/sessions/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 872)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 464)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 4179)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 5195)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2023-05-01 09:37:27 -0500
+Processing by Admin::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"admin@example.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+Redirected to http://127.0.0.1:3000/admin/dashboard
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 688)
+
+
+Started GET "/admin/dashboard" for 127.0.0.1 at 2023-05-01 09:37:27 -0500
+Processing by Admin::DashboardController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_admin_user'
+  Rendering /Users/polkampallykeerthana/.rvm/gems/ruby-3.2.1/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_admin_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_admin_user'
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/admin/dashboard.rb:15:in `block (6 levels) in <main>'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/admin/dashboard.rb:16:in `block (6 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 29], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 30], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 32], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 33], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 34], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.2ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 35], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 37], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 38], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 39], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 40], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 41], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 42], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  Rendered /Users/polkampallykeerthana/.rvm/gems/ruby-3.2.1/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 78.6ms | Allocations: 44723)
+Completed 200 OK in 88ms (Views: 77.5ms | ActiveRecord: 3.2ms | Allocations: 48187)
+
+
+Started GET "/admin/dashboard" for 127.0.0.1 at 2023-05-01 09:37:27 -0500
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_admin_user'
+  Rendering /Users/polkampallykeerthana/.rvm/gems/ruby-3.2.1/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_admin_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_admin_user'
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/admin/dashboard.rb:15:in `block (6 levels) in <main>'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/admin/dashboard.rb:16:in `block (6 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 29], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 30], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 32], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 33], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 34], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 35], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 37], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 38], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 39], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 40], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 41], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 42], ["LIMIT", 1]]
+  ↳ app/admin/dashboard.rb:23:in `block (8 levels) in <main>'
+  Rendered /Users/polkampallykeerthana/.rvm/gems/ruby-3.2.1/gems/activeadmin-2.13.1/app/views/active_admin/page/index.html.arb (Duration: 49.2ms | Allocations: 33518)
+Completed 200 OK in 52ms (Views: 48.1ms | ActiveRecord: 1.7ms | Allocations: 34717)
+
+
+Started GET "/admin/kycs" for 127.0.0.1 at 2023-05-01 09:37:30 -0500
+Processing by Admin::KycsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_admin_user'
+  Rendering /Users/polkampallykeerthana/.rvm/gems/ruby-3.2.1/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_admin_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_admin_user'
+  [1m[36mKyc Load (0.2ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" ORDER BY "kycs"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 39], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 37], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered /Users/polkampallykeerthana/.rvm/gems/ruby-3.2.1/gems/activeadmin-2.13.1/app/views/active_admin/resource/index.html.arb (Duration: 103.7ms | Allocations: 67290)
+Completed 200 OK in 110ms (Views: 103.9ms | ActiveRecord: 1.7ms | Allocations: 69784)
+
+
+Started GET "/admin/kycs/104/edit" for 127.0.0.1 at 2023-05-01 09:37:32 -0500
+Processing by Admin::KycsController#edit as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mKyc Load (0.2ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."id" = ? LIMIT ?[0m  [["id", 104], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_admin_user'
+  Rendering /Users/polkampallykeerthana/.rvm/gems/ruby-3.2.1/gems/activeadmin-2.13.1/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_admin_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_admin_user'
+  [1m[36mCACHE Kyc Load (0.0ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."id" = ? LIMIT ?[0m  [["id", 104], ["LIMIT", 1]]
+  Rendered /Users/polkampallykeerthana/.rvm/gems/ruby-3.2.1/gems/activeadmin-2.13.1/app/views/active_admin/resource/edit.html.arb (Duration: 40.4ms | Allocations: 21009)
+Completed 200 OK in 46ms (Views: 41.7ms | ActiveRecord: 0.3ms | Allocations: 23523)
+
+
+Started PATCH "/admin/kycs/104" for 127.0.0.1 at 2023-05-01 09:37:35 -0500
+Processing by Admin::KycsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "kyc"=>{"status"=>"awaiting", "license_number"=>"12345678"}, "commit"=>"Update Kyc", "id"=>"104"}
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."id" = ? LIMIT ?[0m  [["id", 104], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_admin_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[36mKyc Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "kycs" WHERE "kycs"."license_number" = ? AND "kycs"."id" != ? AND "kycs"."user_id" = ? LIMIT ?[0m  [["license_number", "12345678"], ["id", 104], ["user_id", 41], ["LIMIT", 1]]
+  [1m[36mKyc Update (0.5ms)[0m  [1m[33mUPDATE "kycs" SET "updated_at" = ?, "status" = ? WHERE "kycs"."id" = ?[0m  [["updated_at", "2023-05-01 14:37:35.575838"], ["status", "awaiting"], ["id", 104]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/admin/kycs/104
+Completed 302 Found in 20ms (ActiveRecord: 2.0ms | Allocations: 10393)
+
+
+Started GET "/admin/kycs/104" for 127.0.0.1 at 2023-05-01 09:37:35 -0500
+Processing by Admin::KycsController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."id" = ? LIMIT ?[0m  [["id", 104], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_admin_user'
+  Rendering /Users/polkampallykeerthana/.rvm/gems/ruby-3.2.1/gems/activeadmin-2.13.1/app/views/active_admin/resource/show.html.arb
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_admin_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_admin_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[36mActiveAdmin::Comment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Kyc"], ["resource_id", 104], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Kyc"], ["resource_id", 104], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /Users/polkampallykeerthana/.rvm/gems/ruby-3.2.1/gems/activeadmin-2.13.1/app/views/active_admin/resource/show.html.arb (Duration: 54.4ms | Allocations: 30646)
+Completed 200 OK in 60ms (Views: 54.6ms | ActiveRecord: 1.4ms | Allocations: 32976)
+
+
