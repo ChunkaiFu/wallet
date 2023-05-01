@@ -1,4 +1,4 @@
-class Admin::KycsController < Admin::BaseController
+class Admin::KycsController <  ApplicationController
     def update
         @kyc = Kyc.find(params[:id])
         if(session[:admin_authenticated])
