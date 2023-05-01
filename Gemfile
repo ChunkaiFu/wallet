@@ -66,7 +66,7 @@ group :development do
   # gem "spring"
 end
 
-# gem 'pg'
+gem 'pg'
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
