@@ -33,6 +33,13 @@
         </div> 
 
         <div class= "mb-3">
+        <%= form.check_box :terms_of_service %>
+        <%= form.label :terms_of_service do %>
+            I agree to the <%= link_to "Terms of Service", terms_of_services_path %> 
+        <% end %>
+        </div> 
+
+        <div class= "mb-3">
             <%= form.submit "Sign up", class: "btn btn-primary" %>
         </div> 
 <% end %>
