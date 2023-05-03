@@ -1,6 +1,16 @@
 ActiveAdmin.register Kyc do
     permit_params :id, :status, :license_number
     
+    show do
+      attributes_table do
+        row :license_number
+        row :status
+        row :created_at
+        row :updated_at
+        row :id
+      end
+    end
+
     form do |f|
         f.inputs "KYC Details" do
         f.input :status, as: :select, collection: Kyc.statuses.keys
@@ -10,6 +20,8 @@ ActiveAdmin.register Kyc do
           f.action :submit, label: "Update KYC Status", url: admin_dashboard_path, notice: "KYC status was successfully updated."
         end
     end
+
+
     def update
         @kyc = Kyc.find(params[:id])
         if @kyc.update(kyc_params)
