@@ -9,5 +9,9 @@ class Admin::KycController <  ApplicationController
           end
         end
     end
+    private
+    def kyc_params
+      params.require(:kyc).permit(:status)
+    end
   end
   
