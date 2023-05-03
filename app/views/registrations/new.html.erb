@@ -1,45 +1,53 @@
-<h1> Sign up </h1>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-5 offset-md-3">
+      <div class="login-form mt-5">
+        <h1 class="login-form__title text-center">Sign Up</h1>
+            <%= form_with model: @user, url: sign_up_path, data: { turbo: false } do |form| %>
+                <% if @user.errors.any? %>
+                    <div class="alert alert-danger">
+                        <% @user.errors.full_messages.each do |message| %>
+                            <div> <%= message %> </div>
+                        <% end %>
+                    </div>
+                <% end %>
 
-<%= form_with model: @user, url: sign_up_path, data: { turbo: false } do |form| %>
-    <% if @user.errors.any? %>
-        <div class="alert alert-danger">
-            <% @user.errors.full_messages.each do |message| %>
-                <div> <%= message %> </div>
+                    <div class= "mb-3">
+                        <%= form.label :email%>
+                        <%= form.text_field :email, class: "form-control", placeholder: "user_name@wallet.com" %>
+                    </div> 
+                    <div class= "mb-3">
+                        <%= form.label :firstname%>
+                        <%= form.text_field :firstname, class: "form-control", placeholder: "firstname" %>
+                    </div> 
+                    <div class= "mb-3">
+                        <%= form.label :lastname%>
+                        <%= form.text_field :lastname, class: "form-control", placeholder: "lastname" %>
+                    </div>
+
+                    <div class= "mb-3">
+                        <%= form.label :password%>
+                        <%= form.password_field :password, class: "form-control", placeholder: "password" %>
+                    </div> 
+
+                    <div class= "mb-3">
+                        <%= form.label :password_confirmation%>
+                        <%= form.password_field :password_confirmation, class: "form-control", placeholder: "password" %>
+                    </div> 
+
+                    <div class= "mb-3">
+                    <%= form.check_box :terms_of_service %>
+                    <%= form.label :terms_of_service do %>
+                        I agree to the <%= link_to "Terms of Service", terms_of_services_path %> 
+                    <% end %>
+                    </div> 
+
+                    <div class= "mb-3">
+                        <%= form.submit "Sign up", class: "btn btn-primary" %>
+                    </div> 
             <% end %>
-        </div>
-    <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-        <div class= "mb-3">
-            <%= form.label :email%>
-            <%= form.text_field :email, class: "form-control", placeholder: "user_name@wallet.com" %>
-        </div> 
-        <div class= "mb-3">
-            <%= form.label :firstname%>
-            <%= form.text_field :firstname, class: "form-control", placeholder: "firstname" %>
-        </div> 
-        <div class= "mb-3">
-            <%= form.label :lastname%>
-            <%= form.text_field :lastname, class: "form-control", placeholder: "lastname" %>
-        </div>
-
-        <div class= "mb-3">
-            <%= form.label :password%>
-            <%= form.password_field :password, class: "form-control", placeholder: "password" %>
-        </div> 
-
-        <div class= "mb-3">
-            <%= form.label :password_confirmation%>
-            <%= form.password_field :password_confirmation, class: "form-control", placeholder: "password" %>
-        </div> 
-
-        <div class= "mb-3">
-        <%= form.check_box :terms_of_service %>
-        <%= form.label :terms_of_service do %>
-            I agree to the <%= link_to "Terms of Service", terms_of_services_path %> 
-        <% end %>
-        </div> 
-
-        <div class= "mb-3">
-            <%= form.submit "Sign up", class: "btn btn-primary" %>
-        </div> 
-<% end %>

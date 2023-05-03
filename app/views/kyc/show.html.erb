@@ -1,11 +1,17 @@
-<h1>KYC Status</h1>
-<p>Showing KYC status for user <%= Current.user.email %>:</p>
-<% if @kyc.status == "approved" %>
-  <p>
-    Your KYC has been approved. You can now access our services.
-  </p>
-<% else %>
-  <p>
-    Your KYC is pending approval. Please wait until it is approved to access our services.
-  </p>
+<h1> KYC Details </h1>
+
+<div class="col-md-4 mb-4">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title"><%= Current.user.email %></h4>
+      <h5 class="card-subtitle mb-2 text-muted">License number: ***** <%=@kyc.license_number.slice(-4, 4) %></h5>
+      <h5 class="card-subtitle mb-2 text-muted">KYC status: <%= @kyc.status.to_s %></h5>
+    </div>
+  </div>
+</div>
+
+<% if @kyc.status == 'approved' %>
+  <div>
+    <%=link_to "Send money", new_transaction_path, class: "btn btn-primary"%>
+  </div>
 <% end %>

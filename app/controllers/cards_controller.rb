@@ -7,6 +7,7 @@ class CardsController < ApplicationController
   before_action :set_card, only: [:show, :destroy]
   before_action :require_kyc_exists, only: [:index, :show, :edit, :update]
   before_action :require_kyc_approved, only: [:index, :show, :edit, :update]
+  before_action :require_accept_terms, only: [:index, :show, :edit, :update]
 
   def index
     if @wallet && @user.terms_of_service 
@@ -87,6 +88,12 @@ class CardsController < ApplicationController
         redirect_to kyc_show_path
       end
     end
+
+    def require_accept_terms
+      if !@user.terms_of_service
+        redirect_to terms_path, alert: "please accept our terms first" and return 
+      end 
+    end 
 end
 
 

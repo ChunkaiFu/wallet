@@ -2,6 +2,7 @@
 <h1> Welcome to your virtual wallet! </h1>
 </div>
 
+
 <div class="container" style="width: 800px; height: 500px;">
   <%= image_tag "front.png", class: "img-fluid rounded mx-auto d-block" %>
 </div>
@@ -16,13 +17,13 @@
 	</div>
 
 	<div class="text-center">
-		<%=link_to "Login as Admin", admin_login_path, class: "btn btn-dark btn-primary custom-width", style: "width: 250px; margin-top: 10px; margin-bottom: 10px;"%>
-	</div>
-
-	<div class="text-center">
 		<%=link_to "Sign in with Google", '/auth/google_oauth2', method: :get, class: "btn btn-lg btn-primary custom-width", style: "width: 250px;margin-top: 10px; margin-bottom: 10px;"%>
 	</div>
 <% end %>
+
+	<div class="text-center">
+		<%=link_to "Login as admin", admin_login_path, class: "btn btn-lg btn-dark custom-width", style: "width: 250px;margin-top: 10px; margin-bottom: 10px;"%>
+	</div>
 
 <div class="text-left">
 	<%=link_to "Follow us on twitter", 'https://twitter.com/payfastwallet' %>
