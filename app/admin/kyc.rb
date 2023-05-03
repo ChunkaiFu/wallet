@@ -7,7 +7,7 @@ ActiveAdmin.register Kyc do
         f.input :license_number, input_html: { value: f.object.license_number }, readonly: true
         end
         f.actions do
-          f.action :submit, label: "Update KYC Status", url: admin_sessions_path, notice: "KYC status was successfully updated."
+          f.action :submit, label: "Update KYC Status", url: admin_sessions__update_path(f.object), notice: "KYC status was successfully updated."
         end
     end
     def update
