@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     patch 'kycs/:id', to: 'kyc#update', as: 'kyc_update'
     # put 'dashboard', to: 'sessions#update', as: 'dashboard'
     put 'login.id', to: 'sessions#update', as: 'update'
-    resources :kycs
-    resources :sessions  
+    resources :kycs, , only: [:update]
+    resources :sessions, only: [:show, :update, :destroy, :create, :edit]
   end
   ActiveAdmin.routes(self)
   get "about-us", to: "about#index", as: :about 
