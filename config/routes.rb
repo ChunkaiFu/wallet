@@ -5,11 +5,11 @@ Rails.application.routes.draw do
     post 'login', to: 'sessions#create', as: 'sessions'
     delete 'logout', to: 'sessions#destroy', as: 'logout'
     get 'edit', to: 'sessions#edit', as: 'sessions_edit'
-    patch 'kycs/:id', to: 'kyc#update', as: 'kyc_update'
+    put 'kycs/:id', to: 'kycs#update', as: 'kycs_update'
     # put 'dashboard', to: 'sessions#update', as: 'dashboard'
     put 'login.id', to: 'sessions#update', as: 'update'
-    resources :kycs, only: [:update]
-    resources :sessions, only: [:show, :update, :destroy, :create, :edit]
+    resources :kycs
+    resources :sessions  
   end
   ActiveAdmin.routes(self)
   get "about-us", to: "about#index", as: :about 
