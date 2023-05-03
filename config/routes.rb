@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  
+  namespace :admin do
+    get 'login', to: 'sessions#new', as: 'login'
+    post 'login', to: 'sessions#create', as: 'sessions'
+    delete 'logout', to: 'sessions#destroy', as: 'logout'
+    get 'edit', to: 'sessions#edit', as: 'sessions_edit'
+    put 'kycs/:id', to: 'kycs#update', as: 'kycs_update'
+    # put 'dashboard', to: 'sessions#update', as: 'dashboard'
+    put 'login.id', to: 'sessions#update', as: 'update'
+    resources :kycs
+    resources :sessions  
+  end
+  ActiveAdmin.routes(self)
   get "about-us", to: "about#index", as: :about 
 
   get "contact", to: "contact#index", as: :contact 
@@ -21,6 +34,10 @@ Rails.application.routes.draw do
   get "password/reset/edit", to: "password_resets#edit"
   patch "password/reset/edit", to: "password_resets#update"
 
+  get "kyc/new", to: "kyc#new"
+  post "kyc/new", to: "kyc#create"
+  get "kyc/show", to: "kyc#show"
+
   get "wallet/cards/new", to: "cards#new"
   post "wallet/cards/new", to: "cards#create"
 
@@ -39,8 +56,6 @@ Rails.application.routes.draw do
   get "wallet/balances/:id/edit", to: "balances#edit"
   patch "wallet/balances/:id/edit", to: "balances#update"
 
-  
-  
   resource :wallet do 
     resources :balances
     resources :cards 
@@ -50,7 +65,6 @@ Rails.application.routes.draw do
     resource :wallet
   end
 
-  #root to: "main#index"
   root :to => redirect('/home')
   get '/home', to: 'main#index'
 
@@ -67,6 +81,7 @@ Rails.application.routes.draw do
   get "transactions/new", to: "transactions#new"
   post "transactions/new", to: "transactions#create"
   resources :transactions
- # root to: "main#index"
-end
+  # root to: "main#index"
 
+  # root to: "main#index"
+end

@@ -20,8 +20,8 @@ class TermsController < ApplicationController
   #     redirect_to wallet_cards_path, notice: "you are good to go! add some cards if you have not already"
   #   else 
   #     render :edit
-  #   end 
-  # end 
+  #   end
+  # end
 
   def update
     @user = Current.user

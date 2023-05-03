@@ -1,0 +1,18 @@
+current directory: /Users/polkampallykeerthana/Downloads/wallet-keerthana2/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+/Users/polkampallykeerthana/.rvm/rubies/ruby-3.2.1/bin/ruby -I /Users/polkampallykeerthana/.rvm/rubies/ruby-3.2.1/lib/ruby/3.2.0 extconf.rb
+creating Makefile
+
+current directory: /Users/polkampallykeerthana/Downloads/wallet-keerthana2/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230414-51577-ab504c sitelibdir\=./.gem.20230414-51577-ab504c clean
+
+current directory: /Users/polkampallykeerthana/Downloads/wallet-keerthana2/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230414-51577-ab504c sitelibdir\=./.gem.20230414-51577-ab504c
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/polkampallykeerthana/Downloads/wallet-keerthana2/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230414-51577-ab504c sitelibdir\=./.gem.20230414-51577-ab504c install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20230414-51577-ab504c/bootsnap
+
+current directory: /Users/polkampallykeerthana/Downloads/wallet-keerthana2/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230414-51577-ab504c sitelibdir\=./.gem.20230414-51577-ab504c clean

@@ -1,0 +1,12 @@
+<h1>Edit KYC Status</h1>
+
+<%= form_for @user.kyc.status, url: admin_dashboard_path, method: :put do |f| %>
+
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.select :status, [['Pending', 'pending'], ['Approved', 'approved'], ['Rejected', 'rejected']], { prompt: 'Select Status' }, { class: 'form-control' } %>
+  </div>
+
+  <%= f.submit 'Update', class: 'btn btn-primary' %>
+  
+<% end %>

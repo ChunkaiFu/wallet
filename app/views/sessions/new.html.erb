@@ -1,23 +1,30 @@
-<h1>Sign in</h1>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-5 offset-md-3">
+      <div class="login-form mt-5">
+        <h1 class="login-form__title text-center">Sign In</h1>
+            <%= form_with url: sign_in_path, data: { turbo: false } do |form| %>
+              <div class= "mb-3">
+                <%= form.label :email%>
+                <%= form.text_field :email, class: "form-control", placeholder: "user_name@wallet.com" %>
+              </div> 
 
-<%= form_with url: sign_in_path, data: { turbo: false } do |form| %>
-  <div class= "mb-3">
-    <%= form.label :email%>
-    <%= form.text_field :email, class: "form-control", placeholder: "user_name@wallet.com" %>
-  </div> 
+              <div class= "mb-3">
+                <%= form.label :password%>
+                <%= form.password_field :password, class: "form-control", placeholder: "password" %>
+                <%=link_to "Forgot your password?", password_reset_path%>
+              </div> 
 
-  <div class= "mb-3">
-    <%= form.label :password%>
-    <%= form.password_field :password, class: "form-control", placeholder: "password" %>
-    <%=link_to "Forgot your password?", password_reset_path%>
-  </div> 
+              <div class= "mb-3">
+                <%= form.submit "Sign In", class: "btn btn-primary" %>
+              </div> 
+              <% end %>
 
-  <div class= "mb-3">
-    <%= form.submit "Sign In", class: "btn btn-primary" %>
-  </div> 
-  <% end %>
-
-<div>
-	<%=link_to "Sign Up", sign_up_path, class: "btn btn-primary"%>
+            <div>
+              <%=link_to "Sign Up", sign_up_path, class: "btn btn-primary"%>
+            </div>
+      </div>
+    </div>
+  </div>
 </div>
 

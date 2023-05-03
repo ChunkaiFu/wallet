@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_21_202933) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_03_161028) do
   create_table "balances", force: :cascade do |t|
     t.float "value", default: 0.0
     t.integer "wallet_id", null: false
@@ -30,6 +30,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_202933) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["wallet_id"], name: "index_cards_on_wallet_id"
+  end
+
+  create_table "kycs", force: :cascade do |t|
+    t.string "license_number"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status", default: "pending"
+    t.index ["user_id"], name: "index_kycs_on_user_id"
   end
 
   create_table "transactions", force: :cascade do |t|
@@ -62,5 +71,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_202933) do
 
   add_foreign_key "balances", "wallets"
   add_foreign_key "cards", "wallets"
+  add_foreign_key "kycs", "users", on_delete: :cascade
   add_foreign_key "wallets", "users"
 end

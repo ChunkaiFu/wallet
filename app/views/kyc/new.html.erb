@@ -1,0 +1,8 @@
+<%= form_with(model: @kyc, url: kyc_new_path, local: true) do |form| %>
+      <div class="form-group">
+        <%= form.label :license_number %>
+        <%= form.text_field :license_number, class: 'form-control' %>
+      </div>
+    <%= form.submit "Submit", class: 'btn btn-primary' %>
+  <% end %>
+  
