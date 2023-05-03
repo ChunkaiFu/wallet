@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
+  
   namespace :admin do
     get 'login', to: 'sessions#new', as: 'login'
     post 'login', to: 'sessions#create', as: 'sessions'
     delete 'logout', to: 'sessions#destroy', as: 'logout'
     get 'edit', to: 'sessions#edit', as: 'sessions_edit'
-    put 'kycs/:id', to: 'kycs#update', as: 'kycs_update'
-    put 'dashboard', to: 'sessions#update', as: 'dashboard'
+    patch 'kycs/:id', to: 'kyc#update', as: 'kyc_update'
+    # put 'dashboard', to: 'sessions#update', as: 'dashboard'
     put 'login.id', to: 'sessions#update', as: 'update'
     resources :kycs
-    resources :sessions
+    resources :sessions  
   end
   ActiveAdmin.routes(self)
   get "about-us", to: "about#index", as: :about 
@@ -55,8 +56,6 @@ Rails.application.routes.draw do
   get "wallet/balances/:id/edit", to: "balances#edit"
   patch "wallet/balances/:id/edit", to: "balances#update"
 
-  
-  
   resource :wallet do 
     resources :balances
     resources :cards 
@@ -82,7 +81,7 @@ Rails.application.routes.draw do
   get "transactions/new", to: "transactions#new"
   post "transactions/new", to: "transactions#create"
   resources :transactions
- # root to: "main#index"
+  # root to: "main#index"
 
   # root to: "main#index"
 end

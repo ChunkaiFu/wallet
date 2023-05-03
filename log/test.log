@@ -10524,3 +10524,523 @@ Completed 302 Found in 1ms (ActiveRecord: 0.1ms | Allocations: 256)
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (3.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "firstname", "lastname", "terms_of_service") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "user@example.com"], ["password_digest", "$2a$04$UzqDNIkb8GS87J65sP863uxjNRcwZv6D09g29e1QHMDYeXQT0LQNW"], ["created_at", "2023-05-01 19:46:14.657167"], ["updated_at", "2023-05-01 19:46:14.657167"], ["firstname", "User"], ["lastname", "Example"], ["terms_of_service", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:14 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1790)
+  Rendered shared/_navbar.html.erb (Duration: 2.4ms | Allocations: 1029)
+  Rendered shared/_flash.html.erb (Duration: 0.8ms | Allocations: 215)
+  Rendered layout layouts/application.html.erb (Duration: 2195.0ms | Allocations: 296865)
+Completed 200 OK in 2213ms (Views: 2204.5ms | ActiveRecord: 0.0ms | Allocations: 299961)
+Started POST "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:16 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"user@example.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.5ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 14ms (ActiveRecord: 0.8ms | Allocations: 2692)
+Started GET "/" for 127.0.0.1 at 2023-05-01 14:46:16 -0500
+Started GET "/home" for 127.0.0.1 at 2023-05-01 14:46:16 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 646)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 561)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3120)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 4178)
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWallet Load (0.3ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.0ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://www.example.com/kyc/new
+Filter chain halted as :require_kyc_exists rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.6ms | Allocations: 2937)
+Started GET "/kyc/new" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by KycController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.0ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/new.html.erb within layouts/application
+  Rendered kyc/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 719)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 558)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3222)
+Completed 200 OK in 11ms (Views: 5.9ms | ActiveRecord: 0.3ms | Allocations: 6843)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "firstname", "lastname", "terms_of_service") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "user@example.com"], ["password_digest", "$2a$04$384YGKuwJ99l47ybrCXL4OY5AAlV2SUQVk4OMgxZSst/u/zwFMti2"], ["created_at", "2023-05-01 19:46:17.067975"], ["updated_at", "2023-05-01 19:46:17.067975"], ["firstname", "User"], ["lastname", "Example"], ["terms_of_service", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 594)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 422)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2878)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 3158)
+Started POST "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"user@example.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 510)
+Started GET "/" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Started GET "/home" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 293)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 517)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2687)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 3183)
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.0ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://www.example.com/kyc/new
+Filter chain halted as :require_kyc_exists rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 789)
+Started GET "/kyc/new" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by KycController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.0ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/new.html.erb within layouts/application
+  Rendered kyc/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 378)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 517)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2763)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.1ms | Allocations: 3358)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "firstname", "lastname", "terms_of_service") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "user@example.com"], ["password_digest", "$2a$04$m6DliSNveN4mPFayMRwsp.fJZ1iHb8fpt8WINpKmuEMeN2yLXOJ0y"], ["created_at", "2023-05-01 19:46:17.127520"], ["updated_at", "2023-05-01 19:46:17.127520"], ["firstname", "User"], ["lastname", "Example"], ["terms_of_service", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 594)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 422)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2878)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 3156)
+Started POST "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"user@example.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.0ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 508)
+Started GET "/" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Started GET "/home" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 290)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 517)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2665)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.1ms | Allocations: 3145)
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWallet Create (0.3ms)[0m  [1m[32mINSERT INTO "wallets" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 1], ["created_at", "2023-05-01 19:46:17.161188"], ["updated_at", "2023-05-01 19:46:17.161188"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.0ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://www.example.com/kyc/new
+Filter chain halted as :require_kyc_exists rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 813)
+Started GET "/kyc/new" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by KycController#new as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.0ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/new.html.erb within layouts/application
+  Rendered kyc/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 378)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 517)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2760)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 3379)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "firstname", "lastname", "terms_of_service") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "user@example.com"], ["password_digest", "$2a$04$u6EA384zsT1Bz0ZB0FAIrOj6xvnfFqdoKwpEEqv3ZaL1JzGdQ8mam"], ["created_at", "2023-05-01 19:46:17.182949"], ["updated_at", "2023-05-01 19:46:17.182949"], ["firstname", "User"], ["lastname", "Example"], ["terms_of_service", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 593)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 422)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2876)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 3154)
+Started POST "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"user@example.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.1ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 508)
+Started GET "/" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Started GET "/home" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 290)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 517)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2665)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 3145)
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 1], ["created_at", "2023-05-01 19:46:17.211655"], ["updated_at", "2023-05-01 19:46:17.211655"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCard Create (0.7ms)[0m  [1m[32mINSERT INTO "cards" ("issuer", "holder_name", "number", "expiration_date", "cvv", "wallet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["issuer", nil], ["holder_name", "Megaman McGee"], ["number", "2222333344445555"], ["expiration_date", "12/34"], ["cvv", "999"], ["wallet_id", 1], ["created_at", "2023-05-01 19:46:17.225133"], ["updated_at", "2023-05-01 19:46:17.225133"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/wallet/cards" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by CardsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.0ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://www.example.com/kyc/new
+Filter chain halted as :require_kyc_exists rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 812)
+Started GET "/kyc/new" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by KycController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.0ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/new.html.erb within layouts/application
+  Rendered kyc/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 378)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 517)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2760)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 3376)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "firstname", "lastname", "terms_of_service") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "user@example.com"], ["password_digest", "$2a$04$TMrojEduGqDpsCS2HAokzu2jCRKwNnXotofXXMAC5LHh0ml2djALS"], ["created_at", "2023-05-01 19:46:17.248396"], ["updated_at", "2023-05-01 19:46:17.248396"], ["firstname", "User"], ["lastname", "Example"], ["terms_of_service", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 593)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 422)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2876)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 3154)
+Started POST "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"user@example.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.0ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 508)
+Started GET "/" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Started GET "/home" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 290)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 517)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2665)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 3178)
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 1], ["created_at", "2023-05-01 19:46:17.275834"], ["updated_at", "2023-05-01 19:46:17.275834"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("issuer", "holder_name", "number", "expiration_date", "cvv", "wallet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["issuer", "VISA"], ["holder_name", "Megaman McGee"], ["number", "2222333344445555"], ["expiration_date", "12/34"], ["cvv", "999"], ["wallet_id", 1], ["created_at", "2023-05-01 19:46:17.277438"], ["updated_at", "2023-05-01 19:46:17.277438"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.0ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://www.example.com/kyc/new
+Filter chain halted as :require_kyc_exists rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 955)
+Started GET "/kyc/new" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by KycController#new as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.0ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/new.html.erb within layouts/application
+  Rendered kyc/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 378)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 517)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2760)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 3370)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "firstname", "lastname", "terms_of_service") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "user@example.com"], ["password_digest", "$2a$04$YFKamyGFS28R2lBbxti2.e18MIqjTw5CSzXGI8VveObVstZYHVK5q"], ["created_at", "2023-05-01 19:46:17.302894"], ["updated_at", "2023-05-01 19:46:17.302894"], ["firstname", "User"], ["lastname", "Example"], ["terms_of_service", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 594)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 422)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2877)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 3155)
+Started POST "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"user@example.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.0ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 508)
+Started GET "/" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Started GET "/home" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 290)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 517)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2665)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 3139)
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWallet Create (0.2ms)[0m  [1m[32mINSERT INTO "wallets" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 1], ["created_at", "2023-05-01 19:46:17.330635"], ["updated_at", "2023-05-01 19:46:17.330635"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("issuer", "holder_name", "number", "expiration_date", "cvv", "wallet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["issuer", "VISA"], ["holder_name", "Megaman McGee"], ["number", "2222333344445555"], ["expiration_date", "12/34"], ["cvv", "999"], ["wallet_id", 1], ["created_at", "2023-05-01 19:46:17.332404"], ["updated_at", "2023-05-01 19:46:17.332404"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.0ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://www.example.com/kyc/new
+Filter chain halted as :require_kyc_exists rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 788)
+Started GET "/kyc/new" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by KycController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.0ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/new.html.erb within layouts/application
+  Rendered kyc/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 378)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 517)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2760)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 3361)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "firstname", "lastname", "terms_of_service") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "user@example.com"], ["password_digest", "$2a$04$qo9Td21iTXfjMKxtNrzzOOOT5nQmoGhfXSapeFhNEtGJqnM8mUdmO"], ["created_at", "2023-05-01 19:46:17.354279"], ["updated_at", "2023-05-01 19:46:17.354279"], ["firstname", "User"], ["lastname", "Example"], ["terms_of_service", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 593)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 422)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2876)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 3154)
+Started POST "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"user@example.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.0ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 508)
+Started GET "/" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Started GET "/home" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 290)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 517)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2665)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 3163)
+  [1m[36mWallet Load (0.1ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mWallet Create (0.4ms)[0m  [1m[32mINSERT INTO "wallets" ("user_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["user_id", 1], ["created_at", "2023-05-01 19:46:17.381804"], ["updated_at", "2023-05-01 19:46:17.381804"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCard Create (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("issuer", "holder_name", "number", "expiration_date", "cvv", "wallet_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["issuer", "VISA"], ["holder_name", "Megaman McGee"], ["number", "2222333344445555"], ["expiration_date", "12/34"], ["cvv", "999"], ["wallet_id", 1], ["created_at", "2023-05-01 19:46:17.384468"], ["updated_at", "2023-05-01 19:46:17.384468"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/wallet/balances" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by BalancesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWallet Load (0.0ms)[0m  [1m[34mSELECT "wallets".* FROM "wallets" WHERE "wallets"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.0ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to http://www.example.com/kyc/new
+Filter chain halted as :require_kyc_exists rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 797)
+Started GET "/kyc/new" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by KycController#new as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKyc Load (0.0ms)[0m  [1m[34mSELECT "kycs".* FROM "kycs" WHERE "kycs"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering kyc/new.html.erb within layouts/application
+  Rendered kyc/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 378)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 517)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 2766)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.1ms | Allocations: 3367)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 594)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 422)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2885)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 3163)
+Started POST "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"john@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "john@gmail.com"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 594)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 422)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2866)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 3287)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 593)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 422)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2876)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 3154)
+Started POST "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"john@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "john@gmail.com"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 593)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 422)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2864)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 3280)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 593)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 422)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2876)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3154)
+Started POST "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"john123@gmail.com", "password"=>"[FILTERED]", "commit"=>"Sign In"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "john123@gmail.com"], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 593)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 422)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2864)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 3280)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 593)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 422)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2876)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 3154)
+Started GET "/wallet" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by WalletsController#show as HTML
+Redirected to http://www.example.com/sign_in
+Filter chain halted as :require_user_logged_in! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 330)
+Started GET "/sign_in" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 593)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 422)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2880)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 3257)
+Started GET "/sign_up" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2474)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 451)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 4863)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 5585)
+Started POST "/sign_up" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"swetha@yahoo.com", "firstname"=>"Swetha", "lastname"=>"Reddy", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "terms_of_service"=>"0"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2260)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 422)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 4535)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 5249)
+Started GET "/sign_up" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1563)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 422)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3846)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 4156)
+Started POST "/sign_up" for 127.0.0.1 at 2023-05-01 14:46:17 -0500
+Processing by RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"xyz.com", "firstname"=>"xyz1", "lastname"=>"wxy", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "terms_of_service"=>"0"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 3798)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 422)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 6073)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 6741)
