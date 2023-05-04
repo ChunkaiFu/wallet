@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start
+
 Given(/the following users exist/) do |users_table|
   users_table.hashes.each do |user|
     User.create user
@@ -38,5 +41,9 @@ end
 
 When('I follow {string}') do |my_link|
   click_link(my_link)
+end
+
+And('I am on the home page') do
+  visit root_path
 end
 

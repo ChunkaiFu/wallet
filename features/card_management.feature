@@ -4,20 +4,19 @@ Feature: Card Management
   As a user
   I want to add a card to my account
   
-
-  Scenario: User logs in and navigates to MyCards page
-    Given I am logged in 
-    When I click "MyCards" in the navbar
-    Then I should be on the "MyCards" page
     
-  Scenario: New user creates wallet
-    Given I am logged in
+  Scenario: User creates wallet
+    Given I have created an account
+    And I am kyc authenticated
+    And I have accepted the Terms of Services
     When I click "MyCards" in the navbar
     And I click the "Add some cards" button
     Then I should see the message "Successfully created wallet!"
 
   Scenario: User adds first card to their wallet
-    Given I am logged in
+    Given I have created an account
+    And I am kyc authenticated
+    And I have accepted the Terms of Services
     And I have a wallet
     And I am on the MyCards page
     When I click the "Add a card now!" button
@@ -31,7 +30,9 @@ Feature: Card Management
     And I should see the new card on the cards page
     
   Scenario: User deletes a card
-    Given I am logged in
+    Given I have created an account
+    And I am kyc authenticated
+    And I have accepted the Terms of Services
     And I have a card in my wallet
     And I am on the MyCards page
     When I click the "Delete" button
