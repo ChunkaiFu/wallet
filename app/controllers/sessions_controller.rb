@@ -36,7 +36,7 @@ class SessionsController < ApplicationController
 
     if user
       session[:user_id] = user.id
-      redirect_to root_path, notice: "Signed in!"
+      redirect_to root_path, notice: "Signed in! Please remember to change your password! "
     else
       new_user = User.new(
         email: auth[:email], 
