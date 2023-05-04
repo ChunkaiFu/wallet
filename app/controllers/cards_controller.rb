@@ -14,7 +14,7 @@ class CardsController < ApplicationController
       @cards = @wallet.cards
     else
       if !@wallet
-        redirect_to new_wallet_path, alert: "Add some cards now" and return 
+        redirect_to new_wallet_path, alert: "create a wallet now" and return 
       elsif !@user.terms_of_service 
         redirect_to terms_path, alert: "please accept our terms first" and return 
       else 

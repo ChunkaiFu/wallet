@@ -137,6 +137,9 @@ class TransactionsController < ApplicationController
   
     def set_wallet
       @wallet = @user.wallet 
+      if !@wallet 
+        redirect_to new_wallet_path, alert: "create a wallet now" 
+      end 
     end 
   
     def set_balance

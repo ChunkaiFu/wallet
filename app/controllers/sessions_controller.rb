@@ -8,14 +8,14 @@ class SessionsController < ApplicationController
     if user.present? 
       if user.authenticate(params[:password])
         session[:user_id] = user.id
-        if user.kyc.present?  
-          if user.kyc.status == "pending"
-            redirect_to kyc_new_path, notice: "Logged in successfully!"
-          elsif user.kyc.status == "awaiting"
-            redirect_to kyc_show_path
+        if user.kyc.present? 
+          if user.kyc.status == "approved"
+            redirect_to root_path, notice: "Logged in successfully!"
+          else 
+            redirect_to root_path, notice: "please wait for your kyc approval!"
           end
         else
-          redirect_to root_path
+          redirect_to kyc_new_path, notice: "add a kyc first to continue"
         end
       end  
     else 
