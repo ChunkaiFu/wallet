@@ -14,9 +14,10 @@
             <%= form.password_field :password, class: "form-control", autocomplete: "current-password" %>
           </div>
 
-        <div class="text-center">
-          <%=link_to "Login as admin", admin_login_path, class: "btn btn-lg btn-dark custom-width", style: "width: 200px;margin-top: 10px; margin-bottom: 10px;"%>
-        </div>
+          <div class="text-center">
+            <%= form.submit "Login", class: "btn btn-lg btn-secondary custom-width", style: "width: 200px;margin-top: 10px; margin-bottom: 10px;" %>
+          </div>
+
         <% end %>
       </div>
     </div>
