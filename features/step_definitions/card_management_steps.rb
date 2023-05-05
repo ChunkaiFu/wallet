@@ -1,13 +1,9 @@
-Given("I am logged in") do
-  @user = User.create(email: "user@example.com", firstname: "User", lastname: "Example", password: "password127", password_confirmation: "password127")
-  visit sign_in_path
-  fill_in "Email", with: @user.email
-  fill_in "Password", with: @user.password
-  click_button "Sign In"
-end
+require 'simplecov'
+SimpleCov.start
 
 When("I click {string} in the navbar") do |page|
   click_on page
+  expect(current_path).to eq(new_wallet_path)
 end
 
 Then("I should be on the {string} page") do |page|

@@ -33,7 +33,7 @@ class TransactionsController < ApplicationController
                     redirect_to wallet_balances_path, alert: "You need to add sufficient balance for this currency first"
                 else
                     @balance = @balances.find_by(currency: params[:transaction][:currency] )
-                    puts @balance.value.to_f, "****"
+                    # puts @balance.value.to_f, "****"
                     #@balance.decrement(:value, params[:transaction][:amount].to_f)
                     #if @balances.update(value: @balance.value-params[:transaction][:amount].to_f)
                     new_val = ((@balance.value*100-params[:transaction][:amount].to_f*100).to_i)/100.0  
@@ -52,9 +52,9 @@ class TransactionsController < ApplicationController
                     @receiver_balances=@receiver_wallet.balances
                     @receiver_balance = @receiver_balances.find_by(currency: params[:transaction][:currency] )
                     if @receiver_balance.present?
-                        puts "Receiver balance present"
+                        # puts "Receiver balance present"
                         if @receiver_balance.update(value: @receiver_balance.value +  params[:transaction][:amount].to_f)
-                            puts "Successful"
+                            # puts "Successful"
                             if(new_val.abs < 0.01)
                                 new_val=0.0
                                 @balance.destroy
@@ -75,14 +75,14 @@ class TransactionsController < ApplicationController
                                 redirect_to transactions_path, notice: "Some error occured. Sorry!!!"
                             end
                         else
-                            puts "Not able to update his balance"
+                            # puts "Not able to update his balance"
                             redirect_to transactions_path, notice: "Some error occured. Sorry!!!"
                         end
                     else
-                        puts "No receiver balance!!"
+                        # puts "No receiver balance!!"
                         @receiver_balance = @receiver_wallet.balances.new(value: params[:transaction][:amount].to_f, wallet_id: @receiver.wallet.user_id,  currency: params[:transaction][:currency] )
                         if @receiver_balance.save
-                            puts "Created receiver balances"
+                            # puts "Created receiver balances"
                             if(new_val.abs < 0.01)
                                 new_val=0.0
                                 @balance.destroy
@@ -104,17 +104,17 @@ class TransactionsController < ApplicationController
                             end
                         else
                             redirect_to transactions_path, alert: "Receiver has not added any card as of now. Transaction not possible. Sorry!!!"
-                            puts @receiver_balance.errors.full_messages
-                            puts "Receiver balance not created! some error!!"
+                            # puts @receiver_balance.errors.full_messages
+                            # puts "Receiver balance not created! some error!!"
                         end
                     end
 
                     #@balances.find_by(currency: params[:transaction][:currency] ).value=@balances.find_by(currency: params[:transaction][:currency] )[:value]-params[:transaction][:amount].to_f
                     
-                    puts("*****************************************8")
+                    # puts("*****************************************8")
                 end
             else
-                puts("Currency does not exist!!")
+                # puts("Currency does not exist!!")
                 redirect_to wallet_balances_path, alert: "You need to add this currency first"
             end
         else

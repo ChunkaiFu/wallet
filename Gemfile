@@ -51,7 +51,7 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
-
+  gem 'simplecov', require: false
 end
 
 group :development do
@@ -68,7 +68,6 @@ end
 gem 'pg'
 gem 'cucumber-rails', require: false
 gem 'cucumber-rails-training-wheels'
-gem 'simplecov', require:false
 gem 'database_cleaner'
 gem 'rspec-rails'
 
@@ -95,3 +94,7 @@ gem 'omniauth-rails_csrf_protection'
 
 gem 'aws-sdk-secretsmanager'
 gem 'rqrcode'
+
+group :development do
+  gem 'rails-erd'
+end

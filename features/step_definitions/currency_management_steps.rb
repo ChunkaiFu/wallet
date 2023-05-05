@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start
+
 And("I have a wallet with a card") do
   @user.wallet ||= Wallet.create
   @card = @user.wallet.cards.create(number: "2222333344445555", expiration_date: "12/34", holder_name: "Megaman McGee", cvv: "999", issuer: "VISA")
