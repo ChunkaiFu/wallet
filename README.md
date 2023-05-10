@@ -52,10 +52,19 @@ Packages: make sure git has been installed on your lcoal machine
 Step 1: 
 To install Git on Ubuntu, you can follow these steps:
 Open a terminal window by pressing Ctrl + Alt + T.
-Update the package list by running the following command: sudo apt update
-Install Git by running the following command: sudo apt install git
-Verify that Git has been installed by running the following command: git --version
+Update the package list by running the following command: 
+```
+sudo apt update
+```
 
+Install Git by running the following command: 
+```
+sudo apt install git
+```
+Verify that Git has been installed by running the following command: 
+```
+git --version
+```
 Step 2:
 Clone the repo. Navigate to the directory you want to place this project. 
 Open a terminal in vscode or ubuntu. copy and paste the following command and press enter:
@@ -68,17 +77,28 @@ Open the terminal at the project root, create a new file called ".env", and copy
 ```
 AWS_KEY= Place your AWS_KEY here 
 ```
-
+```
 AWS_SECRET= Place your AWS_secret here 
+```
+
 For detailed instructions on obtaing AWS key and secret, please refer to the following docuemntation: 
 https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html 
-In the root of the project terminal enter the command: bundle 
+In the root of the project terminal enter the command: 
+```
+bundle 
+```
 If your see errors similar to bundle commands not found, you need to install a bunlder first. 
 Follow this tutorial to install bundler rails and ruby: 
 https://bundler.io/guides/rails.html
 
-Then run the command: rake db:migrate 
-Then run the command: rails s 
+Then run the command: 
+```
+rake db:migrate 
+```
+Then run the command: 
+```
+rails s 
+```
 You should see local host is active and running, open a window of your browser and type in the corresponding local address, you should see 
 the app up and running. 
 
@@ -88,14 +108,33 @@ on mailer, please refer to this tutorial:
 https://developers.google.com/workspace/guides/create-credentials 
 
 2. Set run time variable for Heroku: you need to set the run time variable for heroku before deploying it. 
+To deploy to heroku, you need to first login to your heroku account. following these instructions to install heroku: 
+https://devcenter.heroku.com/articles/heroku-cli 
+after Heroku is installed, open a terminal to the root of the app, and type 
+```
+heroku login -i 
+```
+Then you need to enter your heroku account and then enter your heroku security password which can be found in your heroku account details.  
+
 Use the following commands to set heroku run time environment variable: 
+```
 	heroku config:set AWS_KEY= <your aws key here which is the same as the local env variables above>
 	heroku config:set AWS_SECRET= <your aws secret which is the same as the one you have set in the .env as well>
+```
 
 
-3. Add, commit and push all your changes to a repo of your own. Then run: git push heroku main 
-	then: heroku run rake db:migrate 
-	then: heroku info 
+3. Add, commit and push all your changes to a repo of your own. Then run: 
+	```
+	git push heroku main 
+	```
+	then: 
+	```
+	heroku run rake db:migrate 
+	```
+	then: 
+	```
+	heroku info 
+	```
 Then you should see the link for the deployed link. 
 
 Quick tips: 
