@@ -76,7 +76,7 @@ git clone https://github.com/ChunkaiFu/wallet.git
 Navigate to the directory called wallet. There you should see all the app files. 
 
 ### Step 3: 
-For development and testing: 
+#### For Development: 
 Open the terminal at the project root, create a new file called ".env", and copy and paste the following lines into the file: 
 ```
 AWS_KEY= Place your AWS_KEY here 
@@ -104,9 +104,19 @@ Then run the command:
 rails s 
 ```
 You should see local host is active and running, open a window of your browser and type in the corresponding local address, you should see 
-the app up and running. 
+the app up and running. <br />
+#### For Testing:
+Open the terminal at the project root folder and run:
+```
+rake cucumber 
+```
+This will run all the cucumber tests written for the application
+```
+rake spec 
+```
+This will run all the rspec tests written for the application
 
-For production: 
+#### For Production: 
 1. Set master account for Mailer: you need to obtain a master mailing account for the mailer feature in this app. For details on how to set up and config the development and production 
 on mailer, please refer to this tutorial: 
 https://developers.google.com/workspace/guides/create-credentials 
@@ -143,9 +153,9 @@ Then you should see the link for the deployed link.
 
 Quick tips: 
 	1. Debugging: for those who are new to ruby on rails, you are likely going to encounter many bugs and errors messages and some times many confusions. 
-	don't hesitate to google the error message and try to find out a fix. Pair programming is also helpful in debugging as well. 
-	2. Stuck? If you get stuck on some part of the progress, seek immediate help from professor or more experienced peers, do not hold on to the bugs to yourself. 
-	3. You could alwys reach out to the owner of this repo if you want to know more. 
+	don't hesitate to google the error message and try to find out a fix. Pair programming is also helpful in debugging as well. <br />
+	2. Stuck? If you get stuck on some part of the progress, seek immediate help from professor or more experienced peers, do not hold on to the bugs to yourself. <br />
+	3. You could alwys reach out to the owner of this repo if you want to know more. <br />
 
 Good luck and have fun! 
 
