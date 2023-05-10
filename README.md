@@ -45,13 +45,6 @@ Appreciation to the team members and contributors for their valuable input and h
 Thank you to our customer for contributing this project to our class.
 
 
-# Acknowledgements
-
-A special thanks to Texas A&M University, the Computer Science Department, and Dr. Ritchey for promoting an environment of self-learning in the world of extreme programming.
-Appreciation to the team members and contributors for their valuable input and hard work.
-Thank you to our customer for contributing this project to our class.
-
-
 # Steps to run this app on your local machine: 
 
 ## Environment 
