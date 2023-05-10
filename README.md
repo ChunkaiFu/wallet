@@ -3,7 +3,7 @@
 This Virtual Wallet is a web application that allows users to create and manage a digital wallet, add multiple cards, transfer money, and perform transactions between users. It also offers Google authentication and admin functionality for managing user profiles. <br>
 
 Features <br>
-	&emsp User registration and login (including Google login) <br>
+	User registration and login (including Google login) <br>
 	Wallet creation and management <br>
 	Multiple card management<br>
 	Money transfer between cards and wallet<br>
@@ -41,11 +41,15 @@ Appreciation to the team members and contributors for their valuable input and h
 Thank you to our customer for contributing this project to our class.
 
 
-Steps to run this app on your local machine: 
+# Steps to run this app on your local machine: 
 
-Environment: It is recommended to use Ubuntu or WSL with vscode. 
-Packages: make sure git has been installed on your lcoal machine
-Step 1: 
+## Environment 
+It is recommended to use Ubuntu or WSL with vscode. 
+
+## Packages 
+Make sure git has been installed on your lcoal machine
+
+### Step 1: 
 To install Git on Ubuntu, you can follow these steps:
 Open a terminal window by pressing Ctrl + Alt + T.
 Update the package list by running the following command: 
@@ -61,13 +65,13 @@ Verify that Git has been installed by running the following command:
 ```
 git --version
 ```
-Step 2:
+### Step 2:
 Clone the repo. Navigate to the directory you want to place this project. 
 Open a terminal in vscode or ubuntu. copy and paste the following command and press enter:
 git clone https://github.com/ChunkaiFu/wallet.git 
 Navigate to the directory called wallet. There you should see all the app files. 
 
-Step 3: 
+### Step 3: 
 For development and testing: 
 Open the terminal at the project root, create a new file called ".env", and copy and paste the following lines into the file: 
 ```
