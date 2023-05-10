@@ -65,8 +65,10 @@ Navigate to the directory called wallet. There you should see all the app files.
 Step 3: 
 For development and testing: 
 Open the terminal at the project root, create a new file called ".env", and copy and paste the following lines into the file: 
-
+```
 AWS_KEY= Place your AWS_KEY here 
+```
+
 AWS_SECRET= Place your AWS_secret here 
 For detailed instructions on obtaing AWS key and secret, please refer to the following docuemntation: 
 https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html 
