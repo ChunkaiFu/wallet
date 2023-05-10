@@ -3,7 +3,7 @@
 This Virtual Wallet is a web application that allows users to create and manage a digital wallet, add multiple cards, transfer money, and perform transactions between users. It also offers Google authentication and admin functionality for managing user profiles. <br>
 
 Features <br>
-	nbsp nbsp nbsp User registration and login (including Google login) <br>
+	&emsp User registration and login (including Google login) <br>
 	Wallet creation and management <br>
 	Multiple card management<br>
 	Money transfer between cards and wallet<br>
