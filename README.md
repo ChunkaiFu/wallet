@@ -152,10 +152,10 @@ heroku config:set AWS_SECRET= <your aws secret which is the same as the one you 
 Then you should see the link for the deployed link. 
 
 #### Quick tips: <br />
-	1. Debugging: for those who are new to ruby on rails, you are likely going to encounter many bugs and errors messages and some times many confusions. 
-	don't hesitate to google the error message and try to find out a fix. Pair programming is also helpful in debugging as well. <br />
-	2. Stuck? If you get stuck on some part of the progress, seek immediate help from professor or more experienced peers, do not hold on to the bugs to yourself. <br />
-	3. You could alwys reach out to the owner of this repo if you want to know more. <br />
+1. Debugging: for those who are new to ruby on rails, you are likely going to encounter many bugs and errors messages and some times many confusions. 
+don't hesitate to google the error message and try to find out a fix. Pair programming is also helpful in debugging as well. <br />
+2. Stuck? If you get stuck on some part of the progress, seek immediate help from professor or more experienced peers, do not hold on to the bugs to yourself. <br />
+3. You could alwys reach out to the owner of this repo if you want to know more. <br />
 
 Good luck and have fun! 
 
