@@ -132,8 +132,8 @@ Then you need to enter your heroku account and then enter your heroku security p
 
 Use the following commands to set heroku run time environment variable: 
 ```
-	heroku config:set AWS_KEY= <your aws key here which is the same as the local env variables above>
-	heroku config:set AWS_SECRET= <your aws secret which is the same as the one you have set in the .env as well>
+heroku config:set AWS_KEY= <your aws key here which is the same as the local env variables above>
+heroku config:set AWS_SECRET= <your aws secret which is the same as the one you have set in the .env as well>
 ```
 
 
@@ -151,7 +151,7 @@ Use the following commands to set heroku run time environment variable:
 	```
 Then you should see the link for the deployed link. 
 
-Quick tips: 
+#### Quick tips: <br />
 	1. Debugging: for those who are new to ruby on rails, you are likely going to encounter many bugs and errors messages and some times many confusions. 
 	don't hesitate to google the error message and try to find out a fix. Pair programming is also helpful in debugging as well. <br />
 	2. Stuck? If you get stuck on some part of the progress, seek immediate help from professor or more experienced peers, do not hold on to the bugs to yourself. <br />
