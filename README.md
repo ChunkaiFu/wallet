@@ -1,8 +1,8 @@
-README
+# Project Overview <br>
 
-This Virtual Wallet is a web application that allows users to create and manage a digital wallet, add multiple cards, transfer money, and perform transactions between users. It also offers Google authentication and admin functionality for managing user profiles.
+This Virtual Wallet is a web application that allows users to create and manage a digital wallet, add multiple cards, transfer money, and perform transactions between users. It also offers Google authentication and admin functionality for managing user profiles. <br>
 
-Features
+Features <br>
 	User registration and login (including Google login)
 	Wallet creation and management
 	Multiple card management
@@ -14,7 +14,7 @@ Features
 	Secure storage of sensitive information using environment variables
 	QR code generation
 	
-Prerequisites
+Prerequisites <br>
 	Ruby 2.7.0 or higher
 	Rails 6.1.4 or higher
 	PostgreSQL 12.0 or higher
