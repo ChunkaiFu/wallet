@@ -4,6 +4,7 @@ This Virtual Wallet is a web application that allows users to create and manage 
 
 Link for Heroku Deployment: https://bigwallet.herokuapp.com/home <br> 
 Demo Video: https://www.youtube.com/watch?v=RcYXTyiOQ-U <br>
+Credits: Chunkai Fu, Sambhav Khurana, P Keerthana, Swetha reddy, J Sanders
 
 
 ## Features
